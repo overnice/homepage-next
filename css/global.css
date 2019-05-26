@@ -1,0 +1,39 @@
+:root {
+--darkgray: #24262C;
+--lightgray: #E9E9EA;
+--white: #fff;
+--red: #FF795F;
+--font-family: "TextaNarrow", sans-serif;
+}
+
+@font-face {
+font-family: "TextaNarrow";
+font-weight: 400;
+src:    url("~assets/fonts/texta-narrow-book.eot");
+src:    url("~assets/fonts/texta-narrow-book.eot?#iefix") format("embedded-opentype"),
+        url("~assets/fonts/texta-narrow-book.woff2") format("woff2"),
+        url("~assets/fonts/texta-narrow-book.woff") format("woff"),
+        url("~assets/fonts/texta-narrow-book.ttf") format("truetype");
+}
+
+@font-face {
+font-family: "TextaNarrow";
+font-weight: 600;
+src:    url("~assets/fonts/texta-narrow-bold.eot");
+src:    url("~assets/fonts/texta-narrow-bold.eot?#iefix") format("embedded-opentype"),
+        url("~assets/fonts/texta-narrow-bold.woff2") format("woff2"),
+        url("~assets/fonts/texta-narrow-bold.woff") format("woff"),
+        url("~assets/fonts/texta-narrow-bold.ttf") format("truetype");
+}
+
+body, p, a, h1, h2, h3 {
+    margin: 0;
+    padding: 0;
+    -webkit-font-smoothing: antialiased;
+    font-weight: normal;
+}
+
+body, html {
+    background: var(--darkgray);
+    font-family: var(--font-family);
+}
