@@ -8,16 +8,9 @@
       </p>
     </header>
     <CasePreview
-      copy="A radical, inclusive and concept-driven approach to branding one of the most thrilling technologies in existence: <strong>Nimiq</strong>, a browser-based cryptocurrency."
-    />
-    <CasePreview
-      copy="Automation killing jobs is a scary topic; ironically, an AI-based service overnice branded and dubbed <strong>Peers</strong> could be the solution. The branding required tact."
-    />
-    <CasePreview
-      copy="A dual brand strategy that leverages interaction and synergy to create more than the sum of its parts for <strong>Archilyse</strong>, architecture analysis by machine learning."
-    />
-    <CasePreview
-      copy="<strong>Prisma</strong> simplifies database management and as a typical start-up, everything changes all the time. How branding can evolve without losing identity."
+      v-for="casePreview in casePreviews"
+      :key="casePreview.id"
+      :copy="casePreview.copy"
     />
   </section>
 </template>
@@ -30,7 +23,8 @@ export default {
   props: {
     title: String,
     copy: String,
-    smallCopy: String
+    smallCopy: String,
+    casePreviews: Array
   }
 }
 </script>

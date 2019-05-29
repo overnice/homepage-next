@@ -19,6 +19,7 @@ module.exports = {
   // ],
   // add your custom rules here
   rules: {
-    "vue/require-default-prop": false
+    "vue/require-default-prop": false,
+    "no-console": 1
   }
 }

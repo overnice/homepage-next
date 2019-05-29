@@ -1,20 +1,32 @@
 <template>
-  <div class="case">
-    <div class="visual" />
+  <nuxt-link to="/case" class="case">
+    <!-- <transition name="test" mode="out-in"> -->
+      <div class="visual" />
+    <!-- </transition> -->
     <p v-html="copy" />
-  </div>
+  </nuxt-link>
 </template>
 
 <script>
+import { mapState } from 'vuex'
+
 export default {
   props: {
     copy: String
+  },
+  computed: mapState(['page']),
+  transition: {
+    name: 'test',
+    mode: 'out-in',
+    duration: 300
   }
 }
 </script>
 
 <style lang="scss" scoped>
 .case {
+  color: inherit;
+  text-decoration: none;
   margin-top: 64px;
   display: flex;
   align-items: center;

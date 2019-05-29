@@ -3,6 +3,10 @@ import pkg from './package'
 export default {
   mode: 'universal',
 
+  router: {
+    middleware: 'pages'
+  },
+  
   /*
    ** Headers of the page
    */

@@ -11,19 +11,12 @@
     <IntroVideo />
     <section id="content" class="content">
       <ServiceCategory
-        title="Brands"
-        copy="Creating a brand is creating an experience. Users don’t remember the logo. They remember the feeling. overnice makes sure it’s a nice one."
-        small-copy="Brands just like friends, corporate design, messaging."
-      />
-      <ServiceCategory
-        title="Products"
-        copy="An excellent digital product has texture, fragrance, and moves to a steady beat. overnice takes the users by the hand and makes them all comfy, just to rattle their cages where it matters."
-        small-copy="Web- and mobile apps, platforms, websites."
-      />
-      <ServiceCategory
-        title="Creatives"
-        copy="overnice develops communication strategies and measures that seem like somebody spontaneously said the right thing, in the right place, at the right time."
-        small-copy="Persuasive marketing strategies, creative direction, crafty execution"
+        v-for="serviceCategory in serviceCategories"
+        :key="serviceCategory.id"
+        :title="serviceCategory.title"
+        :copy="serviceCategory.copy"
+        :small-copy="serviceCategory.smallCopy"
+        :case-previews="serviceCategory.casePreviews"
       />
     </section>
   </div>
@@ -32,6 +25,7 @@
 <script>
 import IntroVideo from '~/components/IntroVideo.vue'
 import ServiceCategory from '~/components/ServiceCategory.vue'
+import serviceCategoriesData from '~/data/serviceCategories.json'
 
 if (process.browser) {
   /* global window, TweenMax, Expo, ScrollMagic, controller */
@@ -69,6 +63,11 @@ if (process.browser) {
 
 export default {
   components: { IntroVideo, ServiceCategory },
+  data() {
+    return {
+      serviceCategories: serviceCategoriesData
+    }
+  },
 
   head() {
     return {

@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "title": "Brands",
+    "copy": "Creating a brand is creating an experience. Users don’t remember the logo. They remember the feeling. overnice makes sure it’s a nice one.",
+    "smallCopy": "Brands just like friends, corporate design, messaging.",
+    "casePreviews": [
+      {
+        "visual": "",
+        "copy": "A radical, inclusive and concept-driven approach to branding one of the most thrilling technologies in existence: <strong>Nimiq</strong>, a browser-based cryptocurrency."
+      },
+      {
+        "visual": "",
+        "copy": "Automation killing jobs is a scary topic; ironically, an AI-based service overnice branded and dubbed <strong>Peers</strong> could be the solution. The branding required tact."
+      },
+      {
+        "visual": "",
+        "copy": "A dual brand strategy that leverages interaction and synergy to create more than the sum of its parts for <strong>Archilyse</strong>, architecture analysis by machine learning."
+      },
+      {
+        "visual": "",
+        "copy": "<strong>Prisma</strong> simplifies database management and as a typical start-up, everything changes all the time. How branding can evolve without losing identity."
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Products",
+    "copy": "An excellent digital product has texture, fragrance, and moves to a steady beat. overnice takes the users by the hand and makes them all comfy, just to rattle their cages where it matters.",
+    "smallCopy": "Web- and mobile apps, platforms, websites."
+  },
+  {
+    "id": 3,
+    "title": "Creatives",
+    "copy": "overnice develops communication strategies and measures that seem like somebody spontaneously said the right thing, in the right place, at the right time.",
+    "smallCopy": "Persuasive marketing strategies, creative direction, crafty execution"
+  }
+]
