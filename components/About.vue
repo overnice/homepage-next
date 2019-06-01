@@ -1,8 +1,12 @@
 <template>
   <section id="about" class="about">
-    <div id="about--visual--outer" class="about--visual--outer">
-      <div id="about--visual--inner" class="about--visual--inner">
-        <div class="about--visual" />
+    <div id="about--visual" class="about--visual">
+      <div id="about--visual--outer" class="about--visual--outer">
+        <div id="about--visual--inner" class="about--visual--inner">
+          <video playsinline autoplay muted loop>
+            <source src="~/assets/videos/background.webm" type="video/webm">
+          </video>
+        </div>
       </div>
     </div>
     <div class="about--content">
@@ -24,12 +28,12 @@ if (process.browser) {
   window.onNuxtReady(() => {
     // Pin Visual
     new ScrollMagic.Scene({ triggerElement: '#about', duration: 500, offset: window.innerHeight * 0.5 })
-      .setPin('#about--visual--outer', { pushFollowers: false })
+      .setPin('#about--visual', { pushFollowers: false })
       .addIndicators({ name: 'Pin About Visual' })
       .addTo(controller)
 
     // Grow Visual
-    const growVisual = TweenMax.to('#about--visual--inner', 1, {
+    const growVisual = TweenMax.to('#about--visual--outer', 1, {
       paddingLeft: '0px',
       paddingTop: '0px',
       paddingBottom: '0px',
@@ -54,26 +58,37 @@ export default {
     width: 100%;
   }
 
-  .about--visual--outer {
+  .about--visual {
     position: absolute;
     top: 0;
     left: 0;
     width: calc(50vw - 60px);
     height: 100vh;
     box-sizing: border-box;
+
+    video {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%) scale(1.02);
+      height: auto;
+      min-width: 50vw;
+    }
   }
 
-  .about--visual--inner {
+  .about--visual--outer {
     width: 100%;
     height: 100%;
     padding: 64px 32px 64px 64px;
     box-sizing: border-box;
   }
 
-  .about--visual {
+  .about--visual--inner {
     background: rgba(255,255,255,0.1);
     width: 100%;
     height: 100%;
+    overflow: hidden;
+    position: relative;
   }
 
   .about--content {
