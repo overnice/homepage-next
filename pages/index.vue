@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div>
     <section class="intro">
       <svg id="logo" class="logo" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
         <path d="M161.5,187.6c-2.6,0-3.5,1.9-3.5,5.9v1.7h7v-1.7C165.1,189.4,164.3,187.6,161.5,187.6z" />
@@ -18,6 +18,7 @@
         :small-copy="serviceCategory.smallCopy"
         :case-previews="serviceCategory.casePreviews"
       />
+      <About />
     </section>
   </div>
 </template>
@@ -25,6 +26,8 @@
 <script>
 import IntroVideo from '~/components/IntroVideo.vue'
 import ServiceCategory from '~/components/ServiceCategory.vue'
+import About from '~/components/About.vue'
+
 import serviceCategoriesData from '~/data/serviceCategories.json'
 
 if (process.browser) {
@@ -49,9 +52,9 @@ if (process.browser) {
 
     // Shrink Video
     const shrinkVideo = TweenMax.to('#intro-video--outer', 1, {
-      paddingLeft: '60px',
-      paddingRight: '60px',
-      paddingBottom: '60px',
+      paddingLeft: '64px',
+      paddingRight: '64px',
+      paddingBottom: '64px',
       ease: Expo.easeOut
     })
     new ScrollMagic.Scene({ triggerElement: '#content', duration: 300, offset: 350 })
@@ -62,22 +65,11 @@ if (process.browser) {
 }
 
 export default {
-  components: { IntroVideo, ServiceCategory },
+  components: { IntroVideo, ServiceCategory, About },
+
   data() {
     return {
       serviceCategories: serviceCategoriesData
-    }
-  },
-
-  head() {
-    return {
-      script: [
-        { src: './scripts/TweenMax.min.js' },
-        { src: './scripts/ScrollMagic.js' },
-        { src: './scripts/animation.gsap.js' },
-        { src: './scripts/debug.addIndicators.js' },
-        { innerHTML: 'const controller = new ScrollMagic.Controller();' }
-      ]
     }
   }
 }

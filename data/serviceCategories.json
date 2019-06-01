@@ -27,12 +27,52 @@
     "id": 2,
     "title": "Products",
     "copy": "An excellent digital product has texture, fragrance, and moves to a steady beat. overnice takes the users by the hand and makes them all comfy, just to rattle their cages where it matters.",
-    "smallCopy": "Web- and mobile apps, platforms, websites."
+    "smallCopy": "Web- and mobile apps, platforms, websites.",
+    "casePreviews": [
+      {
+        "visual": "",
+        "copy": "Breaking barriers, translating complicated stuff and stripping away technicalities until it’s easier to create a <strong>Nimiq</strong> account on the blockchain than creating an email address."
+      },
+      {
+        "visual": "",
+        "copy": "Losing your internet connection is bad, providing costly support call centers is too. overnice helped <strong>Vodafone</strong>, and it’s customers with a smart and individualized self-service solution."
+      },
+      {
+        "visual": "",
+        "copy": "<strong>Talentwunder</strong> finds talent. overnice helped with the search. Aggregating a tiring and incomprehensible list of input fields into a single, smart search field."
+      },
+      {
+        "visual": "",
+        "copy": "<strong>Kocks</strong> is a classic, family-owned German engineering company. Their AAA steel products now come with an AAA web-presence – custom CMS included."
+      },
+      {
+        "visual": "",
+        "copy": "The Berlin-based coffee chain <strong>Einstein</strong> prides itself with its roastery and high-quality coffees. The new website mirrors their passion and finds the coffee that suits you best. "
+      }
+    ]
   },
   {
     "id": 3,
     "title": "Creatives",
     "copy": "overnice develops communication strategies and measures that seem like somebody spontaneously said the right thing, in the right place, at the right time.",
-    "smallCopy": "Persuasive marketing strategies, creative direction, crafty execution"
+    "smallCopy": "Persuasive marketing strategies, creative direction, crafty execution",
+    "casePreviews": [
+      {
+        "visual": "",
+        "copy": "Securing Ethereum Smart Contracts is as crucial as it is complicated. overnice developed a set of items from company videos to infographics for <strong>Solidified</strong>."
+      },
+      {
+        "visual": "",
+        "copy": "How fast can I kick a ball? How good is the new <strong>Nike</strong> Superfly XY really? overnice created an in-store experience that answers both questions while creating some nice content for your Instagram."
+      },
+      {
+        "visual": "",
+        "copy": "How to promote <strong>Nimiq</strong> at a no logo/no sponsor conference? With a huge floating banner, weatherproof marketeers and a designated onboarding app obviously."
+      },
+      {
+        "visual": "",
+        "copy": "Scammers riddle the blockchain space. Besides individuals, it’s companies that exploit the young technology. overnice exposed a particularly bad one and created awareness for <strong>Alethena</strong>."
+      }
+    ]
   }
 ]

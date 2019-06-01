@@ -4,6 +4,7 @@
 --white: #fff;
 --red: #FF795F;
 --font-family: "TextaNarrow", sans-serif;
+--content-max-width: 760px;
 }
 
 @font-face {
@@ -26,15 +27,51 @@ src:    url("~assets/fonts/texta-narrow-bold.eot?#iefix") format("embedded-opent
         url("~assets/fonts/texta-narrow-bold.ttf") format("truetype");
 }
 
-body, p, a, h1, h2, h3 {
+html, body, p, a, h1, h2, h3 {
     margin: 0;
     padding: 0;
-    -webkit-font-smoothing: antialiased;
     font-weight: normal;
     line-height: 1.4;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
 }
 
 body, html {
     background: var(--darkgray);
     font-family: var(--font-family);
 }
+
+header {
+    margin-bottom: 104px;
+}
+
+/* .section:first-of-type {
+background: none;
+} */
+
+h2 {
+    font-size: 70px;
+    font-weight: bold;
+    line-height: 1;
+}
+
+p {
+    font-size: 40px;
+    margin-top: 24px;
+}
+
+p.small {
+    font-size: 28px;
+    opacity: .4;
+}
+
+/* .zoom-enter-active,
+.zoom-leave-active {
+    transition: opacity .5s
+}
+
+.zoom-enter, .zoom-leave-active {
+    opacity: 0
+} */

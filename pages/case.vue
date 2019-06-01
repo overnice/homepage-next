@@ -21,6 +21,12 @@ export default {
     return {
       title: 'Case'
     }
+  // },
+  // transition(to, from) {
+  //   return ({
+  //     name: 'zoom',
+  //     duration: 1000
+  //   })
   }
 }
 </script>

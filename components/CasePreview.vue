@@ -1,24 +1,14 @@
 <template>
   <nuxt-link to="/case" class="case">
-    <!-- <transition name="test" mode="out-in"> -->
-      <div class="visual" />
-    <!-- </transition> -->
+    <div class="visual" />
     <p v-html="copy" />
   </nuxt-link>
 </template>
 
 <script>
-import { mapState } from 'vuex'
-
 export default {
   props: {
     copy: String
-  },
-  computed: mapState(['page']),
-  transition: {
-    name: 'test',
-    mode: 'out-in',
-    duration: 300
   }
 }
 </script>
@@ -77,12 +67,4 @@ p {
   margin-left: -80px;
   transition: background .2s ease, transform .6s cubic-bezier(0.25, 0, 0, 1);
 }
-
-// .visual-transition {
-//   background-color: var(--red);
-//   /* opacity: .1; */
-//   pointer-events: none;
-//   border-radius: 1px;
-//   z-index: 2;
-// }
 </style>

@@ -1,7 +1,7 @@
 <template>
-  <section class="service-category">
+  <section class="service-category" id="category">
     <header>
-      <h1>{{ title }}</h1>
+      <h2>{{ title }}</h2>
       <p>{{ copy }}</p>
       <p class="small">
         {{ smallCopy }}
@@ -34,31 +34,7 @@ export default {
     color: var(--white);
     position: relative;
     z-index: 2;
-    max-width: 760px;
+    max-width: var(--content-max-width);
     margin: 0 auto 160px;
-  }
-
-  header {
-    margin-bottom: 104px;
-  }
-
-  /* .section:first-of-type {
-    background: none;
-  } */
-
-  h1 {
-    font-size: 70px;
-    font-weight: bold;
-    line-height: 1;
-  }
-
-  p {
-    font-size: 40px;
-    margin-top: 24px;
-  }
-
-  p.small {
-    font-size: 28px;
-    opacity: .4;
   }
 </style>
