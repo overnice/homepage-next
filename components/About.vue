@@ -71,8 +71,8 @@ export default {
       top: 50%;
       left: 50%;
       transform: translate(-50%,-50%) scale(1.02);
-      height: auto;
-      min-width: 50vw;
+      width: auto;
+      min-height: 100vh;
     }
   }
 
