@@ -17,6 +17,7 @@
 
 <script>
 export default {
+  layout: 'case',
   head() {
     return {
       title: 'Case'

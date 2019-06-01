@@ -22,6 +22,6 @@ export default {
 
 <style lang="scss" scoped>
   .container {
-    color: white;
+    color: var(--darkgray);
   }
 </style>

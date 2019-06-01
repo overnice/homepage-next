@@ -23,11 +23,6 @@ if (process.browser) {
 
   window.onNuxtReady(() => {
     // Pin Visual
-    const visual = document.getElementById('about--visual--outer').getBoundingClientRect()
-    const scrollTop = window.pageYOffset || document.documentElement.scrollTop
-    const visualTop = visual.top + scrollTop
-    console.log(visualTop)
-
     new ScrollMagic.Scene({ triggerElement: '#about', duration: 500, offset: window.innerHeight * 0.5 })
       .setPin('#about--visual--outer', { pushFollowers: false })
       .addIndicators({ name: 'Pin About Visual' })

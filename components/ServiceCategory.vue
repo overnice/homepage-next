@@ -1,5 +1,5 @@
 <template>
-  <section class="service-category" id="category">
+  <section class="service-category">
     <header>
       <h2>{{ title }}</h2>
       <p>{{ copy }}</p>
@@ -31,7 +31,6 @@ export default {
 
 <style lang="scss" scoped>
   .service-category {
-    color: var(--white);
     position: relative;
     z-index: 2;
     max-width: var(--content-max-width);
