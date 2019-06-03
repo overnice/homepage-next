@@ -101,6 +101,7 @@ export default {
 
   .about--visual--inner {
     background: rgba(255,255,255,0.1);
+    border-radius: 1px;
     width: 100%;
     height: 100%;
     overflow: hidden;
@@ -173,7 +174,6 @@ export default {
         margin-top: -9px;
         height: 2px;
         background: rgba(#ff795f, .7);
-        // opacity: .7;
         z-index: -1;
         border-radius: 1px;
         transition: background .3s cubic-bezier(0.25, 0, 0, 1), transform .3s cubic-bezier(0.25, 0, 0, 1);
@@ -186,20 +186,8 @@ export default {
         &:before {
           transform: translate3D(0,2px,0);
           background: rgba(255,255,255,.5);
-          // opacity: color(rgba);
         }
       }
-
-      // &:hover {
-      //   color: var(--darkgray);
-
-      //   &:before {
-      //     transform: translate3D(-50%, -14px, 0) scale3D(1.2,28,1);
-      //     border-radius: 1px;
-      //     background: var(--red);
-      //     opacity: 1;
-      //   }
-      // }
     }
   }
 
@@ -213,7 +201,6 @@ export default {
       color: rgba(255,255,255,.5);
       font-weight: 400;
       text-shadow: none;
-      // transition: opacity .2s ease;
 
       &:before {
         background: rgba(255,255,255,0);
@@ -223,10 +210,6 @@ export default {
 
       &:hover {
         opacity: 1;
-
-        &:before {
-          // background: rgba(255,255,255,1);
-        }
       }
     }
   }

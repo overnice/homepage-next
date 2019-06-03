@@ -23,6 +23,12 @@
       transform: translate(-50%,-50%) scale(1.02);
       height: auto;
       min-width: 100vw;
+
+      @media (orientation: portrait) {
+        height: 100%;
+        width: auto;
+      }
+
     }
   }
 
@@ -38,6 +44,7 @@
     /* background: rgba(30,150,30,0.2); */
     width: 100%;
     height: 100%;
+    border-radius: 1px;
     overflow: hidden;
     position: relative;
   }
