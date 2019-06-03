@@ -1,10 +1,18 @@
 :root {
---darkgray: #24262C;
---lightgray: #E9E9EA;
---white: #fff;
---red: #FF795F;
---font-family: "TextaNarrow", sans-serif;
---content-max-width: 760px;
+    --darkgray: #24262C;
+    --lightgray: #E9E9EA;
+    --white: #fff;
+    --red: #FF795F;
+    --font-family: "TextaNarrow", sans-serif;
+
+    --base-size: 8px;
+
+    --h2-font-size: 9rem;
+    --p-font-size: 5rem;
+    --small-font-size: 3.5rem;
+    --tiny-font-size: 2.25rem;
+
+    --content-max-width: 760px;
 }
 
 @font-face {
@@ -41,29 +49,33 @@ html, body, p, a, h1, h2, h3 {
 body, html {
     background: var(--darkgray);
     font-family: var(--font-family);
+    font-size: var(--base-size);
+}
+
+
+/* temporary */
+
+body > div {
+    font-size: 2rem !important;
 }
 
 header {
-    margin-bottom: 104px;
+    margin-bottom: 13rem;
 }
 
-/* .section:first-of-type {
-background: none;
-} */
-
 h2 {
-    font-size: 70px;
+    font-size: var(--h2-font-size);
     font-weight: bold;
     line-height: 1;
 }
 
 p {
-    font-size: 40px;
-    margin-top: 24px;
+    font-size: var(--p-font-size);
+    margin-top: 3rem;
 }
 
 p.small {
-    font-size: 28px;
+    font-size: var(--small-font-size);
     opacity: .4;
 }
 

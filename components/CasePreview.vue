@@ -28,11 +28,11 @@ export default {
 
     .visual {
       margin-left: 0;
-      margin-right: -80px;
+      margin-right: -10rem;
     }
     p {
       padding-left: 0;
-      padding-right: 80px;
+      padding-right: 10rem;
     }
   }
 
@@ -53,8 +53,8 @@ export default {
 }
 
 p {
-  font-size: 28px;
-  padding-left: 80px;
+  font-size: var(--small-font-size);
+  padding-left: 10rem;
   margin-top: 0;
 }
 
@@ -64,7 +64,7 @@ p {
   height: 280px;
   width: 350px;
   flex: 0 0 auto;
-  margin-left: -80px;
+  margin-left: -10rem;
   transition: background .2s ease, transform .6s cubic-bezier(0.25, 0, 0, 1);
 }
 </style>

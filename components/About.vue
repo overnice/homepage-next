@@ -17,17 +17,33 @@
       <p class="small">
         We love them. We travel the world for them, cross the jungle, sail the sea, take the train. But Friday afternoons are off because there's more to life than work.
       </p>
+      <div class="client-logos">
+        <img src="~/assets/images/logos.svg" />
+      </div>
+      <div class="contact">
+        <h2>Let's talk business</h2>
+        <p>
+          Give us a <a href="" target="blank">call</a>,
+          shoot us an <a href="" target="blank">email</a>,
+          visit us in <a href="" target="blank">Kreuzberg</a>
+        </p>
+        <p class="footnotes">
+          <a href="">Imprint</a>
+          <a href="">Privacy</a>
+          <a href="">Jobs</a>
+        </p>
+      </div>
     </div>
   </section>
 </template>
 
 <script>
 if (process.browser) {
-  /* global window, ScrollMagic, TweenMax, Expo, controller */
+  /* global window, document, ScrollMagic, TweenMax, Expo, controller */
 
   window.onNuxtReady(() => {
     // Pin Visual
-    new ScrollMagic.Scene({ triggerElement: '#about', duration: 500, offset: window.innerHeight * 0.5 })
+    new ScrollMagic.Scene({ triggerElement: '#about', duration: document.height, offset: window.innerHeight * 0.5 })
       .setPin('#about--visual', { pushFollowers: false })
       .addIndicators({ name: 'Pin About Visual' })
       .addTo(controller)
@@ -62,7 +78,7 @@ export default {
     position: absolute;
     top: 0;
     left: 0;
-    width: calc(50vw - 60px);
+    width: 50vw;
     height: 100vh;
     box-sizing: border-box;
 
@@ -79,7 +95,7 @@ export default {
   .about--visual--outer {
     width: 100%;
     height: 100%;
-    padding: 64px 32px 64px 64px;
+    padding: 8rem 10rem 8rem 8rem;
     box-sizing: border-box;
   }
 
@@ -93,12 +109,125 @@ export default {
 
   .about--content {
     width: calc(var(--content-max-width) * 0.5);
-    padding: 96px 0 0 32px;
+    padding: 12rem 0 12rem;
     margin-left: 50%;
     box-sizing: border-box;
 
     p.small {
       opacity: 1;
+    }
+  }
+
+  .client-logos {
+    width: 100%;
+    margin-top: 8rem;
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  .contact {
+    margin-top: 10rem;
+    color: var(--red);
+
+    h2 {
+      font-weight: 500;
+      font-size: var(--p-font-size);
+    }
+
+    p {
+      font-size: var(--small-font-size);
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+      position: relative;
+      display: inline-block;
+      font-weight: 600;
+      text-shadow:
+        -1px -1px 0 var(--darkgray),
+          1px -1px 0 var(--darkgray),
+          -1px 1px 0 var(--darkgray),
+          1px 1px 0 var(--darkgray),
+          -2px -2px 0 var(--darkgray),
+          2px -2px 0 var(--darkgray),
+          -2px 2px 0 var(--darkgray),
+          2px 2px 0 var(--darkgray),
+          -3px -3px 0 var(--darkgray),
+          3px -3px 0 var(--darkgray),
+          -3px 3px 0 var(--darkgray),
+          3px 3px 0 var(--darkgray);
+
+      // line-height: 1;
+      transition: color .3s cubic-bezier(.25,0,0,1), transform .3s cubic-bezier(.25,0,0,1);
+
+      &:before {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 100%;
+        margin-top: -9px;
+        height: 2px;
+        background: rgba(#ff795f, .7);
+        // opacity: .7;
+        z-index: -1;
+        border-radius: 1px;
+        transition: background .3s cubic-bezier(0.25, 0, 0, 1), transform .3s cubic-bezier(0.25, 0, 0, 1);
+      }
+
+      &:hover {
+        color: white;
+        transform: translate3d(0,-2px,0);
+
+        &:before {
+          transform: translate3D(0,2px,0);
+          background: rgba(255,255,255,.5);
+          // opacity: color(rgba);
+        }
+      }
+
+      // &:hover {
+      //   color: var(--darkgray);
+
+      //   &:before {
+      //     transform: translate3D(-50%, -14px, 0) scale3D(1.2,28,1);
+      //     border-radius: 1px;
+      //     background: var(--red);
+      //     opacity: 1;
+      //   }
+      // }
+    }
+  }
+
+  .footnotes {
+    display: flex;
+    margin-top: 10rem;
+
+    a {
+      margin-right: 2rem;
+      font-size: var(--tiny-font-size)!important;
+      color: rgba(255,255,255,.5);
+      font-weight: 400;
+      text-shadow: none;
+      // transition: opacity .2s ease;
+
+      &:before {
+        background: rgba(255,255,255,0);
+        height: 1px;
+        margin-top: -4px;
+      }
+
+      &:hover {
+        opacity: 1;
+
+        &:before {
+          // background: rgba(255,255,255,1);
+        }
+      }
     }
   }
 </style>
