@@ -20,6 +20,7 @@ module.exports = {
   // add your custom rules here
   rules: {
     "vue/require-default-prop": false,
+    "no-tabs": 0,
     "no-console": 1
   }
 }
