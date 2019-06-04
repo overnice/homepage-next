@@ -19,7 +19,7 @@ if (process.browser) {
     // Show Logo
     new ScrollMagic.Scene({ triggerElement: '#content', duration: document.height, offset: window.innerHeight * 1.5 })
       .setClassToggle('#controls', 'visible')
-      .addIndicators({ name: 'Show Controls' })
+      // .addIndicators({ name: 'Show Controls' })
       .addTo(controller)
   })
 }
