@@ -13,15 +13,12 @@ import Nav from '~/components/Layout/Nav.vue'
 import LangSwitch from '~/components/Layout/LangSwitch.vue'
 
 if (process.browser) {
-  /* global window, document, TweenMax, ScrollMagic, controller */
+  /* global window, document, ScrollMagic, controller */
 
   window.onNuxtReady(() => {
     // Show Logo
-    const showControls = TweenMax.from('#controls', 0.4, {
-      opacity: 0
-    })
     new ScrollMagic.Scene({ triggerElement: '#content', duration: document.height, offset: window.innerHeight * 1.5 })
-      .setTween(showControls)
+      .setClassToggle('#controls', 'visible')
       .addIndicators({ name: 'Show Controls' })
       .addTo(controller)
   })
@@ -51,6 +48,16 @@ export default {
 
   .logo, .nav {
     position: fixed;
+  }
+
+  .controls {
+    opacity: 0;
+    transition: opacity .2s ease;
+
+    &.visible {
+      opacity: 1;
+      transition: opacity .5s ease;
+    }
   }
 
   .logo {
