@@ -1,27 +1,24 @@
 <template>
   <div class="container">
     <nuxt />
+    <Controls />
   </div>
 </template>
 <script>
+import Controls from '~/components/Layout/Controls.vue'
 
 export default {
-  head() {
-    return {
-      script: [
-        { src: './scripts/TweenMax.min.js' },
-        { src: './scripts/ScrollMagic.js' },
-        { src: './scripts/animation.gsap.js' },
-        { src: './scripts/debug.addIndicators.js' },
-        { innerHTML: 'const controller = new ScrollMagic.Controller();' }
-      ]
-    }
-  }
+  components: { Controls }
 }
 </script>
 
 <style lang="scss" scoped>
   .container {
     color: var(--darkgray);
+
+    & /deep/ .logo-vertical {
+      fill: var(--darkgray);
+      opacity: .15;
+    }
   }
 </style>

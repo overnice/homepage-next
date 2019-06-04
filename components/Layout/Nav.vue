@@ -14,6 +14,7 @@
 
 <style lang="scss" scoped>
 .nav {
+  position: fixed;
   top: 0;
   left: 0;
   margin-top: calc(-10rem - var(--small-font-size));

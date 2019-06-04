@@ -1,31 +1,26 @@
 <template>
   <div class="container">
     <nuxt />
-    <div id="controls" class="controls">
-      <Nav />
-      <LangSwitch lang="en" />
-      <img src="~/assets/images/logo_vertical.svg" class="logo">
-    </div>
+    <Controls />
   </div>
 </template>
 <script>
-import Nav from '~/components/Layout/Nav.vue'
-import LangSwitch from '~/components/Layout/LangSwitch.vue'
+import Controls from '~/components/Layout/Controls.vue'
 
 if (process.browser) {
-  /* global window, document, ScrollMagic, controller */
+  /* global window, ScrollMagic, controller */
 
   window.onNuxtReady(() => {
     // Show Logo
-    new ScrollMagic.Scene({ triggerElement: '#content', duration: document.height, offset: window.innerHeight * 1.5 })
-      .setClassToggle('#controls', 'visible')
-      // .addIndicators({ name: 'Show Controls' })
+    new ScrollMagic.Scene({ triggerElement: '#intro', duration: window.innerHeight * 1.5 })
+      .setClassToggle('#controls', 'invisible')
+      // .addIndicators({ name: 'Hide Controls' })
       .addTo(controller)
   })
 }
 
 export default {
-  components: { Nav, LangSwitch },
+  components: { Controls },
 
   head() {
     return {
@@ -45,28 +40,9 @@ export default {
   @import 'css/variables';
   .container {
     color: white;
-  }
 
-  .controls {
-    opacity: 0;
-    transition: opacity .2s ease;
-
-    &.visible {
-      opacity: 1;
-      transition: opacity .5s ease;
+    & /deep/ .logo-vertical {
+      color: white;
     }
-
-    @media (max-width: $bp-desktop + 108px) {
-      display: none;
-    }
-  }
-
-  .logo {
-    position: fixed;
-    width: 21px;
-    height: auto;
-    opacity: .1;
-    bottom: 5rem;
-    right: 5rem;
   }
 </style>

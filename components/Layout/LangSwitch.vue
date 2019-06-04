@@ -1,11 +1,11 @@
 <template>
   <div class="lang-switch">
-    <svg v-if="lang === 'en'" class="flag-de" viewbox="0 0 64 48">
+    <svg v-if="lang === 'en'" class="flag-de" height="48" width="64" viewbox="0 0 64 48">
       <path class="flag-de-black" d="M0,0h64v16H0V0z" />
       <path class="flag-de-red" d="M0,16h64v16H0V16z" />
       <path class="flag-de-yellow" d="M0,32h64v16H0V32z" />
     </svg>
-    <svg v-else class="flag-en" viewbox="0 0 64 48">
+    <svg v-else class="flag-en" height="48" width="64" viewbox="0 0 64 48">
       <g class="flag-en-blue">
         <polygon points="0,32 0,34.63 5.27,32 " />
         <polygon points="0,13.37 0,16 5.27,16 " />
