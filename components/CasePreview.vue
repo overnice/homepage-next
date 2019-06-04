@@ -53,10 +53,6 @@ export default {
       transform: scale3D(1.1,1.1,1.1);
       opacity: 1;
     }
-
-    & /deep/ strong {
-      color: white;
-    }
   }
 }
 
@@ -64,6 +60,10 @@ p {
   font-size: var(--small-font-size);
   padding-left: var(--case-padding);
   margin-top: 0;
+
+  & /deep/ strong {
+    color: white !important;
+  }
 }
 
 .visual {
