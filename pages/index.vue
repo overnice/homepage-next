@@ -127,9 +127,5 @@ export default {
     top: 50vh;
     margin-top: 1px;
     padding-top: calc(450px + 50vh); // video scroll height + video size (minus top value)
-
-    // margin-left: auto;
-    // margin-right: auto;
-    // max-width: var(--content-max-width);
   }
 </style>
