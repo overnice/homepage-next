@@ -18,7 +18,7 @@
         We love them. We travel the world for them, cross the jungle, sail the sea, take the train. But Friday afternoons are off because there's more to life than work.
       </p>
       <div class="client-logos">
-        <img src="~/assets/images/logos.svg" />
+        <img src="~/assets/images/logos.svg">
       </div>
       <div class="contact">
         <h2>Let's talk business</h2>
@@ -151,19 +151,17 @@ export default {
       font-weight: 600;
       text-shadow:
         -1px -1px 0 var(--darkgray),
-          1px -1px 0 var(--darkgray),
-          -1px 1px 0 var(--darkgray),
-          1px 1px 0 var(--darkgray),
-          -2px -2px 0 var(--darkgray),
-          2px -2px 0 var(--darkgray),
-          -2px 2px 0 var(--darkgray),
-          2px 2px 0 var(--darkgray),
-          -3px -3px 0 var(--darkgray),
-          3px -3px 0 var(--darkgray),
-          -3px 3px 0 var(--darkgray),
-          3px 3px 0 var(--darkgray);
-
-      // line-height: 1;
+        1px -1px 0 var(--darkgray),
+        -1px 1px 0 var(--darkgray),
+        1px 1px 0 var(--darkgray),
+        -2px -2px 0 var(--darkgray),
+        2px -2px 0 var(--darkgray),
+        -2px 2px 0 var(--darkgray),
+        2px 2px 0 var(--darkgray),
+        -3px -3px 0 var(--darkgray),
+        3px -3px 0 var(--darkgray),
+        -3px 3px 0 var(--darkgray),
+        3px 3px 0 var(--darkgray);
       transition: color .3s cubic-bezier(.25,0,0,1), transform .3s cubic-bezier(.25,0,0,1);
 
       &:before {

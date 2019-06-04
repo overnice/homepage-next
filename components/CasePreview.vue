@@ -14,10 +14,14 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import 'css/variables';
+
 .case {
+  --case-padding: 10rem;
+
   color: inherit;
   text-decoration: none;
-  margin-top: 64px;
+  margin-top: 8rem;
   display: flex;
   align-items: center;
   transition: transform .6s cubic-bezier(0.25, 0, 0, 1), color .2s ease;
@@ -28,11 +32,11 @@ export default {
 
     .visual {
       margin-left: 0;
-      margin-right: -10rem;
+      margin-right: calc(var(--case-padding) * -1);
     }
     p {
       padding-left: 0;
-      padding-right: 10rem;
+      padding-right: var(--case-padding);
     }
   }
 
@@ -58,7 +62,7 @@ export default {
 
 p {
   font-size: var(--small-font-size);
-  padding-left: 10rem;
+  padding-left: var(--case-padding);
   margin-top: 0;
 }
 
@@ -68,7 +72,13 @@ p {
   height: 280px;
   width: 350px;
   flex: 0 0 auto;
-  margin-left: -10rem;
+  margin-left: calc(var(--case-padding) * -1);
   transition: background .2s ease, transform .6s cubic-bezier(0.25, 0, 0, 1);
+}
+
+@media (max-width: $bp-desktop) {
+  .case {
+    --case-padding: 8rem;
+  }
 }
 </style>

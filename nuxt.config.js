@@ -25,7 +25,7 @@ export default {
    ** Global CSS
    */
   css: [
-    '~/css/global.css'
+    '~/css/global.scss'
   ],
 
   /*

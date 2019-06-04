@@ -30,6 +30,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+  @import 'css/variables';
+
   .service-category {
     position: relative;
     z-index: 2;
@@ -37,5 +39,9 @@ export default {
     box-sizing: border-box;
     margin: 0 auto;
     padding: 10rem;
+
+    @media (max-width: $bp-desktop) {
+      padding: 8rem;
+    }
   }
 </style>

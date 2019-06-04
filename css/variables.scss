@@ -1,0 +1,7 @@
+// redeclare colors as SASS variables for use in RGBA;
+$darkgray: var(--darkgray);
+$lightgray: var(--lightgray);
+$white: var(--white);
+$red: var(--red);
+
+$bp-desktop: 920px; // --content-max-width
