@@ -42,12 +42,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+  @import 'css/variables';
   .container {
     color: white;
-  }
-
-  .logo, .nav {
-    position: fixed;
   }
 
   .controls {
@@ -58,9 +55,14 @@ export default {
       opacity: 1;
       transition: opacity .5s ease;
     }
+
+    @media (max-width: $bp-desktop + 108px) {
+      display: none;
+    }
   }
 
   .logo {
+    position: fixed;
     width: 21px;
     height: auto;
     opacity: .1;
