@@ -49,6 +49,10 @@ export default {
       transform: scale3D(1.1,1.1,1.1);
       opacity: 1;
     }
+
+    & /deep/ strong {
+      color: white;
+    }
   }
 }
 
