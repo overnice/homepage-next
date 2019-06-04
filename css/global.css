@@ -12,7 +12,9 @@
     --small-font-size: 3.5rem;
     --tiny-font-size: 2.25rem;
 
-    --content-max-width: 760px;
+    --content-max-width: 920px;
+
+    --bp-desktop: 920px; /* 760 + 2*80px */
 }
 
 @font-face {

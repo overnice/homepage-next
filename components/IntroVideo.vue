@@ -24,7 +24,7 @@
       height: auto;
       min-width: 100vw;
 
-      @media (orientation: portrait) {
+      @media (max-aspect-ratio: 4/3) { /* CHANGE TO ACTUAL VIDEO ASPECT RATIO */
         height: 100%;
         width: auto;
       }

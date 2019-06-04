@@ -34,6 +34,8 @@ export default {
     position: relative;
     z-index: 2;
     max-width: var(--content-max-width);
-    margin: 0 auto 20rem;
+    box-sizing: border-box;
+    margin: 0 auto;
+    padding: 10rem;
   }
 </style>

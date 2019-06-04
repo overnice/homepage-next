@@ -109,8 +109,9 @@ export default {
   }
 
   .about--content {
-    width: calc(var(--content-max-width) * 0.5);
+    max-width: calc(var(--content-max-width) * 0.5);
     padding: 12rem 0 12rem;
+    padding-right: 80px;
     margin-left: 50%;
     box-sizing: border-box;
 
