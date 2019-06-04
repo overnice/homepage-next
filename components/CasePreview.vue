@@ -17,26 +17,24 @@ export default {
 @import 'css/variables';
 
 .case {
-  --case-padding: 10rem;
-
   color: inherit;
   text-decoration: none;
-  margin-top: 8rem;
+  margin-top: var(--m-spacing);
   display: flex;
   align-items: center;
   transition: transform .6s cubic-bezier(0.25, 0, 0, 1), color .2s ease;
   cursor: pointer;
 
-  &:nth-child(odd) {
+  &:nth-child(even) {
     flex-direction: row-reverse;
 
     .visual {
       margin-left: 0;
-      margin-right: calc(var(--case-padding) * -1);
+      margin-right: calc(var(--l-spacing) * -1);
     }
     p {
       padding-left: 0;
-      padding-right: var(--case-padding);
+      padding-right: var(--l-spacing);
     }
   }
 
@@ -54,11 +52,39 @@ export default {
       opacity: 1;
     }
   }
+
+  // Horizontal Layout for Cases on Mobile
+  @media (max-width: $bp-case-layout) {
+    flex-direction: column !important;
+    flex: 0 0 auto;
+    width: 40%;
+    max-width: none;
+    margin-left: var(--m-spacing);
+
+    &:last-child {
+      padding-right: var(--m-spacing);
+    }
+
+    .visual {
+      margin: 0 !important;
+      width: 100%;
+      max-width: none;
+      margin-left: var(--m-spacing);
+    }
+
+    p {
+      padding: var(--l-spacing) 3rem 3rem !important;
+    }
+  }
+
+  @media (max-width: 700px) {
+    width: 60%;
+  }
 }
 
 p {
   font-size: var(--small-font-size);
-  padding-left: var(--case-padding);
+  padding-left: var(--l-spacing);
   margin-top: 0;
 
   & /deep/ strong {
@@ -70,15 +96,10 @@ p {
   background: rgba(255,255,255,0.1);
   border-radius: 1px;
   height: 280px;
-  width: 350px;
+  width: 50%;
+  max-width: 350px;
   flex: 0 0 auto;
-  margin-left: calc(var(--case-padding) * -1);
+  margin-left: calc(var(--l-spacing) * -1);
   transition: background .2s ease, transform .6s cubic-bezier(0.25, 0, 0, 1);
-}
-
-@media (max-width: $bp-desktop) {
-  .case {
-    --case-padding: 8rem;
-  }
 }
 </style>

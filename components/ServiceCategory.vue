@@ -7,11 +7,13 @@
         {{ smallCopy }}
       </p>
     </header>
-    <CasePreview
-      v-for="casePreview in casePreviews"
-      :key="casePreview.id"
-      :copy="casePreview.copy"
-    />
+    <div class="cases">
+      <CasePreview
+        v-for="casePreview in casePreviews"
+        :key="casePreview.id"
+        :copy="casePreview.copy"
+      />
+    </div>
   </section>
 </template>
 
@@ -30,18 +32,22 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  @import 'css/variables';
+@import 'css/variables';
 
-  .service-category {
-    position: relative;
-    z-index: 2;
-    max-width: var(--content-max-width);
-    box-sizing: border-box;
-    margin: 0 auto;
-    padding: 10rem;
+.service-category {
+  position: relative;
+  z-index: 2;
+  max-width: var(--content-max-width);
+  box-sizing: border-box;
+  margin: 0 auto;
+  padding: var(--l-spacing);
+}
 
-    @media (max-width: $bp-desktop) {
-      padding: 8rem;
-    }
+@media (max-width: $bp-case-layout) {
+  .cases {
+    display: flex;
+    margin: 0 calc(var(--l-spacing) * -1); // compensate service category padding
+    overflow: auto;
   }
+}
 </style>

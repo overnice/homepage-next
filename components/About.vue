@@ -45,7 +45,7 @@ if (process.browser) {
     // Pin Visual
     new ScrollMagic.Scene({ triggerElement: '#about', duration: document.height, offset: window.innerHeight * 0.5 })
       .setPin('#about--visual', { pushFollowers: false })
-      .addIndicators({ name: 'Pin About Visual' })
+      // .addIndicators({ name: 'Pin About Visual' })
       .addTo(controller)
 
     // Grow Visual
@@ -57,7 +57,7 @@ if (process.browser) {
     })
     new ScrollMagic.Scene({ triggerElement: '#about', duration: 300, offset: window.innerHeight * 0.5 - 300 })
       .setTween(growVisual)
-      .addIndicators({ name: 'Grow Visual' })
+      // .addIndicators({ name: 'Grow Visual' })
       .addTo(controller)
   })
 }
@@ -68,6 +68,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+  @import 'css/variables';
+
   .about {
     position: relative;
     margin: 0 auto;
@@ -95,7 +97,7 @@ export default {
   .about--visual--outer {
     width: 100%;
     height: 100%;
-    padding: 8rem 10rem 8rem 8rem;
+    padding: var(--m-spacing) var(--l-spacing) var(--m-spacing) var(--m-spacing);
     box-sizing: border-box;
   }
 
@@ -111,7 +113,7 @@ export default {
   .about--content {
     max-width: calc(var(--content-max-width) * 0.5);
     padding: 12rem 0 12rem;
-    padding-right: 80px;
+    padding-right: var(--l-spacing);
     margin-left: 50%;
     box-sizing: border-box;
 
@@ -122,7 +124,7 @@ export default {
 
   .client-logos {
     width: 100%;
-    margin-top: 8rem;
+    margin-top: var(--m-spacing);
 
     img {
       width: 100%;
@@ -131,7 +133,7 @@ export default {
   }
 
   .contact {
-    margin-top: 10rem;
+    margin-top: var(--l-spacing);
     color: var(--red);
 
     h2 {
@@ -192,7 +194,7 @@ export default {
 
   .footnotes {
     display: flex;
-    margin-top: 10rem;
+    margin-top: var(--l-spacing);
 
     a {
       margin-right: 2rem;

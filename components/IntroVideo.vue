@@ -37,6 +37,7 @@
     height: 100%;
     box-sizing: border-box;
     margin: 0 auto;
+    padding: 0 var(--m-spacing) var(--m-spacing);
   }
 
   .intro-video--inner {

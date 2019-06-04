@@ -43,25 +43,25 @@ if (process.browser) {
     )
     new ScrollMagic.Scene({ triggerElement: '#content', duration: 300 })
       .setTween(zoomLogo)
-      .addIndicators({ name: 'Zoom Logo' })
+      // .addIndicators({ name: 'Zoom Logo' })
       .addTo(controller)
 
     // Pin Video
     new ScrollMagic.Scene({ triggerElement: '#content', duration: 450, offset: 0 })
       .setPin('#intro-video', { pushFollowers: false })
-      .addIndicators({ name: 'Pin Video' })
+      // .addIndicators({ name: 'Pin Video' })
       .addTo(controller)
 
     // Shrink Video
-    const shrinkVideo = TweenMax.to('#intro-video--outer', 1, {
-      paddingLeft: '64px',
-      paddingRight: '64px',
-      paddingBottom: '64px',
+    const shrinkVideo = TweenMax.from('#intro-video--outer', 1, {
+      paddingLeft: '0',
+      paddingRight: '0',
+      paddingBottom: '0',
       ease: Expo.easeOut
     })
     new ScrollMagic.Scene({ triggerElement: '#content', duration: 300, offset: 350 })
       .setTween(shrinkVideo)
-      .addIndicators({ name: 'Shrink Video' })
+      // .addIndicators({ name: 'Shrink Video' })
       .addTo(controller)
   })
 }

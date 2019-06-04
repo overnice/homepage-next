@@ -14,10 +14,20 @@
   --small-font-size: 3.5rem;
   --tiny-font-size: 2.25rem;
 
+  --m-spacing: 8rem;
+  --l-spacing: 10rem;
+  --xl-spacing: 12rem;
+
   --content-max-width: 920px;
 
   @media (max-width: 780px) {
     --base-size: 7px;
+  }
+
+  @media (max-width: $bp-desktop) {
+    --m-spacing: 5rem;
+    --l-spacing: 8rem;
+    --xl-spacing: 10rem;
   }
 }
 
@@ -66,7 +76,7 @@ body > div {
 }
 
 header {
-  margin-bottom: 13rem;
+  margin-bottom: var(--xl-spacing);
 }
 
 h2 {
