@@ -3,7 +3,6 @@
 :root {
   --darkgray: #24262C;
   --lightgray: #E9E9EA;
-  --white: #FFF;
   --red: #FF795F;
   --font-family: "TextaNarrow", sans-serif;
 
@@ -85,7 +84,7 @@ header {
   margin-bottom: var(--xl-spacing);
 }
 
-h2 {
+h1, h2 {
   font-size: var(--h2-font-size);
   font-weight: bold;
   line-height: 1;

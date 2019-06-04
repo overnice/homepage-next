@@ -152,18 +152,18 @@ export default {
       display: inline-block;
       font-weight: 600;
       text-shadow:
-        -1px -1px 0 var(--darkgray),
-        1px -1px 0 var(--darkgray),
-        -1px 1px 0 var(--darkgray),
-        1px 1px 0 var(--darkgray),
-        -2px -2px 0 var(--darkgray),
-        2px -2px 0 var(--darkgray),
-        -2px 2px 0 var(--darkgray),
-        2px 2px 0 var(--darkgray),
-        -3px -3px 0 var(--darkgray),
-        3px -3px 0 var(--darkgray),
-        -3px 3px 0 var(--darkgray),
-        3px 3px 0 var(--darkgray);
+        -0.125rem -0.125rem 0 var(--darkgray),
+        0.125rem -0.125rem 0 var(--darkgray),
+        -0.125rem 0.125rem 0 var(--darkgray),
+        0.125rem 0.125rem 0 var(--darkgray),
+        -0.25rem -0.25rem 0 var(--darkgray),
+        0.25rem -0.25rem 0 var(--darkgray),
+        -0.25rem 0.25rem 0 var(--darkgray),
+        0.25rem 0.25rem 0 var(--darkgray),
+        -0.375rem -0.375rem 0 var(--darkgray),
+        0.375rem -0.375rem 0 var(--darkgray),
+        -0.375rem 0.375rem 0 var(--darkgray),
+        0.375rem 0.375rem 0 var(--darkgray);
       transition: color .3s cubic-bezier(.25,0,0,1), transform .3s cubic-bezier(.25,0,0,1);
 
       &:before {
@@ -172,7 +172,7 @@ export default {
         left: 0;
         right: 0;
         top: 100%;
-        margin-top: -9px;
+        margin-top: -1.125rem;
         height: 2px;
         background: rgba(#ff795f, .7);
         z-index: -1;
@@ -206,7 +206,7 @@ export default {
       &:before {
         background: rgba(255,255,255,0);
         height: 1px;
-        margin-top: -4px;
+        margin-top: -0.5rem;
       }
 
       &:hover {

@@ -117,7 +117,7 @@ export default {
   }
 
   .logo {
-    fill: var(--white);
+    fill: white;
     width: 100vw;
     height: auto;
   }

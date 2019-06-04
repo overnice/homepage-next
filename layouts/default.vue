@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <nuxt />
-    <Controls />
+    <Controls showNav showLangSwitch />
   </div>
 </template>
 <script>

@@ -1,7 +1,7 @@
 <template>
   <div id="controls" class="controls">
-    <Nav />
-    <LangSwitch lang="en" />
+    <Nav v-if="showNav" />
+    <LangSwitch v-if="showLangSwitch" lang="en" />
     <svg class="logo-vertical" viewBox="0 0 21 122">
       <path d="M0.2,80.49c0,5.89,2.79,8.32,10.3,8.32c7.41-0.05,10.3-2.03,10.3-8.32c0-5.38-2.69-7.66-7.36-7.71v5.89 c2.69,0,3.45,0.71,3.45,1.83c0,0.91-0.61,1.78-2.69,1.78h-2.59v-9.59h-0.05v-0.05H9.59C2.53,72.62,0.2,75.21,0.2,80.49z M8.29,78.76v3.55H7.43c-2.03,0-2.99-0.46-2.99-1.78c0-1.42,0.91-1.83,2.99-1.78H8.29z" />
       <path d="M0.2,7.94c0,5.89,2.79,8.32,10.3,8.32c7.41,0,10.3-2.03,10.3-8.32c0-5.38-2.69-7.56-7.36-7.71v5.89 c2.69,0,3.45,0.71,3.45,1.83c0,0.96-0.61,1.78-2.69,1.78h-2.59V0.12h-0.05V0.07H9.59C2.53,0.07,0.2,2.76,0.2,7.94z M8.29,6.26v3.55 H7.43c-2.03,0-2.99-0.46-2.99-1.78c0-1.37,0.91-1.83,2.99-1.78H8.29z" />
@@ -19,7 +19,11 @@ import Nav from '~/components/Layout/Nav.vue'
 import LangSwitch from '~/components/Layout/LangSwitch.vue'
 
 export default {
-  components: { Nav, LangSwitch }
+  components: { Nav, LangSwitch },
+  props: {
+    showNav: Boolean,
+    showLangSwitch: Boolean
+  }
 }
 </script>
 
