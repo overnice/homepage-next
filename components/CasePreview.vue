@@ -42,7 +42,8 @@ export default {
     cursor: default;
   }
 
-  &:not(.no-interaction):hover {
+  &:not(.no-interaction):hover,
+  &:not(.no-interaction):active {
     transform: scale3D(1.05, 1.05, 1.05);
     color: var(--red);
 
@@ -79,6 +80,15 @@ export default {
 
   @media (max-width: 700px) {
     width: 60%;
+  }
+
+  @media (max-width: $bp-mobile) {
+    width: 80%;
+
+    &:not(.no-interaction):hover,
+    &:not(.no-interaction):active {
+      transform: scale3D(1.01, 1.01, 1.01);
+    }
   }
 }
 

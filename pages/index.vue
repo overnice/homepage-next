@@ -84,7 +84,7 @@ export default {
     left: 0;
     top: 50%;
     width: 100vw;
-    height: 100vh;
+    height: 101vh; // slight flicker on mobile if 100vh
     transform: translate(0, -50%);
     pointer-events: none;
 

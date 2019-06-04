@@ -29,6 +29,12 @@
     --l-spacing: 8rem;
     --xl-spacing: 10rem;
   }
+
+  @media (max-width: $bp-mobile) {
+    --m-spacing: 3rem;
+    --l-spacing: 6rem;
+    --xl-spacing: 8rem;
+  }
 }
 
 @font-face {
