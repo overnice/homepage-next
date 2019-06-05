@@ -94,6 +94,10 @@ export default {
   margin: 0 auto;
   min-height: 100vh;
   box-sizing: border-box;
+
+  @media (max-width: $bp-tablet) {
+    padding-top: calc(var(--l-spacing) * 4);
+  }
 }
 
 .back {
@@ -137,6 +141,10 @@ export default {
     transform: rotate(90deg);
     opacity: 1;
   }
+
+  @media (max-width: $bp-tablet) {
+    padding: 4rem;
+  }
 }
 
 p {
@@ -172,36 +180,44 @@ figure {
   margin-left: calc(var(--l-spacing) * -1);
   margin-right: calc(var(--l-spacing) * -1);
   // background: rgba($darkgray, 0.1);
+  margin-top: 5rem;
 
-  &.full {
+  & + p {
     margin-top: 5rem;
   }
 
-  &.left, &.right {
-    width: 50%;
-    margin-top: 3rem;
-    margin-bottom: 3rem;
+  @media (min-width: 520px) {
+    &.left, &.right {
+      width: 60%;
+      margin-top: 3rem;
+      margin-bottom: 3rem;
+
+      & + p {
+        margin-top: 3rem;
+      }
+    }
+
+    &.left {
+      float: left;
+      margin-right: 4rem;
+    }
+
+    &.right {
+      float: right;
+      margin-left: 4rem;
+    }
   }
 
-  &.left {
-    float: left;
-    margin-right: 4rem;
-  }
-
-  &.right {
-    float: right;
-    margin-left: 4rem;
+  @media (min-width: $bp-tablet) {
+    &.left, &.right {
+      width: 50%;
+    }
   }
 
   img {
     display: block;
     width: 100%;
-    min-height: 300px; // DEV ONLY
     border-radius: 1px;
-  }
-
-  &.full + p {
-    margin-top: 5rem;
   }
 
   figcaption {
@@ -210,4 +226,12 @@ figure {
     text-align: center;
   }
 }
+
+@media (max-width: $bp-tablet) {
+  blockquote {
+    margin-left: 3rem;
+    margin-right: 3rem;
+  }
+}
+
 </style>

@@ -38,7 +38,7 @@
 </template>
 
 <script>
-if (process.browser && window.innerWidth > 450) {
+if (process.browser && window.innerWidth > 650) { // $bp-tablet
   /* global window, document, ScrollMagic, TweenMax, Expo, controller */
 
   window.onNuxtReady(() => {
@@ -116,6 +116,7 @@ export default {
     padding: 12rem 0 12rem;
     padding-right: var(--l-spacing);
     margin-left: 50%;
+    min-height: 100vh;
     box-sizing: border-box;
 
     p.small {
@@ -241,6 +242,8 @@ export default {
     .about--content {
       margin: 0;
       padding: var(--xl-spacing) var(--l-spacing) var(--l-spacing);
+      max-width: none;
+      min-height: 0;
     }
 
     .client-logos, .contact {

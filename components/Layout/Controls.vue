@@ -39,8 +39,16 @@ export default {
     transition: opacity .2s ease;
   }
 
-  @media (max-width: $bp-desktop + 108px) {
-    display: none;
+  // @media (max-width: $bp-desktop + 108px) {
+  //   display: none;
+  // }
+  @media (max-width: $bp-tablet) {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 12.5rem;
+    background: white;
   }
 }
 
@@ -52,5 +60,16 @@ export default {
   bottom: 5rem;
   right: 5rem;
   fill: white;
+
+  @media (max-width: $bp-tablet) {
+    transform: rotate(90deg);
+    right: auto;
+    bottom: auto;
+    top: 0;
+    left: 122px; // logo width
+    margin-top: 5rem;
+    margin-left: 5rem;
+    transform-origin: 0 0;
+  }
 }
 </style>
