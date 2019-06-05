@@ -17,8 +17,10 @@ export default {
     color: var(--darkgray);
 
     & /deep/ .logo-vertical {
-      fill: var(--darkgray);
-      opacity: .15;
+      // fill: var(--darkgray);
+      // opacity: .15;
+      fill: var(--red);
+      opacity: 1;
     }
   }
 </style>
