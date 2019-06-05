@@ -39,6 +39,7 @@ export default {
 <style lang="scss" scoped>
   @import 'css/variables';
   .container {
+    background: var(--darkgray);
     color: white;
 
     & /deep/ .logo-vertical {
