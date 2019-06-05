@@ -44,7 +44,8 @@
         Our activities included building the website, defining wording and tonality, steering community and social media efforts, PR outreach, and ICO specific communication measures, such as Bitcointalk.org announcements.
       </p>
       <figure class="full">
-        <img src="">
+        <img src="https://s3.eu-central-1.amazonaws.com/on-website-assets/nimiq/wallet.jpg">
+        <figcaption>This is a caption</figcaption>
       </figure>
       <p>
         We learned by doing and contributed to US$18 million being raised in less than two weeks.
@@ -188,7 +189,7 @@ blockquote {
 figure {
   margin-left: calc(var(--l-spacing) * -1);
   margin-right: calc(var(--l-spacing) * -1);
-  background: rgba($darkgray, 0.1);
+  // background: rgba($darkgray, 0.1);
 
   &.full {
     margin-top: 5rem;
@@ -211,6 +212,7 @@ figure {
   }
 
   img {
+    display: block;
     width: 100%;
     min-height: 300px; // DEV ONLY
     border-radius: 1px;
@@ -218,6 +220,12 @@ figure {
 
   &.full + p {
     margin-top: 5rem;
+  }
+
+  figcaption {
+    font-size: var(--tiny-font-size);
+    padding: 1rem;
+    text-align: center;
   }
 }
 </style>
