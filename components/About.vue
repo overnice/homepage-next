@@ -38,7 +38,7 @@
 </template>
 
 <script>
-if (process.browser) {
+if (process.browser && window.innerWidth > 450) {
   /* global window, document, ScrollMagic, TweenMax, Expo, controller */
 
   window.onNuxtReady(() => {
@@ -86,6 +86,7 @@ export default {
 
     video {
       position: absolute;
+      display: block;
       top: 50%;
       left: 50%;
       transform: translate(-50%,-50%) scale(1.02);
@@ -212,6 +213,38 @@ export default {
       &:hover {
         opacity: 1;
       }
+    }
+  }
+
+  @media (max-width: $bp-tablet) {
+    .about--visual {
+      position: relative;
+      width: 100%;
+      height: auto; // given the video has a 4:3 aspect ratio
+
+      video {
+        position: relative;
+        top: 0;
+        left: 0;
+        transform: none;
+        width: 100%;
+        height: auto;
+        min-height: 0;
+      }
+    }
+
+    .about--visual--outer {
+      padding: var(--m-spacing);
+      padding: 0;
+    }
+
+    .about--content {
+      margin: 0;
+      padding: var(--xl-spacing) var(--l-spacing) var(--l-spacing);
+    }
+
+    .client-logos, .contact {
+      margin-top: var(--xl-spacing);
     }
   }
 </style>
