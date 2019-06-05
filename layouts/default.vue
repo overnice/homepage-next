@@ -41,6 +41,7 @@ export default {
   .container {
     background: var(--darkgray);
     color: white;
+    padding-bottom: 50vh;
 
     & /deep/ .logo-vertical {
       color: white;
