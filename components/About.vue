@@ -20,7 +20,7 @@
       <div class="client-logos">
         <img src="~/assets/images/logos.svg">
       </div>
-      <div class="contact">
+      <div id="contact" class="contact">
         <h2>Let's talk business</h2>
         <p>
           Give us a <a href="" target="blank">call</a>,

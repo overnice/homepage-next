@@ -10,7 +10,7 @@ import Controls from '~/components/Layout/Controls.vue'
 if (process.browser) {
   /* global window, ScrollMagic, controller */
 
-  let hiddenDuration = window.innerHeight * 1.5
+  let hiddenDuration = window.innerHeight + 450
 
   if (window.innerWidth < 450) {
     hiddenDuration = window.innerHeight * 0.9

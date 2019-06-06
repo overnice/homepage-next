@@ -1,6 +1,6 @@
 [
   {
-    "id": 1,
+    "id": "brands",
     "title": "Brands",
     "copy": "Creating a brand is creating an experience. Users don’t remember the logo. They remember the feeling. overnice makes sure it’s a nice one.",
     "smallCopy": "Brands just like friends, corporate design, messaging.",
@@ -24,7 +24,7 @@
     ]
   },
   {
-    "id": 2,
+    "id": "products",
     "title": "Products",
     "copy": "An excellent digital product has texture, fragrance, and moves to a steady beat. overnice takes the users by the hand and makes them all comfy, just to rattle their cages where it matters.",
     "smallCopy": "Web- and mobile apps, platforms, websites.",
@@ -52,7 +52,7 @@
     ]
   },
   {
-    "id": 3,
+    "id": "creatives",
     "title": "Creatives",
     "copy": "overnice develops communication strategies and measures that seem like somebody spontaneously said the right thing, in the right place, at the right time.",
     "smallCopy": "Persuasive marketing strategies, creative direction, crafty execution",

@@ -21,6 +21,7 @@
     <section id="content" class="content">
       <ServiceCategory
         v-for="serviceCategory in serviceCategories"
+        :id="serviceCategory.id"
         :key="serviceCategory.id"
         :title="serviceCategory.title"
         :copy="serviceCategory.copy"
