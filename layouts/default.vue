@@ -12,7 +12,7 @@ if (process.browser) {
 
   window.onNuxtReady(() => {
     // Show Logo
-    new ScrollMagic.Scene({ triggerElement: '#intro', duration: window.innerHeight * 1.5 })
+    new ScrollMagic.Scene({ triggerElement: '#content', duration: window.innerHeight * 1.5 })
       .setClassToggle('#controls', 'invisible')
       // .addIndicators({ name: 'Hide Controls' })
       .addTo(controller)

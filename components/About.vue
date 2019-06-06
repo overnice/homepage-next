@@ -28,9 +28,9 @@
           visit us in <a href="" target="blank">Kreuzberg</a>
         </p>
         <p class="footnotes">
-          <a href="">Imprint</a>
-          <a href="">Privacy</a>
-          <a href="">Jobs</a>
+          <a href="/imprint">Imprint</a>
+          <a href="/privacy">Privacy</a>
+          <!-- <a href="">Jobs</a> -->
         </p>
       </div>
     </div>

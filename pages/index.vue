@@ -1,7 +1,7 @@
 <template>
   <div>
     <section class="intro">
-      <div id="intro--inner" class="intro--inner">
+      <div id="introInner" class="intro--inner">
         <svg id="logo" class="logo" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
           <path d="M96.4,187.56c-2.9,0-3.6,2.21-3.6,12.04c0,9.69,0.7,12.04,3.6,12.04c2.9,0,3.6-2.35,3.6-12.04 C100,189.92,99.3,187.56,96.4,187.56z" />
           <path d="M304.4,187.6c-2.6,0-3.5,1.9-3.5,5.9v1.7h7v-1.7C308,189.4,307.1,187.6,304.4,187.6z" />
@@ -37,7 +37,7 @@ if (process.browser) {
 
   window.onNuxtReady(() => {
     // Zoom Logo
-    const zoomLogo = TweenMax.fromTo('#intro--inner', 1,
+    const zoomLogo = TweenMax.fromTo('#introInner', 1,
       { transform: 'scale(1)' },
       { transform: 'scale(50) translate3D(-2.8vw, 0, 0)', ease: Expo.easeIn }
     )
