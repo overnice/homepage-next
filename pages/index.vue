@@ -20,6 +20,7 @@
         :small-copy="serviceCategory.smallCopy"
         :case-previews="serviceCategory.casePreviews"
       />
+      <h1>{{ $t('home') }}</h1>
       <About />
     </section>
   </div>

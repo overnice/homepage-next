@@ -10,7 +10,7 @@
       </div>
     </div>
     <div class="about--content">
-      <h2>About</h2>
+      <h2>{{ $t('about') }}</h2>
       <p>
         Overnice is obsessed with quality, technology, and its clients.
       </p>

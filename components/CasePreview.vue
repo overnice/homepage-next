@@ -1,5 +1,5 @@
 <template>
-  <nuxt-link to="/case" class="case">
+  <nuxt-link :to="localePath('case')" class="case">
     <div class="visual" />
     <p v-html="copy" />
   </nuxt-link>
@@ -8,7 +8,16 @@
 <script>
 export default {
   props: {
-    copy: String
+    copy: String,
+    param: String
+  },
+  computed: {
+    path() {
+      return this.localePath('case/' + this.param)
+    },
+    url() {
+      return "'case/" + this.param + "'"
+    }
   }
 }
 </script>

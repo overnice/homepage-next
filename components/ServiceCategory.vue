@@ -11,6 +11,7 @@
       <CasePreview
         v-for="casePreview in casePreviews"
         :key="casePreview.id"
+        :param="casePreview.id"
         :copy="casePreview.copy"
       />
     </div>

@@ -39,7 +39,18 @@ export default {
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
-    '@nuxtjs/pwa'
+    '@nuxtjs/pwa',
+    ['nuxt-i18n', {
+      locales: ['en', 'de'],
+      defaultLocale: 'en',
+      vueI18n: {
+        fallbackLocale: 'en',
+        messages: {
+          en: require('./lang/en-US.json'),
+          de: require('./lang/de-DE.json')
+        }
+      }
+    }]
   ],
   /*
    ** Axios module configuration
@@ -62,7 +73,10 @@ export default {
           enforce: 'pre',
           test: /\.(js|vue)$/,
           loader: 'eslint-loader',
-          exclude: /(node_modules)/
+          exclude: /(node_modules)/,
+          options : {
+            fix : true
+        }
         })
       }
     }
