@@ -62,7 +62,7 @@
     }
   }
 
-  @media (max-width: $bp-tablet) {
+  @media (max-width: $bp-controls-layout) {
     display: none;
   }
 }

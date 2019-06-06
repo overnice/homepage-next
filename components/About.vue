@@ -43,7 +43,7 @@ if (process.browser && window.innerWidth > 650) { // $bp-tablet
 
   window.onNuxtReady(() => {
     // Pin Visual
-    new ScrollMagic.Scene({ triggerElement: '#about', duration: document.height, offset: window.innerHeight * 0.5 })
+    new ScrollMagic.Scene({ triggerElement: '#about', duration: document.body.clientHeight, offset: window.innerHeight * 0.5 })
       .setPin('#about--visual', { pushFollowers: false })
       // .addIndicators({ name: 'Pin About Visual' })
       .addTo(controller)

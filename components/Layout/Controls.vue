@@ -43,7 +43,7 @@ export default {
   //   display: none;
   // }
 
-  @media (max-width: $bp-tablet) {
+  @media (max-width: $bp-controls-layout) {
     position: fixed;
     top: 0;
     left: 0;
@@ -62,7 +62,7 @@ export default {
   right: 5rem;
   fill: white;
 
-  @media (max-width: $bp-tablet) {
+  @media (max-width: $bp-controls-layout) {
     transform: rotate(90deg);
     right: auto;
     bottom: auto;
@@ -71,6 +71,8 @@ export default {
     margin-top: 5rem;
     margin-left: 5rem;
     transform-origin: 0 0;
+    fill: var(--red);
+    opacity: 1;
   }
 }
 </style>
