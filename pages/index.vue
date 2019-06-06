@@ -11,6 +11,13 @@
       </div>
     </section>
     <IntroVideo />
+    <div id="intro--text" class="intro--text">
+      <h1 >
+        We create brands,
+        <br>products, creatives and overall
+        <strong>a good time for users.</strong>
+      </h1>
+    </div>
     <section id="content" class="content">
       <ServiceCategory
         v-for="serviceCategory in serviceCategories"
@@ -43,13 +50,22 @@ if (process.browser) {
     )
     new ScrollMagic.Scene({ triggerElement: '#content', duration: 300 })
       .setTween(zoomLogo)
-      // .addIndicators({ name: 'Zoom Logo' })
+      .addIndicators({ name: 'Zoom Logo' })
       .addTo(controller)
 
     // Pin Video
     new ScrollMagic.Scene({ triggerElement: '#content', duration: 450, offset: 0 })
       .setPin('#intro-video', { pushFollowers: false })
-      // .addIndicators({ name: 'Pin Video' })
+      .addIndicators({ name: 'Pin Video' })
+      .addTo(controller)
+
+    // Move Intro Text
+    const moveIntroText = TweenMax.to('#intro--text', 1, {
+      marginTop: '50vh', ease: Expo.easeOut
+    })
+    new ScrollMagic.Scene({ triggerElement: '#content', duration: 240, offset: 260 })
+      .setTween(moveIntroText)
+      .addIndicators({ name: 'Move Intro Text' })
       .addTo(controller)
 
     // Shrink Video
@@ -61,7 +77,7 @@ if (process.browser) {
     })
     new ScrollMagic.Scene({ triggerElement: '#content', duration: 300, offset: 350 })
       .setTween(shrinkVideo)
-      // .addIndicators({ name: 'Shrink Video' })
+      .addIndicators({ name: 'Shrink Video' })
       .addTo(controller)
   })
 }
@@ -78,54 +94,77 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  .intro {
-    position: fixed;
-    z-index: 10;
-    left: 0;
-    top: 50%;
-    width: 100vw;
-    height: 101vh; // slight flicker on mobile if 100vh
-    transform: translate(0, -50%);
-    pointer-events: none;
+.intro {
+  position: fixed;
+  z-index: 10;
+  left: 0;
+  top: 50%;
+  width: 100vw;
+  height: 101vh; // slight flicker on mobile if 100vh
+  transform: translate(0, -50%);
+  pointer-events: none;
 
-    .intro--inner {
-      position: relative;
-      width: 100%;
-      height: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+  .intro--inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-      &:before,
-      &:after {
-        content: "";
-        position: absolute;
-        left: 0;
-        right: 0;
-        height: calc(50vh - 30vw);
-        background: white;
-      }
+    &:before,
+    &:after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      height: calc(50vh - 30vw);
+      background: white;
+    }
 
-      &:before {
-        top: 0;
-      }
+    &:before {
+      top: 0;
+    }
 
-      &:after {
-        bottom: 0;
-      }
+    &:after {
+      bottom: 0;
     }
   }
+}
 
-  .logo {
-    fill: white;
-    width: 100vw;
-    height: auto;
-  }
+.intro--text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  margin-top: 100vh;
+  box-sizing: border-box;
+  padding: var(--m-spacing);
+  display: flex;
+  align-items: flex-end;
 
-  .content {
-    position: relative;
-    top: 50vh;
-    margin-top: 1px;
-    padding-top: calc(450px + 50vh); // video scroll height + video size (minus top value)
+  h1 {
+    width: 100%;
+    max-width: var(--content-max-width);
+    padding: 0 var(--l-spacing) calc(var(--l-spacing) + var(--m-spacing));
+    margin: 0 auto;
+    font-weight: 400;
+    line-height: 1.2;
+    box-sizing: border-box;
   }
+}
+
+.logo {
+  fill: white;
+  width: 100vw;
+  height: auto;
+}
+
+.content {
+  position: relative;
+  top: 50vh;
+  margin-top: 1px;
+  padding-top: calc(450px + 50vh); // video scroll height + video size (minus top value)
+}
 </style>
