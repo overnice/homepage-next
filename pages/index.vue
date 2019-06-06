@@ -186,6 +186,7 @@ export default {
 @media (max-width: $bp-mobile) {
   .intro--text {
     margin-top: 0;
+    height: 100vh;
   }
 
   .content {
