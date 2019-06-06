@@ -43,30 +43,32 @@ if (process.browser) {
   /* global window, TweenMax, Expo, ScrollMagic, controller */
 
   window.onNuxtReady(() => {
-    // Zoom Logo
-    const zoomLogo = TweenMax.fromTo('#intro--inner', 1,
-      { transform: 'scale(1)' },
-      { transform: 'scale(50) translate3D(-2.8vw, 0, 0)', ease: Expo.easeIn }
-    )
-    new ScrollMagic.Scene({ triggerElement: '#content', duration: 300 })
-      .setTween(zoomLogo)
-      .addIndicators({ name: 'Zoom Logo' })
-      .addTo(controller)
+    if (window.innerWidth > 450) {
+      // Zoom Logo
+      const zoomLogo = TweenMax.fromTo('#intro--inner', 1,
+        { transform: 'scale(1)' },
+        { transform: 'scale(50) translate3D(-2.8vw, 0, 0)', ease: Expo.easeIn }
+      )
+      new ScrollMagic.Scene({ triggerElement: '#content', duration: 300 })
+        .setTween(zoomLogo)
+        .addIndicators({ name: 'Zoom Logo' })
+        .addTo(controller)
 
-    // Pin Video
-    new ScrollMagic.Scene({ triggerElement: '#content', duration: 450, offset: 0 })
-      .setPin('#intro-video', { pushFollowers: false })
-      .addIndicators({ name: 'Pin Video' })
-      .addTo(controller)
+      // Pin Video
+      new ScrollMagic.Scene({ triggerElement: '#content', duration: 450, offset: 0 })
+        .setPin('#intro-video', { pushFollowers: false })
+        .addIndicators({ name: 'Pin Video' })
+        .addTo(controller)
 
-    // Move Intro Text
-    const moveIntroText = TweenMax.to('#intro--text', 1, {
-      marginTop: '50vh', ease: Expo.easeOut
-    })
-    new ScrollMagic.Scene({ triggerElement: '#content', duration: 240, offset: 260 })
-      .setTween(moveIntroText)
-      .addIndicators({ name: 'Move Intro Text' })
-      .addTo(controller)
+      // Move Intro Text
+      const moveIntroText = TweenMax.to('#intro--text', 1, {
+        marginTop: '50vh', ease: Expo.easeOut
+      })
+      new ScrollMagic.Scene({ triggerElement: '#content', duration: 240, offset: 260 })
+        .setTween(moveIntroText)
+        .addIndicators({ name: 'Move Intro Text' })
+        .addTo(controller)
+    }
 
     // Shrink Video
     const shrinkVideo = TweenMax.from('#intro-video--outer', 1, {
@@ -94,6 +96,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import 'css/variables';
+
 .intro {
   position: fixed;
   z-index: 10;
@@ -130,6 +134,10 @@ export default {
       bottom: 0;
     }
   }
+
+  @media (max-width: $bp-mobile) {
+    display: none;
+  }
 }
 
 .intro--text {
@@ -137,7 +145,7 @@ export default {
   top: 0;
   left: 0;
   width: 100%;
-  height: 100vh;
+  height: calc(450px + 50vh);
   margin-top: 100vh;
   box-sizing: border-box;
   padding: var(--m-spacing);
@@ -153,6 +161,13 @@ export default {
     line-height: 1.2;
     box-sizing: border-box;
   }
+
+  @media (max-width: $bp-mobile) {
+    h1 {
+      font-size: 43px; // to fit 375px viewport
+      padding: var(--m-spacing);
+    }
+  }
 }
 
 .logo {
@@ -166,5 +181,17 @@ export default {
   top: 50vh;
   margin-top: 1px;
   padding-top: calc(450px + 50vh); // video scroll height + video size (minus top value)
+}
+
+@media (max-width: $bp-mobile) {
+  .intro--text {
+    margin-top: 0;
+  }
+
+  .content {
+    top: 0;
+    margin-top: 0;
+    padding-top: 100vh;
+  }
 }
 </style>

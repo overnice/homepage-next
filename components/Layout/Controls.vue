@@ -32,11 +32,11 @@ export default {
 
 .controls {
   opacity: 1;
-  transition: opacity .5s ease;
+  transition: opacity .5s ease, background .3s ease;
 
   &.invisible {
     opacity: 0;
-    transition: opacity .2s ease;
+    transition: opacity .2s ease, background .2s ease;
   }
 
   // @media (max-width: $bp-desktop + 108px) {
@@ -61,6 +61,7 @@ export default {
   bottom: 5rem;
   right: 5rem;
   fill: white;
+  transition: fill .3s ease;
 
   @media (max-width: $bp-controls-layout) {
     transform: rotate(90deg);
@@ -73,6 +74,20 @@ export default {
     transform-origin: 0 0;
     fill: var(--red);
     opacity: 1;
+  }
+}
+
+@media (max-width: $bp-mobile) {
+  .controls {
+    opacity: 1 !important;
+
+    &.invisible {
+      background: none !important;
+
+      .logo-vertical {
+        fill: white;
+      }
+    }
   }
 }
 </style>

@@ -10,11 +10,17 @@ import Controls from '~/components/Layout/Controls.vue'
 if (process.browser) {
   /* global window, ScrollMagic, controller */
 
+  let hiddenDuration = window.innerHeight * 1.5
+
+  if (window.innerWidth < 450) {
+    hiddenDuration = window.innerHeight * 0.9
+  }
+
   window.onNuxtReady(() => {
     // Show Logo
-    new ScrollMagic.Scene({ triggerElement: '#content', duration: window.innerHeight * 1.5 })
+    new ScrollMagic.Scene({ triggerElement: '#content', duration: hiddenDuration })
       .setClassToggle('#controls', 'invisible')
-      // .addIndicators({ name: 'Hide Controls' })
+      .addIndicators({ name: 'Hide Controls' })
       .addTo(controller)
   })
 }
@@ -37,21 +43,25 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  @import 'css/variables';
-  .container {
-    background: var(--darkgray);
-    color: white;
-    padding-bottom: 50vh;
+@import 'css/variables';
+.container {
+  background: var(--darkgray);
+  color: white;
+  padding-bottom: 50vh; // used to compensate the 50vh at the top, removed on mobile
 
-    & /deep/ {
-      .controls {
-        background: var(--darkgray);
-        z-index: 2;
-      }
+  & /deep/ {
+    .controls {
+      background: var(--darkgray);
+      z-index: 2;
+    }
 
-      .logo-vertical {
-        color: white;
-      }
+    .logo-vertical {
+      color: white;
     }
   }
+
+  @media (max-width: $bp-mobile) {
+    padding-bottom: 0;
+  }
+}
 </style>
