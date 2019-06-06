@@ -84,13 +84,13 @@ if (process.browser) {
       )
       new ScrollMagic.Scene({ triggerElement: '#content', duration: 300 })
         .setTween(zoomLogo)
-        .addIndicators({ name: 'Zoom Logo' })
+        // .addIndicators({ name: 'Zoom Logo' })
         .addTo(controller)
 
       // Pin Video
       new ScrollMagic.Scene({ triggerElement: '#content', duration: 450, offset: 0 })
         .setPin('#intro-video', { pushFollowers: false })
-        .addIndicators({ name: 'Pin Video' })
+        // .addIndicators({ name: 'Pin Video' })
         .addTo(controller)
 
       // Move Intro Text
@@ -99,7 +99,7 @@ if (process.browser) {
       })
       new ScrollMagic.Scene({ triggerElement: '#content', duration: 240, offset: 260 })
         .setTween(moveIntroText)
-        .addIndicators({ name: 'Move Intro Text' })
+        // .addIndicators({ name: 'Move Intro Text' })
         .addTo(controller)
     }
 
@@ -112,7 +112,7 @@ if (process.browser) {
     })
     new ScrollMagic.Scene({ triggerElement: '#content', duration: 300, offset: 350 })
       .setTween(shrinkVideo)
-      .addIndicators({ name: 'Shrink Video' })
+      // .addIndicators({ name: 'Shrink Video' })
       .addTo(controller)
   })
 }

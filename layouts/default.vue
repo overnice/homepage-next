@@ -20,7 +20,7 @@ if (process.browser) {
     // Show Logo
     new ScrollMagic.Scene({ triggerElement: '#content', duration: hiddenDuration })
       .setClassToggle('#controls', 'invisible')
-      .addIndicators({ name: 'Hide Controls' })
+      // .addIndicators({ name: 'Hide Controls' })
       .addTo(controller)
   })
 }
