@@ -12,7 +12,7 @@
     </section>
     <IntroVideo />
     <div id="intro--text" class="intro--text">
-      <h1 >
+      <h1>
         We create brands,
         <br>products, creatives and overall
         <strong>a good time for users.</strong>
@@ -39,8 +39,40 @@ import About from '~/components/About.vue'
 
 import serviceCategoriesData from '~/data/serviceCategories.json'
 
+// detect mobile device
+function isMobile() {
+  if (
+    navigator.userAgent.match(/Android/i) ||
+    navigator.userAgent.match(/webOS/i) ||
+    navigator.userAgent.match(/iPhone/i) ||
+    navigator.userAgent.match(/iPad/i) ||
+    navigator.userAgent.match(/iPod/i) ||
+    navigator.userAgent.match(/BlackBerry/i) ||
+    navigator.userAgent.match(/Windows Phone/i)
+  ) {
+    return true
+  } else {
+    return false
+  }
+}
+
+// Recalculate custom CSS property for 100vh on mobile
+function onResize() {
+  window.addEventListener('resize', () => {
+    const vh = window.innerHeight * 0.01
+    document.documentElement.style.setProperty('--vh', `${vh}px`)
+  })
+}
+
 if (process.browser) {
   /* global window, TweenMax, Expo, ScrollMagic, controller */
+
+  if (isMobile()) {
+    // Set custom CSS property for 100vh on mobile
+    const vh = window.innerHeight * 0.01
+    document.documentElement.style.setProperty('--vh', `${vh}px`)
+    window.requestAnimationFrame(onResize)
+  }
 
   window.onNuxtReady(() => {
     if (window.innerWidth > 450) {
@@ -187,12 +219,14 @@ export default {
   .intro--text {
     margin-top: 0;
     height: 100vh;
+    height: calc(var(--vh, 1vh) * 100);
   }
 
   .content {
     top: 0;
     margin-top: 0;
     padding-top: 100vh;
+    padding-top: calc(var(--vh, 1vh) * 100);
   }
 }
 </style>

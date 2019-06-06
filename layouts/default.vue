@@ -27,7 +27,6 @@ if (process.browser) {
 
 export default {
   components: { Controls },
-
   head() {
     return {
       script: [
