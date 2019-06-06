@@ -13,6 +13,8 @@
 </template>
 
 <style lang="scss" scoped>
+@import 'css/variables';
+
 .nav {
   position: fixed;
   top: 0;
@@ -58,6 +60,10 @@
     a {
       filter: blur(0);
     }
+  }
+
+  @media (max-width: $bp-tablet) {
+    display: none;
   }
 }
 </style>

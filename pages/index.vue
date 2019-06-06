@@ -77,7 +77,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
   .intro {
     position: fixed;
     z-index: 10;

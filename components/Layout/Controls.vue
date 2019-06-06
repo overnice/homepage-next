@@ -42,6 +42,7 @@ export default {
   // @media (max-width: $bp-desktop + 108px) {
   //   display: none;
   // }
+
   @media (max-width: $bp-tablet) {
     position: fixed;
     top: 0;

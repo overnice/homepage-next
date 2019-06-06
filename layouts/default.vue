@@ -43,8 +43,15 @@ export default {
     color: white;
     padding-bottom: 50vh;
 
-    & /deep/ .logo-vertical {
-      color: white;
+    & /deep/ {
+      .controls {
+        background: var(--darkgray);
+        z-index: 2;
+      }
+
+      .logo-vertical {
+        color: white;
+      }
     }
   }
 </style>
