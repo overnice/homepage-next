@@ -1,28 +1,34 @@
 <template>
   <nav class="nav">
     <div class="top">
-      <nuxt-link id="brands-link" to="#brands">
+      <button id="brands-link">
         Brands
-      </nuxt-link>
-      <nuxt-link id="products-link" to="#products">
+      </button>
+      <button id="products-link">
         Products
-      </nuxt-link>
-      <nuxt-link id="creatives-link" to="#creatives">
+      </button>
+      <button id="creatives-link">
         Creatives
-      </nuxt-link>
+      </button>
     </div>
     <div class="bottom">
-      <nuxt-link id="about-link" to="#about">
+      <button id="about-link">
         About
-      </nuxt-link>
-      <nuxt-link id="contact-link" to="#contact">
+      </button>
+      <button id="contact-link">
         Contact
-      </nuxt-link>
+      </button>
     </div>
   </nav>
 </template>
 
 <script>
+
+function offset(el) {
+  const rect = el.getBoundingClientRect()
+  const scrollTop = window.pageYOffset || document.documentElement.scrollTop
+  return rect.top + scrollTop
+}
 
 if (process.browser) {
 /* global ScrollMagic, controller */
@@ -37,15 +43,21 @@ if (process.browser) {
 
   window.onNuxtReady(() => {
     targets.forEach((target) => {
-      new ScrollMagic.Scene({ triggerElement: `#${target}`, duration: document.getElementById(target).getBoundingClientRect().height })
+      const targetNode = document.getElementById(target)
+      const targetLink = document.getElementById(`${target}-link`)
+
+      targetLink.addEventListener('click', () => {
+        window.scrollTo({
+          top: offset(targetNode),
+          left: 0,
+          behavior: 'smooth'
+        })
+      })
+
+      new ScrollMagic.Scene({ triggerElement: `#${target}`, duration: targetNode.getBoundingClientRect().height })
         .setClassToggle(`#${target}-link`, 'active')
         // .addIndicators({ name: target })
         .addTo(controller)
-        .on('enter', function (e) {
-          if (window.history && window.history.pushState) {
-            history.pushState('', document.title, `#${target}`)
-          }
-        })
     })
   })
 }
@@ -76,7 +88,7 @@ export default {
     display: flex;
   }
 
-  a {
+  button {
     font-size: var(--small-font-size);
     line-height: 1;
     color: white;
@@ -84,7 +96,12 @@ export default {
     text-decoration: none;
     font-weight: bold;
     display: block;
+    background: none;
+    outline: none;
+    border: none;
+    font-family: inherit;
     opacity: .15;
+    cursor: pointer;
     // filter: blur(4px);
     transition: opacity .4s ease;
 

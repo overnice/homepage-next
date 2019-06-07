@@ -3,9 +3,10 @@
     <div id="about--visual" class="about--visual">
       <div id="about--visual--outer" class="about--visual--outer">
         <div id="about--visual--inner" class="about--visual--inner">
-          <video playsinline autoplay muted loop>
+          <!-- <video playsinline autoplay muted loop>
             <source src="~/assets/videos/background.webm" type="video/webm">
-          </video>
+          </video> -->
+          <img id="about--visual--image" src="~/assets/images/office.jpg" role="presentation" />
         </div>
       </div>
     </div>
@@ -18,7 +19,7 @@
         We love them. We travel the world for them, cross the jungle, sail the sea, take the train. But Friday afternoons are off because there's more to life than work.
       </p>
       <div class="client-logos">
-        <img src="~/assets/images/logos.svg">
+        <img src="~/assets/images/logos.svg" role="presentation">
       </div>
       <div id="contact" class="contact">
         <h2>Let's talk business</h2>
@@ -59,6 +60,16 @@ if (process.browser && window.innerWidth > 650) { // $bp-tablet
       .setTween(growVisual)
       // .addIndicators({ name: 'Grow Visual' })
       .addTo(controller)
+
+    // Keep image steady
+    const keepVisualSteady = TweenMax.from('#about--visual--image', 1, {
+      marginLeft: '0px',
+      ease: Expo.easeIn
+    })
+    new ScrollMagic.Scene({ triggerElement: '#about', duration: 300, offset: window.innerHeight * 0.5 - 300 })
+      .setTween(keepVisualSteady)
+      .addIndicators({ name: 'Keep Visual Steady' })
+      .addTo(controller)
   })
 }
 
@@ -84,7 +95,7 @@ export default {
     height: 100vh;
     box-sizing: border-box;
 
-    video {
+    video, img {
       position: absolute;
       display: block;
       top: 50%;
@@ -109,6 +120,10 @@ export default {
     height: 100%;
     overflow: hidden;
     position: relative;
+  }
+
+  #about--visual--image {
+    margin-left: calc(var(--m-spacing) * 0.5);
   }
 
   .about--content {
