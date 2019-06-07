@@ -162,7 +162,7 @@ export default {
     }
   }
 
-  .footnotes {
+  p.footnotes {
     display: flex;
     margin-top: var(--l-spacing);
 
