@@ -161,53 +161,6 @@ export default {
     p {
       font-size: var(--small-font-size);
     }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-      position: relative;
-      z-index: 0;
-      display: inline-block;
-      font-weight: 600;
-      text-shadow:
-        -0.125rem -0.125rem 0 var(--darkgray),
-        0.125rem -0.125rem 0 var(--darkgray),
-        -0.125rem 0.125rem 0 var(--darkgray),
-        0.125rem 0.125rem 0 var(--darkgray),
-        -0.25rem -0.25rem 0 var(--darkgray),
-        0.25rem -0.25rem 0 var(--darkgray),
-        -0.25rem 0.25rem 0 var(--darkgray),
-        0.25rem 0.25rem 0 var(--darkgray),
-        -0.375rem -0.375rem 0 var(--darkgray),
-        0.375rem -0.375rem 0 var(--darkgray),
-        -0.375rem 0.375rem 0 var(--darkgray),
-        0.375rem 0.375rem 0 var(--darkgray);
-      transition: color .3s cubic-bezier(.25,0,0,1), transform .3s cubic-bezier(.25,0,0,1);
-
-      &:before {
-        content: "";
-        position: absolute;
-        left: 0;
-        right: 0;
-        top: 100%;
-        margin-top: -1.125rem;
-        height: 2px;
-        background: rgba(#ff795f, .7);
-        z-index: -1;
-        border-radius: 1px;
-        transition: background .3s cubic-bezier(0.25, 0, 0, 1), transform .3s cubic-bezier(0.25, 0, 0, 1);
-      }
-
-      &:hover {
-        color: white;
-        transform: translate3d(0,-2px,0);
-
-        &:before {
-          transform: translate3D(0,2px,0);
-          background: rgba(255,255,255,.5);
-        }
-      }
-    }
   }
 
   .footnotes {

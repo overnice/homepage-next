@@ -20,7 +20,7 @@
       The holy grail of Blockchain mass adoption.
     </blockquote>
     <p>
-      Honoring the technological possibilities Nimiq works with, we developed an interface that needed to be, as one of the founders described it, ‘so easy, your grandma could use it’.
+      <a href="">Honoring the technological</a> possibilities Nimiq works with, we developed an interface that needed to be, as one of the founders described it, ‘so easy, your grandma could use it’.
     </p>
     <figure class="left">
       <img src="data:image/gif;base64,R0lGODlhAQABAIAAAMLCwgAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==">
