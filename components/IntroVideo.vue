@@ -5,7 +5,6 @@
         <video id="intro-video--video" autoplay playsinline muted loop>
           <source src="~/assets/videos/intro_video.mp4" type="video/mp4">
           <source src="~/assets/videos/intro_video.webm" type="video/webm">
-          <source src="~/assets/videos/intro_video.ogv" type="video/ogv">
         </video>
       </div>
     </div>
