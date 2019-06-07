@@ -104,13 +104,13 @@ if (process.browser) {
     }
 
     // Darken Video
-    const darkenVideo = TweenMax.to('#intro-video--video', 1, {
-      opacity: '0.4',
+    const darkenVideo = TweenMax.from('#intro-video--video', 1, {
+      opacity: '1',
       ease: Circ.easeOut
     })
     new ScrollMagic.Scene({ triggerElement: '#content', duration: 200, offset: 300 })
       .setTween(darkenVideo)
-      .addIndicators({ name: 'Darken Video' })
+      // .addIndicators({ name: 'Darken Video' })
       .addTo(controller)
 
     // Shrink Video

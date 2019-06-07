@@ -46,6 +46,7 @@ export default {
       height: auto;
       min-width: 100vw;
       z-index: unset;
+      opacity: .4;
 
       @media (max-aspect-ratio: 4/3) { /* CHANGE TO ACTUAL VIDEO ASPECT RATIO */
         height: 100%;

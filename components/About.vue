@@ -68,7 +68,7 @@ if (process.browser && window.innerWidth > 650) { // $bp-tablet
     })
     new ScrollMagic.Scene({ triggerElement: '#about', duration: 300, offset: window.innerHeight * 0.5 - 300 })
       .setTween(keepVisualSteady)
-      .addIndicators({ name: 'Keep Visual Steady' })
+      // .addIndicators({ name: 'Keep Visual Steady' })
       .addTo(controller)
   })
 }
@@ -239,7 +239,7 @@ export default {
       width: 100%;
       height: auto; // given the video has a 4:3 aspect ratio
 
-      video {
+      video, img {
         position: relative;
         top: 0;
         left: 0;
@@ -248,6 +248,10 @@ export default {
         height: auto;
         min-height: 0;
       }
+    }
+
+    #about--visual--image {
+      margin-left: 0;
     }
 
     .about--visual--outer {
