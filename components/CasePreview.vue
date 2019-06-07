@@ -1,6 +1,6 @@
 <template>
   <nuxt-link to="/case" class="case">
-    <div class="visual" />
+    <div class="visual" :style="{ backgroundImage: `url(${visual})` }" />
     <p v-html="copy" />
   </nuxt-link>
 </template>
@@ -8,6 +8,7 @@
 <script>
 export default {
   props: {
+    visual: String,
     copy: String
   }
 }
@@ -48,7 +49,7 @@ export default {
     color: var(--red);
 
     .visual {
-      background: var(--red);
+      // background: var(--red);
       transform: scale3D(1.1,1.1,1.1);
       opacity: 1;
     }
@@ -110,6 +111,8 @@ p {
   max-width: 350px;
   flex: 0 0 auto;
   margin-left: calc(var(--l-spacing) * -1);
+  background-size: cover;
+  background-position: 50%;
   transition: background .2s ease, transform .6s cubic-bezier(0.25, 0, 0, 1);
 }
 </style>

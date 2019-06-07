@@ -6,7 +6,7 @@
           <!-- <video playsinline autoplay muted loop>
             <source src="~/assets/videos/background.webm" type="video/webm">
           </video> -->
-          <img id="about--visual--image" src="~/assets/images/office.jpg" role="presentation">
+          <img id="about--visual--image" src="~/assets/images/office.jpg" role="presentation" />
         </div>
       </div>
     </div>

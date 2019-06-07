@@ -12,6 +12,7 @@
         v-for="casePreview in casePreviews"
         :key="casePreview.id"
         :copy="casePreview.copy"
+        :visual="casePreview.visual"
       />
     </div>
   </section>

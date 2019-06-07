@@ -7,7 +7,7 @@
       </p>
     </header>
     <figure class="full">
-      <img src="data:image/gif;base64,R0lGODlhAQABAIAAAMLCwgAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==">
+      <img src="/cases/branding_archilyse/logo.svg">
     </figure>
     <p>
       Nimiq is an Inuit word for an object or force of connection and unification. Our client thought of Nimiq as a good name for an revolutionary idea: a entirely browser-based blockchain, written entirely in JavaScript.
