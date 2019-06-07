@@ -6,7 +6,7 @@
           <!-- <video playsinline autoplay muted loop>
             <source src="~/assets/videos/background.webm" type="video/webm">
           </video> -->
-          <img id="about--visual--image" src="~/assets/images/office.jpg" role="presentation" />
+          <img id="about--visual--image" src="~/assets/images/office.jpg" role="presentation">
         </div>
       </div>
     </div>
@@ -24,9 +24,8 @@
       <div id="contact" class="contact">
         <h2>Let's talk business</h2>
         <p>
-          Give us a <a href="" target="blank">call</a>,
-          shoot us an <a href="" target="blank">email</a>,
-          visit us in <a href="" target="blank">Kreuzberg</a>
+          Shoot us an <a href="mailto:hello@overnice.com">email</a>
+          or visit us in <a href="https://goo.gl/maps/kJ45arnjaPRWryRL6" target="blank">Kreuzberg</a>
         </p>
         <p class="footnotes">
           <a href="/imprint">Imprint</a>
