@@ -84,14 +84,13 @@ export default {
     text-decoration: none;
     font-weight: bold;
     display: block;
-    opacity: .2;
-    filter: blur(4px);
-    transition: filter .4s ease, opacity .4s ease;
+    opacity: .15;
+    // filter: blur(4px);
+    transition: opacity .4s ease;
 
-    &.active,
-    &:hover {
-      opacity: .3;
-      filter: blur(0);
+    &.active {
+      opacity: .4;
+      // filter: blur(0);
     }
 
     &:hover {
@@ -99,11 +98,11 @@ export default {
     }
   }
 
-  &:hover {
-    a {
-      filter: blur(0);
-    }
-  }
+  // &:hover {
+  //   a {
+  //     filter: blur(0);
+  //   }
+  // }
 
   @media (max-width: $bp-controls-layout) {
     display: none;
