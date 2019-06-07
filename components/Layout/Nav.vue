@@ -1,16 +1,59 @@
 <template>
   <nav class="nav">
     <div class="top">
-      <a class="active" href="">Brands</a>
-      <a href="">Products</a>
-      <a href="">Creatives</a>
+      <nuxt-link id="brands-link" to="#brands">
+        Brands
+      </nuxt-link>
+      <nuxt-link id="products-link" to="#products">
+        Products
+      </nuxt-link>
+      <nuxt-link id="creatives-link" to="#creatives">
+        Creatives
+      </nuxt-link>
     </div>
     <div class="bottom">
-      <a href="">About</a>
-      <a href="">Contact</a>
+      <nuxt-link id="about-link" to="#about">
+        About
+      </nuxt-link>
+      <nuxt-link id="contact-link" to="#contact">
+        Contact
+      </nuxt-link>
     </div>
   </nav>
 </template>
+
+<script>
+
+if (process.browser) {
+/* global ScrollMagic, controller */
+
+  const targets = [
+    'brands',
+    'products',
+    'creatives',
+    'about',
+    'contact'
+  ]
+
+  window.onNuxtReady(() => {
+    targets.forEach((target) => {
+      new ScrollMagic.Scene({ triggerElement: `#${target}`, duration: document.getElementById(target).getBoundingClientRect().height })
+        .setClassToggle(`#${target}-link`, 'active')
+        // .addIndicators({ name: target })
+        .addTo(controller)
+        .on('enter', function (e) {
+          if (window.history && window.history.pushState) {
+            history.pushState('', document.title, `#${target}`)
+          }
+        })
+    })
+  })
+}
+
+export default {
+
+}
+</script>
 
 <style lang="scss" scoped>
 @import 'css/variables';
@@ -62,7 +105,7 @@
     }
   }
 
-  @media (max-width: $bp-tablet) {
+  @media (max-width: $bp-controls-layout) {
     display: none;
   }
 }

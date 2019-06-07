@@ -28,6 +28,10 @@ export default {
   box-sizing: border-box;
 
   @media (max-width: $bp-tablet) {
+    padding-top: calc(var(--l-spacing) * 3);
+  }
+
+  @media (max-width: $bp-mobile) {
     padding-top: calc(var(--l-spacing) * 4);
   }
 }

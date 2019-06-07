@@ -1,7 +1,7 @@
 <template>
   <div>
     <section class="intro">
-      <div id="introInner" class="intro--inner">
+      <div id="intro--inner" class="intro--inner">
         <svg id="logo" class="logo" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
           <path d="M96.4,187.56c-2.9,0-3.6,2.21-3.6,12.04c0,9.69,0.7,12.04,3.6,12.04c2.9,0,3.6-2.35,3.6-12.04 C100,189.92,99.3,187.56,96.4,187.56z" />
           <path d="M304.4,187.6c-2.6,0-3.5,1.9-3.5,5.9v1.7h7v-1.7C308,189.4,307.1,187.6,304.4,187.6z" />
@@ -11,9 +11,17 @@
       </div>
     </section>
     <IntroVideo />
+    <div id="intro--text" class="intro--text">
+      <h1>
+        We create brands,
+        <br>products, creatives and overall
+        <strong>a good time for users.</strong>
+      </h1>
+    </div>
     <section id="content" class="content">
       <ServiceCategory
         v-for="serviceCategory in serviceCategories"
+        :id="serviceCategory.id"
         :key="serviceCategory.id"
         :title="serviceCategory.title"
         :copy="serviceCategory.copy"
@@ -33,25 +41,68 @@ import About from '~/components/About.vue'
 
 import serviceCategoriesData from '~/data/serviceCategories.json'
 
+// detect mobile device
+function isMobile() {
+  if (
+    navigator.userAgent.match(/Android/i) ||
+    navigator.userAgent.match(/webOS/i) ||
+    navigator.userAgent.match(/iPhone/i) ||
+    navigator.userAgent.match(/iPad/i) ||
+    navigator.userAgent.match(/iPod/i) ||
+    navigator.userAgent.match(/BlackBerry/i) ||
+    navigator.userAgent.match(/Windows Phone/i)
+  ) {
+    return true
+  } else {
+    return false
+  }
+}
+
+// Recalculate custom CSS property for 100vh on mobile
+function onResize() {
+  window.addEventListener('resize', () => {
+    const vh = window.innerHeight * 0.01
+    document.documentElement.style.setProperty('--vh', `${vh}px`)
+  })
+}
+
 if (process.browser) {
   /* global window, TweenMax, Expo, ScrollMagic, controller */
 
-  window.onNuxtReady(() => {
-    // Zoom Logo
-    const zoomLogo = TweenMax.fromTo('#introInner', 1,
-      { transform: 'scale(1)' },
-      { transform: 'scale(50) translate3D(-2.8vw, 0, 0)', ease: Expo.easeIn }
-    )
-    new ScrollMagic.Scene({ triggerElement: '#content', duration: 300 })
-      .setTween(zoomLogo)
-      // .addIndicators({ name: 'Zoom Logo' })
-      .addTo(controller)
+  if (isMobile()) {
+    // Set custom CSS property for 100vh on mobile
+    const vh = window.innerHeight * 0.01
+    document.documentElement.style.setProperty('--vh', `${vh}px`)
+    window.requestAnimationFrame(onResize)
+  }
 
-    // Pin Video
-    new ScrollMagic.Scene({ triggerElement: '#content', duration: 450, offset: 0 })
-      .setPin('#intro-video', { pushFollowers: false })
-      // .addIndicators({ name: 'Pin Video' })
-      .addTo(controller)
+  window.onNuxtReady(() => {
+    if (window.innerWidth > 450) {
+      // Zoom Logo
+      const zoomLogo = TweenMax.fromTo('#intro--inner', 1,
+        { transform: 'scale(1)' },
+        { transform: 'scale(50) translate3D(-2.8vw, 0, 0)', ease: Expo.easeIn }
+      )
+      new ScrollMagic.Scene({ triggerElement: '#content', duration: 300 })
+        .setTween(zoomLogo)
+        // .addIndicators({ name: 'Zoom Logo' })
+        .addTo(controller)
+
+      // Pin Video
+      new ScrollMagic.Scene({ triggerElement: '#content', duration: 450, offset: 0 })
+        .setPin('#intro-video', { pushFollowers: false })
+        // .addIndicators({ name: 'Pin Video' })
+        .addTo(controller)
+
+      // Move Intro Text
+      const moveIntroText = TweenMax.to('#intro--text', 1, {
+        marginTop: '50vh', ease: Expo.easeOut
+      })
+      new ScrollMagic.Scene({ triggerElement: '#content', duration: 240, offset: 260 })
+        .setTween(moveIntroText)
+        // .addIndicators({ name: 'Move Intro Text' })
+        .addTo(controller)
+    }
 
     // Shrink Video
     const shrinkVideo = TweenMax.from('#intro-video--outer', 1, {
@@ -79,54 +130,105 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  .intro {
-    position: fixed;
-    z-index: 10;
-    left: 0;
-    top: 50%;
-    width: 100vw;
-    height: 101vh; // slight flicker on mobile if 100vh
-    transform: translate(0, -50%);
-    pointer-events: none;
+@import 'css/variables';
 
-    .intro--inner {
-      position: relative;
-      width: 100%;
-      height: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+.intro {
+  position: fixed;
+  z-index: 10;
+  left: 0;
+  top: 50%;
+  width: 100vw;
+  height: 101vh; // slight flicker on mobile if 100vh
+  transform: translate(0, -50%);
+  pointer-events: none;
 
-      &:before,
-      &:after {
-        content: "";
-        position: absolute;
-        left: 0;
-        right: 0;
-        height: calc(50vh - 30vw);
-        background: white;
-      }
+  .intro--inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-      &:before {
-        top: 0;
-      }
+    &:before,
+    &:after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      height: calc(50vh - 30vw);
+      background: white;
+    }
 
-      &:after {
-        bottom: 0;
-      }
+    &:before {
+      top: 0;
+    }
+
+    &:after {
+      bottom: 0;
     }
   }
 
-  .logo {
-    fill: white;
-    width: 100vw;
-    height: auto;
+  @media (max-width: $bp-mobile) {
+    display: none;
+  }
+}
+
+.intro--text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: calc(450px + 50vh);
+  margin-top: 100vh;
+  box-sizing: border-box;
+  padding: var(--m-spacing);
+  display: flex;
+  align-items: flex-end;
+
+  h1 {
+    width: 100%;
+    max-width: var(--content-max-width);
+    padding: 0 var(--l-spacing) calc(var(--l-spacing) + var(--m-spacing));
+    margin: 0 auto;
+    font-weight: 400;
+    line-height: 1.2;
+    box-sizing: border-box;
+  }
+
+  @media (max-width: $bp-mobile) {
+    h1 {
+      font-size: 43px; // to fit 375px viewport
+      padding: var(--m-spacing);
+    }
+  }
+}
+
+.logo {
+  fill: white;
+  width: 100vw;
+  height: auto;
+}
+
+.content {
+  position: relative;
+  top: 50vh;
+  margin-top: 1px;
+  padding-top: calc(450px + 50vh); // video scroll height + video size (minus top value)
+}
+
+@media (max-width: $bp-mobile) {
+  .intro--text {
+    margin-top: 0;
+    height: 100vh;
+    height: calc(var(--vh, 1vh) * 100);
   }
 
   .content {
-    position: relative;
-    top: 50vh;
-    margin-top: 1px;
-    padding-top: calc(450px + 50vh); // video scroll height + video size (minus top value)
+    top: 0;
+    margin-top: 0;
+    padding-top: 100vh;
+    padding-top: calc(var(--vh, 1vh) * 100);
   }
+}
 </style>

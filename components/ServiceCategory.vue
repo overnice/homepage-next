@@ -1,5 +1,5 @@
 <template>
-  <section class="service-category">
+  <section :id="id" class="service-category">
     <header>
       <h2>{{ title }}</h2>
       <p>{{ copy }}</p>
@@ -24,6 +24,7 @@ import CasePreview from '~/components/CasePreview.vue'
 export default {
   components: { CasePreview },
   props: {
+    id: String,
     title: String,
     copy: String,
     smallCopy: String,

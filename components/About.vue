@@ -20,7 +20,7 @@
       <div class="client-logos">
         <img src="~/assets/images/logos.svg">
       </div>
-      <div class="contact">
+      <div id="contact" class="contact">
         <h2>Let's talk business</h2>
         <p>
           Give us a <a href="" target="blank">call</a>,
@@ -43,7 +43,7 @@ if (process.browser && window.innerWidth > 650) { // $bp-tablet
 
   window.onNuxtReady(() => {
     // Pin Visual
-    new ScrollMagic.Scene({ triggerElement: '#about', duration: document.height, offset: window.innerHeight * 0.5 })
+    new ScrollMagic.Scene({ triggerElement: '#about', duration: document.body.clientHeight, offset: window.innerHeight * 0.5 })
       .setPin('#about--visual', { pushFollowers: false })
       // .addIndicators({ name: 'Pin About Visual' })
       .addTo(controller)
