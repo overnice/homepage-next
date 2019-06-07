@@ -66,7 +66,7 @@ function isMobile() {
 // }
 
 if (process.browser) {
-  /* global window, TweenMax, Expo, ScrollMagic, controller */
+  /* global window, TweenMax, Expo, Circ, ScrollMagic, controller */
 
   if (isMobile()) {
     // Set custom CSS property for 100vh on mobile
@@ -103,11 +103,22 @@ if (process.browser) {
         .addTo(controller)
     }
 
+    // Darken Video
+    const darkenVideo = TweenMax.to('#intro-video--video', 1, {
+      opacity: '0.4',
+      ease: Circ.easeOut
+    })
+    new ScrollMagic.Scene({ triggerElement: '#content', duration: 200, offset: 300 })
+      .setTween(darkenVideo)
+      .addIndicators({ name: 'Darken Video' })
+      .addTo(controller)
+
     // Shrink Video
     const shrinkVideo = TweenMax.from('#intro-video--outer', 1, {
       paddingLeft: '0',
       paddingRight: '0',
       paddingBottom: '0',
+      opacity: 1,
       ease: Expo.easeOut
     })
     new ScrollMagic.Scene({ triggerElement: '#content', duration: 300, offset: 350 })
