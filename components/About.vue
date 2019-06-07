@@ -151,6 +151,7 @@ export default {
       color: inherit;
       text-decoration: none;
       position: relative;
+      z-index: 0;
       display: inline-block;
       font-weight: 600;
       text-shadow:
