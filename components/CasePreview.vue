@@ -20,11 +20,12 @@ export default {
 .case {
   color: inherit;
   text-decoration: none;
-  margin-top: var(--m-spacing);
+  margin-top: 0;
   display: flex;
   align-items: center;
   transition: transform .6s cubic-bezier(0.25, 0, 0, 1), color .2s ease;
   cursor: pointer;
+  padding-top: var(--m-spacing);
 
   &:nth-child(even) {
     flex-direction: row-reverse;
