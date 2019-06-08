@@ -48,8 +48,9 @@ export default {
 @media (max-width: $bp-case-layout) {
   .cases {
     display: flex;
-    margin: 0 calc(var(--l-spacing) * -1); // compensate service category padding
+    margin: calc(var(--l-spacing) * -1); // compensate service category padding + case hover state
     overflow: auto;
+    padding: var(--l-spacing) 0;
   }
 }
 </style>
