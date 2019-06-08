@@ -54,9 +54,31 @@ export default {
       margin-bottom: var(--xl-spacing);
     }
 
-    p {
+    p, ul {
       font-size: var(--small-font-size);
       margin-top: 3rem;
+      max-width: 100%;
+      overflow: hidden;
+    }
+
+    ul {
+      padding-left: 4rem;
+
+      li {
+        position: relative;
+        list-style-type: none;
+
+        &:before {
+          content: "-";
+          position: absolute;
+          left: -2.5rem;
+          top: 0;
+        }
+
+        & + li {
+          margin-top: 2rem;
+        }
+      }
     }
 
     h2 {
@@ -66,7 +88,7 @@ export default {
     }
 
     h3 {
-      font-size: 28px;
+      font-size: var(--small-font-size);
       font-weight: 600;
       margin-top: 5rem;
       text-transform: uppercase;
