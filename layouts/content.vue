@@ -27,6 +27,10 @@ export default {
   min-height: 100vh;
   box-sizing: border-box;
 
+  @media (max-width: $bp-desktop) {
+    padding-top: calc(var(--l-spacing) * 2.5);
+  }
+
   @media (max-width: $bp-tablet) {
     padding-top: calc(var(--l-spacing) * 3);
   }
@@ -45,16 +49,25 @@ export default {
       opacity: 1;
     }
 
-    // Make H3 following H1 Abstract
+    // Make H3 following H1 Abstract, put space after
+
+    h1 + * {
+      margin-top: var(--xl-spacing) !important;
+    }
+
     h1 + h3 {
       font-size: var(--p-font-size);
       font-weight: 400;
-      margin-top: 3rem;
+      margin-top: 3rem !important;
       text-transform: none;
       letter-spacing: 0;
-      margin-bottom: var(--xl-spacing);
+
+      & + * {
+        margin-top: var(--xl-spacing) !important;
+      }
 
       & + figure:not(.left):not(.right)  {
+        margin-top: var(--xl-spacing);
         margin-bottom: var(--xl-spacing);
       }
     }
