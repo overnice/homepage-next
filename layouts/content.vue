@@ -45,13 +45,18 @@ export default {
       opacity: 1;
     }
 
-    header p {
+    // Make H3 following H1 Abstract
+    h1 + h3 {
       font-size: var(--p-font-size);
+      font-weight: 400;
       margin-top: 3rem;
-    }
-
-    header + figure.full {
+      text-transform: none;
+      letter-spacing: 0;
       margin-bottom: var(--xl-spacing);
+
+      & + figure:not(.left):not(.right)  {
+        margin-bottom: var(--xl-spacing);
+      }
     }
 
     p, ul {

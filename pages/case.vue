@@ -1,12 +1,10 @@
 <template>
   <div>
-    <header>
       <h1>Jungle Fever</h1>
-      <p>
+      <h3>
         In 2017, we took off to Costa Rica to join a technological jungle adventure with Nimiq.
-      </p>
-    </header>
-    <figure class="full">
+      </h3>
+    <figure>
       <img src="/cases/branding_archilyse/logo.svg">
     </figure>
     <p>
@@ -41,7 +39,7 @@
     <p>
       Our activities included building the website, defining wording and tonality, steering community and social media efforts, PR outreach, and ICO specific communication measures, such as Bitcointalk.org announcements.
     </p>
-    <figure class="full">
+    <figure>
       <img src="https://s3.eu-central-1.amazonaws.com/on-website-assets/nimiq/wallet.jpg">
       <figcaption>This is a caption</figcaption>
     </figure>
