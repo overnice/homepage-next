@@ -10,8 +10,8 @@
     <div class="cases">
       <CasePreview
         v-for="casePreview in casePreviews"
-        :key="casePreview.id"
-        :param="casePreview.id"
+        :key="casePreview.slug"
+        :param="casePreview.slug"
         :copy="casePreview.copy"
       />
     </div>
@@ -20,15 +20,30 @@
 
 <script>
 import CasePreview from '~/components/CasePreview.vue'
+// import fm from '~/components/CasePreview.md'
 
 export default {
   components: { CasePreview },
+  // extends: fm.vue.component,
   props: {
     id: String,
     title: String,
     copy: String,
     smallCopy: String,
     casePreviews: Array
+  },
+  async asyncData({ params, app }) {
+    const fileContent = await import(`~/static/${app.i18n.locale}/caseMarkdownFiles/${params.slug}.md`)
+    const attr = fileContent.attributes
+    return {
+      id: attr.id,
+      name: params.slug,
+      related: attr.related,
+      renderFunc: fileContent.vue.render,
+      staticRenderFuncs: fileContent.vue.staticRenderFns,
+      title: attr.title,
+      urlTranslation: attr.urlTranslation
+    }
   }
 }
 </script>

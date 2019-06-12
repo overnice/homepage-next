@@ -1,4 +1,50 @@
 import pkg from './package'
+const { join } = require('path')
+const dir = require('node-dir')
+const routesArray = []
+const fs = require('fs')
+const _ = require('lodash')
+const md = require('markdown-it')
+
+
+var files = fs.readdirSync('./static/caseMarkdownFiles');
+function createRoutesArray() {
+  files.forEach(function (file) {
+      var name = file.substr(0, file.lastIndexOf('.'));
+      var route = '/post/' + name
+      routesArray.push(route)
+  });
+}
+
+function returnRoutes() {
+  dir.readFiles('./static/dynamicMarkdownFiles', {
+        match: /.md$/,
+        shortName: true,
+        exclude: /^\./
+        }, function(err, content, next) {
+            if (err) throw err;
+            // console.log('content:', content);
+            next();
+        },
+        function(err, files){
+            if (err) throw err;
+            // fileNamesArray = [];
+            files.forEach(function (file) {
+                var name = file.substr(0, file.lastIndexOf('.'));
+                var path = '/post/' + name
+                return path
+            });
+        });
+}
+// const fs = require('fs')
+// const axios = require('axios')
+// // const _ = require('lodash')
+
+//
+function getSlugs(post, index) {
+  let slug = post.substr(0, post.lastIndexOf('.'));
+  return `/post/${slug}`
+}
 
 export default {
   mode: 'universal',
@@ -16,34 +62,6 @@ export default {
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
   },
 
-  router: {
-    scrollBehavior: async (to, from, savedPosition) => {
-      if (savedPosition) {
-        return savedPosition
-      }
-
-      const findEl = async (hash, x) => {
-        return document.querySelector(hash) ||
-          new Promise((resolve, reject) => {
-            if (x > 50) {
-              return resolve()
-            }
-            setTimeout(() => { resolve(findEl(hash, ++x || 1)) }, 100)
-          })
-      }
-
-      if (to.hash) {
-        let el = await findEl(to.hash)
-        if ('scrollBehavior' in document.documentElement.style) {
-          return window.scrollTo({ top: el.offsetTop + window.innerHeight * 0.5, behavior: 'smooth' })
-        } else {
-          return window.scrollTo(0, el.offsetTop)
-        }
-      }
-
-      return { x: 0, y: 0 }
-    }
-  },
 
   /*
    ** Customize the progress-bar color
@@ -104,10 +122,16 @@ export default {
           loader: 'eslint-loader',
           exclude: /(node_modules)/,
           options : {
-            fix : true
+            fix : true,
+            vue:true
         }
         })
       }
+      config.module.rules.push({
+        test: /\.md$/,
+        use: ['raw-loader'],
+      
+      })
     }
   }
 }

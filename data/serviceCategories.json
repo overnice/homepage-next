@@ -6,18 +6,22 @@
     "smallCopy": "Brands just like friends, corporate design, messaging.",
     "casePreviews": [
       {
+        "slug": "brand_ipsum1",
         "visual": "",
         "copy": "A radical, inclusive and concept-driven approach to branding one of the most thrilling technologies in existence: <strong>Nimiq</strong>, a browser-based cryptocurrency."
       },
       {
+        "slug": "brand_lorem1",
         "visual": "",
         "copy": "Automation killing jobs is a scary topic; ironically, an AI-based service overnice branded and dubbed <strong>Peers</strong> could be the solution. The branding required tact."
       },
       {
+        "slug": "brand_1",
         "visual": "",
         "copy": "A dual brand strategy that leverages interaction and synergy to create more than the sum of its parts for <strong>Archilyse</strong>, architecture analysis by machine learning."
       },
       {
+        "slug": "brand_2",
         "visual": "",
         "copy": "<strong>Prisma</strong> simplifies database management and as a typical start-up, everything changes all the time. How branding can evolve without losing identity."
       }
@@ -58,18 +62,22 @@
     "smallCopy": "Persuasive marketing strategies, creative direction, crafty execution",
     "casePreviews": [
       {
+        "slug": "test",
         "visual": "",
         "copy": "Securing Ethereum Smart Contracts is as crucial as it is complicated. overnice developed a set of items from company videos to infographics for <strong>Solidified</strong>."
       },
       {
+        "slug": "test_2",
         "visual": "",
         "copy": "How fast can I kick a ball? How good is the new <strong>Nike</strong> Superfly XY really? overnice created an in-store experience that answers both questions while creating some nice content for your Instagram."
       },
       {
+        "slug": "lorem",
         "visual": "",
         "copy": "How to promote <strong>Nimiq</strong> at a no logo/no sponsor conference? With a huge floating banner, weatherproof marketeers and a designated onboarding app obviously."
       },
       {
+        "slug": "ipsum",
         "visual": "",
         "copy": "Scammers riddle the blockchain space. Besides individuals, it’s companies that exploit the young technology. overnice exposed a particularly bad one and created awareness for <strong>Alethena</strong>."
       }

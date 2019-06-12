@@ -1,5 +1,8 @@
 <template>
-  <nuxt-link :to="localePath('case')" class="case">
+  <nuxt-link
+    :to="localePath({name: 'case-slug', params: {slug: param} })"
+    class="case"
+  >
     <div class="visual" />
     <p v-html="copy" />
   </nuxt-link>

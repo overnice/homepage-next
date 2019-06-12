@@ -41,11 +41,6 @@ if (process.browser) {
         .setClassToggle(`#${target}-link`, 'active')
         // .addIndicators({ name: target })
         .addTo(controller)
-        .on('enter', function (e) {
-          if (window.history && window.history.pushState) {
-            history.pushState('', document.title, `#${target}`)
-          }
-        })
     })
   })
 }

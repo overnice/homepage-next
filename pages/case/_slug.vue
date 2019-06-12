@@ -1,7 +1,7 @@
 <template>
-  <div>
+  <div :key="$route.params.slug">
     <header>
-      <h1>Jungle Fever</h1>
+      <h1>{{ $route.params.slug }}</h1>
       <p>
         In 2017, we took off to Costa Rica to join a technological jungle adventure with Nimiq.
       </p>
@@ -55,6 +55,12 @@
 // import Close from '~/components/Layout/Close.vue'
 
 export default {
+  // async asyncData({ params }) {
+  //   const fileContent = await import(`~/static/caseMarkdownFiles/${params.slug}.md`)
+  //   return {
+  //     content: fileContent
+  //   }
+  // },
   // components: { Close },
   layout: 'content',
   head() {
