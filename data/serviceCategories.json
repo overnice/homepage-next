@@ -7,23 +7,13 @@
     "casePreviews": [
       {
         "slug": "brand_ipsum1",
-        "visual": "",
+        "visual": "/cases/branding_nimiq/preview.jpg",
         "copy": "A radical, inclusive and concept-driven approach to branding one of the most thrilling technologies in existence: <strong>Nimiq</strong>, a browser-based cryptocurrency."
       },
       {
-        "slug": "brand_lorem1",
-        "visual": "",
-        "copy": "Automation killing jobs is a scary topic; ironically, an AI-based service overnice branded and dubbed <strong>Peers</strong> could be the solution. The branding required tact."
-      },
-      {
         "slug": "brand_1",
-        "visual": "",
+        "visual": "/cases/branding_archilyse/preview.jpg",
         "copy": "A dual brand strategy that leverages interaction and synergy to create more than the sum of its parts for <strong>Archilyse</strong>, architecture analysis by machine learning."
-      },
-      {
-        "slug": "brand_2",
-        "visual": "",
-        "copy": "<strong>Prisma</strong> simplifies database management and as a typical start-up, everything changes all the time. How branding can evolve without losing identity."
       }
     ]
   },
@@ -34,24 +24,12 @@
     "smallCopy": "Web- and mobile apps, platforms, websites.",
     "casePreviews": [
       {
-        "visual": "",
-        "copy": "Breaking barriers, translating complicated stuff and stripping away technicalities until it’s easier to create a <strong>Nimiq</strong> account on the blockchain than creating an email address."
-      },
-      {
-        "visual": "",
-        "copy": "Losing your internet connection is bad, providing costly support call centers is too. overnice helped <strong>Vodafone</strong>, and it’s customers with a smart and individualized self-service solution."
-      },
-      {
-        "visual": "",
+        "visual": "/cases/product_talentwunder/preview.jpg",
         "copy": "<strong>Talentwunder</strong> finds talent. overnice helped with the search. Aggregating a tiring and incomprehensible list of input fields into a single, smart search field."
       },
       {
-        "visual": "",
-        "copy": "<strong>Kocks</strong> is a classic, family-owned German engineering company. Their AAA steel products now come with an AAA web-presence – custom CMS included."
-      },
-      {
-        "visual": "",
-        "copy": "The Berlin-based coffee chain <strong>Einstein</strong> prides itself with its roastery and high-quality coffees. The new website mirrors their passion and finds the coffee that suits you best. "
+        "visual": "/cases/product_nimiq/hero.jpg",
+        "copy": "Breaking barriers, translating complicated stuff and stripping away technicalities until it’s easier to create a <strong>Nimiq</strong> account on the blockchain than creating an email address."
       }
     ]
   },
@@ -63,23 +41,13 @@
     "casePreviews": [
       {
         "slug": "test",
-        "visual": "",
+        "visual": "/cases/creative_solidified/preview.png",
         "copy": "Securing Ethereum Smart Contracts is as crucial as it is complicated. overnice developed a set of items from company videos to infographics for <strong>Solidified</strong>."
       },
       {
-        "slug": "test_2",
-        "visual": "",
-        "copy": "How fast can I kick a ball? How good is the new <strong>Nike</strong> Superfly XY really? overnice created an in-store experience that answers both questions while creating some nice content for your Instagram."
-      },
-      {
-        "slug": "lorem",
-        "visual": "",
+        "slug": "test2",
+        "visual": "/cases/creative_nimiq/preview.jpg",
         "copy": "How to promote <strong>Nimiq</strong> at a no logo/no sponsor conference? With a huge floating banner, weatherproof marketeers and a designated onboarding app obviously."
-      },
-      {
-        "slug": "ipsum",
-        "visual": "",
-        "copy": "Scammers riddle the blockchain space. Besides individuals, it’s companies that exploit the young technology. overnice exposed a particularly bad one and created awareness for <strong>Alethena</strong>."
       }
     ]
   }

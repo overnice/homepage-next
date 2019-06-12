@@ -58,21 +58,21 @@ function isMobile() {
 }
 
 // Recalculate custom CSS property for 100vh on mobile
-function onResize() {
-  window.addEventListener('resize', () => {
-    const vh = window.innerHeight * 0.01
-    document.documentElement.style.setProperty('--vh', `${vh}px`)
-  })
-}
+// function onResize() {
+//   window.addEventListener('resize', () => {
+//     const vh = window.innerHeight * 0.01
+//     document.documentElement.style.setProperty('--vh', `${vh}px`)
+//   })
+// }
 
 if (process.browser) {
-  /* global window, TweenMax, Expo, ScrollMagic, controller */
+  /* global window, TweenMax, Expo, Circ, ScrollMagic, controller */
 
   if (isMobile()) {
     // Set custom CSS property for 100vh on mobile
     const vh = window.innerHeight * 0.01
     document.documentElement.style.setProperty('--vh', `${vh}px`)
-    window.requestAnimationFrame(onResize)
+    // window.requestAnimationFrame(onResize)
   }
 
   window.onNuxtReady(() => {
@@ -103,11 +103,22 @@ if (process.browser) {
         .addTo(controller)
     }
 
+    // Darken Video
+    const darkenVideo = TweenMax.from('#intro-video--video', 1, {
+      opacity: '1',
+      ease: Circ.easeOut
+    })
+    new ScrollMagic.Scene({ triggerElement: '#content', duration: 200, offset: 300 })
+      .setTween(darkenVideo)
+      // .addIndicators({ name: 'Darken Video' })
+      .addTo(controller)
+
     // Shrink Video
     const shrinkVideo = TweenMax.from('#intro-video--outer', 1, {
       paddingLeft: '0',
       paddingRight: '0',
       paddingBottom: '0',
+      opacity: 1,
       ease: Expo.easeOut
     })
     new ScrollMagic.Scene({ triggerElement: '#content', duration: 300, offset: 350 })

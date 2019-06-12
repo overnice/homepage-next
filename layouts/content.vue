@@ -27,6 +27,10 @@ export default {
   min-height: 100vh;
   box-sizing: border-box;
 
+  @media (max-width: $bp-desktop) {
+    padding-top: calc(var(--l-spacing) * 2.5);
+  }
+
   @media (max-width: $bp-tablet) {
     padding-top: calc(var(--l-spacing) * 3);
   }
@@ -45,18 +49,54 @@ export default {
       opacity: 1;
     }
 
-    header p {
+    // Make H3 following H1 Abstract, put space after
+
+    h1 + * {
+      margin-top: var(--xl-spacing) !important;
+    }
+
+    h1 + h3 {
       font-size: var(--p-font-size);
-      margin-top: 3rem;
+      font-weight: 400;
+      margin-top: 3rem !important;
+      text-transform: none;
+      letter-spacing: 0;
+
+      & + * {
+        margin-top: var(--xl-spacing) !important;
+      }
+
+      & + figure:not(.left):not(.right)  {
+        margin-top: var(--xl-spacing);
+        margin-bottom: var(--xl-spacing);
+      }
     }
 
-    header + figure.full {
-      margin-bottom: var(--xl-spacing);
-    }
-
-    p {
+    p, ul {
       font-size: var(--small-font-size);
       margin-top: 3rem;
+      max-width: 100%;
+      overflow: hidden;
+    }
+
+    ul {
+      padding-left: 4rem;
+
+      li {
+        position: relative;
+        list-style-type: none;
+
+        &:before {
+          content: "-";
+          position: absolute;
+          left: -2.5rem;
+          top: 0;
+        }
+
+        & + li {
+          margin-top: 2rem;
+        }
+      }
     }
 
     h2 {
@@ -66,7 +106,7 @@ export default {
     }
 
     h3 {
-      font-size: 28px;
+      font-size: var(--small-font-size);
       font-weight: 600;
       margin-top: 5rem;
       text-transform: uppercase;

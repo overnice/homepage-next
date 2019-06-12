@@ -3,7 +3,7 @@
     :to="localePath({name: 'case-slug', params: {slug: param} })"
     class="case"
   >
-    <div class="visual" />
+    <div class="visual" :style="{ backgroundImage: `url(${visual})` }" />
     <p v-html="copy" />
   </nuxt-link>
 </template>
@@ -12,6 +12,7 @@
 export default {
   props: {
     copy: String,
+    visual: String,
     param: String
   },
   computed: {
@@ -31,11 +32,12 @@ export default {
 .case {
   color: inherit;
   text-decoration: none;
-  margin-top: var(--m-spacing);
+  margin-top: 0;
   display: flex;
   align-items: center;
   transition: transform .6s cubic-bezier(0.25, 0, 0, 1), color .2s ease;
   cursor: pointer;
+  padding-top: var(--m-spacing);
 
   &:nth-child(even) {
     flex-direction: row-reverse;
@@ -60,7 +62,7 @@ export default {
     color: var(--red);
 
     .visual {
-      background: var(--red);
+      // background: var(--red);
       transform: scale3D(1.1,1.1,1.1);
       opacity: 1;
     }
@@ -122,6 +124,8 @@ p {
   max-width: 350px;
   flex: 0 0 auto;
   margin-left: calc(var(--l-spacing) * -1);
+  background-size: cover;
+  background-position: 50%;
   transition: background .2s ease, transform .6s cubic-bezier(0.25, 0, 0, 1);
 }
 </style>

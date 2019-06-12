@@ -1,13 +1,11 @@
 <template>
   <div :key="$route.params.slug">
-    <header>
-      <h1>{{ $route.params.slug }}</h1>
-      <p>
-        In 2017, we took off to Costa Rica to join a technological jungle adventure with Nimiq.
-      </p>
-    </header>
-    <figure class="full">
-      <img src="data:image/gif;base64,R0lGODlhAQABAIAAAMLCwgAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==">
+    <h1>{{ $route.params.slug }}</h1>
+    <h3>
+      In 2017, we took off to Costa Rica to join a technological jungle adventure with Nimiq.
+    </h3>
+    <figure>
+      <img src="/cases/branding_archilyse/logo.svg">
     </figure>
     <p>
       Nimiq is an Inuit word for an object or force of connection and unification. Our client thought of Nimiq as a good name for an revolutionary idea: a entirely browser-based blockchain, written entirely in JavaScript.
@@ -20,7 +18,7 @@
       The holy grail of Blockchain mass adoption.
     </blockquote>
     <p>
-      Honoring the technological possibilities Nimiq works with, we developed an interface that needed to be, as one of the founders described it, ‘so easy, your grandma could use it’.
+      <a href="">Honoring the technological</a> possibilities Nimiq works with, we developed an interface that needed to be, as one of the founders described it, ‘so easy, your grandma could use it’.
     </p>
     <figure class="left">
       <img src="data:image/gif;base64,R0lGODlhAQABAIAAAMLCwgAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==">
@@ -41,7 +39,7 @@
     <p>
       Our activities included building the website, defining wording and tonality, steering community and social media efforts, PR outreach, and ICO specific communication measures, such as Bitcointalk.org announcements.
     </p>
-    <figure class="full">
+    <figure>
       <img src="https://s3.eu-central-1.amazonaws.com/on-website-assets/nimiq/wallet.jpg">
       <figcaption>This is a caption</figcaption>
     </figure>

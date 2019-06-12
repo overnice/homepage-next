@@ -57,6 +57,37 @@ export default {
     .logo-vertical {
       color: white;
     }
+
+    p {
+      a {
+        text-shadow:
+          -0.125rem -0.125rem 0 var(--darkgray),
+          0.125rem -0.125rem 0 var(--darkgray),
+          -0.125rem 0.125rem 0 var(--darkgray),
+          0.125rem 0.125rem 0 var(--darkgray),
+          -0.25rem -0.25rem 0 var(--darkgray),
+          0.25rem -0.25rem 0 var(--darkgray),
+          -0.25rem 0.25rem 0 var(--darkgray),
+          0.25rem 0.25rem 0 var(--darkgray),
+          -0.375rem -0.375rem 0 var(--darkgray),
+          0.375rem -0.375rem 0 var(--darkgray),
+          -0.375rem 0.375rem 0 var(--darkgray),
+          0.375rem 0.375rem 0 var(--darkgray);
+        transition: color .3s cubic-bezier(.25,0,0,1), transform .3s cubic-bezier(.25,0,0,1);
+
+        &:before {
+          background: rgba(#ff795f, .7);
+        }
+
+        &:hover {
+          color: white;
+
+          &:before {
+            background: rgba(255,255,255,.5);
+          }
+        }
+      }
+    }
   }
 
   @media (max-width: $bp-mobile) {
