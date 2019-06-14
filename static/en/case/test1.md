@@ -1,5 +1,5 @@
 ---
-subject: Hello
+name: Hello
 tags:
   - tag1
   - tag2

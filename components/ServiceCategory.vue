@@ -33,17 +33,19 @@ export default {
     smallCopy: String,
     casePreviews: Array
   },
-  async asyncData({ params, app }) {
-    const fileContent = await import(`~/static/${app.i18n.locale}/caseMarkdownFiles/${params.slug}.md`)
-    const attr = fileContent.attributes
-    return {
-      id: attr.id,
-      name: params.slug,
-      related: attr.related,
-      renderFunc: fileContent.vue.render,
-      staticRenderFuncs: fileContent.vue.staticRenderFns,
-      title: attr.title,
-      urlTranslation: attr.urlTranslation
+  methods: {
+    async asyncData({ params, app }) {
+      const fileContent = await import(`~/static/${app.i18n.locale}/caseMarkdownFiles/${params.slug}.md`)
+      const attr = fileContent.attributes
+      return {
+        id: attr.id,
+        name: params.slug,
+        related: attr.related,
+        renderFunc: fileContent.vue.render,
+        staticRenderFuncs: fileContent.vue.staticRenderFns,
+        title: attr.title,
+        urlTranslation: attr.urlTranslation
+      }
     }
   }
 }

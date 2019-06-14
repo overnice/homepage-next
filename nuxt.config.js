@@ -4,47 +4,6 @@ const dir = require('node-dir')
 const routesArray = []
 const fs = require('fs')
 const _ = require('lodash')
-const md = require('markdown-it')
-
-
-var files = fs.readdirSync('./static/caseMarkdownFiles');
-function createRoutesArray() {
-  files.forEach(function (file) {
-      var name = file.substr(0, file.lastIndexOf('.'));
-      var route = '/post/' + name
-      routesArray.push(route)
-  });
-}
-
-function returnRoutes() {
-  dir.readFiles('./static/dynamicMarkdownFiles', {
-        match: /.md$/,
-        shortName: true,
-        exclude: /^\./
-        }, function(err, content, next) {
-            if (err) throw err;
-            // console.log('content:', content);
-            next();
-        },
-        function(err, files){
-            if (err) throw err;
-            // fileNamesArray = [];
-            files.forEach(function (file) {
-                var name = file.substr(0, file.lastIndexOf('.'));
-                var path = '/post/' + name
-                return path
-            });
-        });
-}
-// const fs = require('fs')
-// const axios = require('axios')
-// // const _ = require('lodash')
-
-//
-function getSlugs(post, index) {
-  let slug = post.substr(0, post.lastIndexOf('.'));
-  return `/post/${slug}`
-}
 
 export default {
   mode: 'universal',
@@ -128,9 +87,14 @@ export default {
       }
       config.module.rules.push({
         test: /\.md$/,
-        use: ['raw-loader'],
-      
-      })
+        loader: 'frontmatter-markdown-loader',
+        options: {
+          markdown: (body) => {
+            var md = require('markdown-it')();
+            return md.render(body)
+          }
+        }
+      });
     }
   }
 }
