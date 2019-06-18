@@ -30,12 +30,20 @@ export default {
   head() {
     return {
       script: [
-        { src: './scripts/TweenMax.min.js' },
-        { src: './scripts/ScrollMagic.js' },
-        { src: './scripts/animation.gsap.js' },
-        { src: './scripts/debug.addIndicators.js' },
+        { src: this.currentScript + '/scripts/TweenMax.min.js' },
+        { src: this.currentScript + '/scripts/ScrollMagic.js' },
+        { src: this.currentScript + '/scripts/debug.addIndicators.js' },
+        { src: this.currentScript + '/scripts/animation.gsap.js' },
+
         { innerHTML: 'const controller = new ScrollMagic.Controller();' }
       ]
+    }
+  },
+  computed: {
+    currentScript() {
+      if (this.$i18n.locale === 'de') { return '../.' } else {
+        return '.'
+      }
     }
   }
 }

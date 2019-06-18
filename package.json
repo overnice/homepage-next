@@ -20,7 +20,8 @@
     "node-dir": "^0.1.17",
     "nuxt": "^2.4.0",
     "nuxt-i18n": "^5.12.4",
-    "require-dir": "^1.2.0"
+    "require-dir": "^1.2.0",
+    "scrollmagic": "^2.0.7"
   },
   "devDependencies": {
     "@nuxtjs/eslint-config": "^0.0.1",
