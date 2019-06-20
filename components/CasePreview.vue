@@ -30,6 +30,7 @@ export default {
 @import 'css/variables';
 
 .case {
+  position: relative;
   color: inherit;
   text-decoration: none;
   margin-top: 0;
@@ -56,8 +57,10 @@ export default {
     cursor: default;
   }
 
+  // Hover & Active Styles
   &:not(.no-interaction):hover,
-  &:not(.no-interaction):active {
+  &:not(.no-interaction):active,
+  &:not(.no-interaction):focus {
     transform: scale3D(1.05, 1.05, 1.05);
     color: var(--red);
 

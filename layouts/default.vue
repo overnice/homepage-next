@@ -87,7 +87,9 @@ export default {
           background: rgba(#ff795f, .7);
         }
 
-        &:hover {
+        &:hover,
+        &:active,
+        &:focus {
           color: white;
 
           &:before {

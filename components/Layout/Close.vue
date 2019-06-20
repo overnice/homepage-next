@@ -49,7 +49,9 @@ export default {
     transform: translate3D(-50%, -50%, 0) rotate(45deg) translateZ(0);
   }
 
-  &:hover {
+  &:hover,
+  &:active,
+  &:focus {
     transition: opacity .2s ease, transform .2s ease;
     transform: rotate(90deg);
     opacity: 1;

@@ -132,7 +132,9 @@ p {
       transition: background .3s cubic-bezier(0.25, 0, 0, 1), transform .3s cubic-bezier(0.25, 0, 0, 1);
     }
 
-    &:hover {
+    &:hover,
+    &:active,
+    &:focus {
       color: var(--red);
       transform: translate3d(0,-2px,0);
 
@@ -142,6 +144,10 @@ p {
       }
     }
   }
+}
+
+a, .button {
+  outline: none;
 }
 
 p.small {

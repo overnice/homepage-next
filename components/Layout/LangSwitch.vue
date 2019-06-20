@@ -93,7 +93,9 @@ export default {
       fill: var(--flag-de-yellow);
     }
 
-    &:hover {
+    &:hover,
+    &:active,
+    &:focus {
       background: white;
       --flag-en-red: #cc0000;
       --flag-en-blue: #000066;
