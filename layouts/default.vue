@@ -1,11 +1,9 @@
 <template>
   <div class="container">
     <nuxt />
-    <Controls show-nav show-lang-switch />
   </div>
 </template>
 <script>
-import Controls from '~/components/Layout/Controls.vue'
 
 if (process.browser) {
   /* global window, ScrollMagic, controller */
@@ -26,7 +24,6 @@ if (process.browser) {
 }
 
 export default {
-  components: { Controls },
   head() {
     return {
       script: [
@@ -73,14 +70,28 @@ export default {
           0.125rem -0.125rem 0 var(--darkgray),
           -0.125rem 0.125rem 0 var(--darkgray),
           0.125rem 0.125rem 0 var(--darkgray),
+          0.125rem 0 0 var(--darkgray),
+          -0.125rem 0 0 var(--darkgray),
+          0 0.125rem 0 var(--darkgray),
+          0 -0.125rem 0 var(--darkgray),
+
           -0.25rem -0.25rem 0 var(--darkgray),
           0.25rem -0.25rem 0 var(--darkgray),
           -0.25rem 0.25rem 0 var(--darkgray),
           0.25rem 0.25rem 0 var(--darkgray),
+          0.25rem 0 0 var(--darkgray),
+          -0.25rem 0 0 var(--darkgray),
+          0 0.25rem 0 var(--darkgray),
+          0 -0.25rem 0 var(--darkgray),
+
           -0.375rem -0.375rem 0 var(--darkgray),
           0.375rem -0.375rem 0 var(--darkgray),
           -0.375rem 0.375rem 0 var(--darkgray),
-          0.375rem 0.375rem 0 var(--darkgray);
+          0.375rem 0.375rem 0 var(--darkgray),
+          0.375rem 0 0 var(--darkgray),
+          -0.375rem 0 0 var(--darkgray),
+          0 0.375rem 0 var(--darkgray),
+          0 -0.375rem 0 var(--darkgray);
         transition: color .3s cubic-bezier(.25,0,0,1), transform .3s cubic-bezier(.25,0,0,1);
 
         &:before {
