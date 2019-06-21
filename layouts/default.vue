@@ -1,7 +1,7 @@
 <template>
   <div class="container">
-    <nuxt />
-    <Controls show-nav show-lang-switch />
+    <nuxt/>
+    <Controls show-nav show-lang-switch/>
   </div>
 </template>
 <script>
@@ -30,11 +30,11 @@ export default {
   head() {
     return {
       script: [
-        { src: './scripts/TweenMax.min.js' },
-        { src: './scripts/ScrollMagic.js' },
-        { src: './scripts/animation.gsap.js' },
-        { src: './scripts/debug.addIndicators.js' },
-        { innerHTML: 'const controller = new ScrollMagic.Controller();' }
+        // { src: './scripts/TweenMax.min.js' },
+        // { src: './scripts/ScrollMagic.js' },
+        // { src: './scripts/animation.gsap.js' },
+        // { src: './scripts/debug.addIndicators.js' },
+        // { innerHTML: 'var controller = new ScrollMagic.Controller();' }
       ]
     }
   }
