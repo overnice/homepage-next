@@ -77,6 +77,7 @@ if (process.browser) {
     // window.requestAnimationFrame(onResize)
   }
 }
+
 export default {
   components: { IntroVideo, ServiceCategory, About, Controls },
 

@@ -30,40 +30,36 @@ function offset(el) {
   return rect.top + scrollTop
 }
 
-if (process.browser) {
-/* global ScrollMagic, controller */
-
-  const targets = [
-    'brands',
-    'products',
-    'creatives',
-    'about',
-    'contact'
-  ]
-
-  window.onNuxtReady(() => {
-    targets.forEach((target) => {
-      const targetNode = document.getElementById(target)
-      const targetLink = document.getElementById(`${target}-link`)
-
-      targetLink.addEventListener('click', () => {
-        window.scrollTo({
-          top: offset(targetNode),
-          left: 0,
-          behavior: 'smooth'
-        })
-      })
-
-      new ScrollMagic.Scene({ triggerElement: `#${target}`, duration: targetNode.getBoundingClientRect().height })
-        .setClassToggle(`#${target}-link`, 'active')
-        // .addIndicators({ name: target })
-        .addTo(controller)
-    })
-  })
-}
-
 export default {
+  mounted() {
+    this.$nextTick(this.handleNav)
+  },
+  methods: {
+    handleNav() {
+      const targets = [
+        'brands',
+        'products',
+        'creatives',
+        'about',
+        'contact'
+      ]
+      targets.forEach((target) => {
+        const targetNode = document.getElementById(target)
+        const targetLink = document.getElementById(`${target}-link`)
 
+        targetLink.addEventListener('click', () => {
+          window.scrollTo({
+            top: offset(targetNode),
+            left: 0,
+            behavior: 'smooth'
+          })
+        })
+        const sceneTargetHighlight = new this.$scrollmagic.Scene({ triggerElement: `#${target}`, duration: targetNode.getBoundingClientRect().height })
+          .setClassToggle(`#${target}-link`, 'active')
+        this.$ksvuescr.$emit('addScene', 'targetLink', sceneTargetHighlight)
+      })
+    }
+  }
 }
 </script>
 
