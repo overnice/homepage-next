@@ -6,10 +6,12 @@
     "smallCopy": "Brands just like friends, corporate design, messaging.",
     "casePreviews": [
       {
+        "slug": "brand_ipsum1",
         "visual": "/cases/branding_nimiq/preview.jpg",
         "copy": "A radical, inclusive and concept-driven approach to branding one of the most thrilling technologies in existence: <strong>Nimiq</strong>, a browser-based cryptocurrency."
       },
       {
+        "slug": "brand_1",
         "visual": "/cases/branding_archilyse/preview.jpg",
         "copy": "A dual brand strategy that leverages interaction and synergy to create more than the sum of its parts for <strong>Archilyse</strong>, architecture analysis by machine learning."
       }
@@ -22,10 +24,12 @@
     "smallCopy": "Web- and mobile apps, platforms, websites.",
     "casePreviews": [
       {
+        "slug": "Lorem1",
         "visual": "/cases/product_talentwunder/preview.jpg",
         "copy": "<strong>Talentwunder</strong> finds talent. overnice helped with the search. Aggregating a tiring and incomprehensible list of input fields into a single, smart search field."
       },
       {
+        "slug": "Lorem2",
         "visual": "/cases/product_nimiq/hero.jpg",
         "copy": "Breaking barriers, translating complicated stuff and stripping away technicalities until it’s easier to create a <strong>Nimiq</strong> account on the blockchain than creating an email address."
       }
@@ -38,10 +42,12 @@
     "smallCopy": "Persuasive marketing strategies, creative direction, crafty execution",
     "casePreviews": [
       {
+        "slug": "test1",
         "visual": "/cases/creative_solidified/preview.png",
         "copy": "Securing Ethereum Smart Contracts is as crucial as it is complicated. overnice developed a set of items from company videos to infographics for <strong>Solidified</strong>."
       },
       {
+        "slug": "test2",
         "visual": "/cases/creative_nimiq/preview.jpg",
         "copy": "How to promote <strong>Nimiq</strong> at a no logo/no sponsor conference? With a huge floating banner, weatherproof marketeers and a designated onboarding app obviously."
       }

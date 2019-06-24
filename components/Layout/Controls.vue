@@ -43,6 +43,18 @@ export default {
   //   display: none;
   // }
 
+  &.on-image {
+    & /deep/ .nav {
+      button {
+        opacity: .45;
+
+        &.active {
+          opacity: 1;
+        }
+      }
+    }
+  }
+
   @media (max-width: $bp-controls-layout) {
     position: fixed;
     top: 0;

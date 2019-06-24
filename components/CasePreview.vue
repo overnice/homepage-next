@@ -1,5 +1,8 @@
 <template>
-  <nuxt-link to="/case" class="case">
+  <nuxt-link
+    :to="localePath({name: 'case-slug', params: {slug: param} })"
+    class="case"
+  >
     <div class="visual" :style="{ backgroundImage: `url(${visual})` }" />
     <p v-html="copy" />
   </nuxt-link>
@@ -8,8 +11,17 @@
 <script>
 export default {
   props: {
+    copy: String,
     visual: String,
-    copy: String
+    param: String
+  },
+  computed: {
+    path() {
+      return this.localePath('case/' + this.param)
+    },
+    url() {
+      return "'case/" + this.param + "'"
+    }
   }
 }
 </script>
@@ -18,6 +30,7 @@ export default {
 @import 'css/variables';
 
 .case {
+  position: relative;
   color: inherit;
   text-decoration: none;
   margin-top: 0;
@@ -44,8 +57,10 @@ export default {
     cursor: default;
   }
 
+  // Hover & Active Styles
   &:not(.no-interaction):hover,
-  &:not(.no-interaction):active {
+  &:not(.no-interaction):active,
+  &:not(.no-interaction):focus {
     transform: scale3D(1.05, 1.05, 1.05);
     color: var(--red);
 

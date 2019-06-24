@@ -1,4 +1,9 @@
 import pkg from './package'
+const { join } = require('path')
+const dir = require('node-dir')
+const routesArray = []
+const fs = require('fs')
+const _ = require('lodash')
 
 export default {
   mode: 'universal',
@@ -39,7 +44,18 @@ export default {
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
-    '@nuxtjs/pwa'
+    '@nuxtjs/pwa',
+    ['nuxt-i18n', {
+      locales: ['en', 'de'],
+      defaultLocale: 'en',
+      vueI18n: {
+        fallbackLocale: 'en',
+        messages: {
+          en: require('./lang/en-US.json'),
+          de: require('./lang/de-DE.json')
+        }
+      }
+    }]
   ],
   /*
    ** Axios module configuration
@@ -62,9 +78,23 @@ export default {
           enforce: 'pre',
           test: /\.(js|vue)$/,
           loader: 'eslint-loader',
-          exclude: /(node_modules)/
+          exclude: /(node_modules)/,
+          options : {
+            fix : true,
+            vue:true
+        }
         })
       }
+      config.module.rules.push({
+        test: /\.md$/,
+        loader: 'frontmatter-markdown-loader',
+        options: {
+          markdown: (body) => {
+            var md = require('markdown-it')();
+            return md.render(body)
+          }
+        }
+      });
     }
   }
 }

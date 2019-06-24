@@ -1,11 +1,9 @@
 <template>
   <div class="container">
     <nuxt />
-    <Controls show-nav show-lang-switch />
   </div>
 </template>
 <script>
-import Controls from '~/components/Layout/Controls.vue'
 
 if (process.browser) {
   /* global window, ScrollMagic, controller */
@@ -26,16 +24,23 @@ if (process.browser) {
 }
 
 export default {
-  components: { Controls },
   head() {
     return {
       script: [
-        { src: './scripts/TweenMax.min.js' },
-        { src: './scripts/ScrollMagic.js' },
-        { src: './scripts/animation.gsap.js' },
-        { src: './scripts/debug.addIndicators.js' },
+        { src: this.currentScript + '/scripts/TweenMax.min.js' },
+        { src: this.currentScript + '/scripts/ScrollMagic.js' },
+        { src: this.currentScript + '/scripts/debug.addIndicators.js' },
+        { src: this.currentScript + '/scripts/animation.gsap.js' },
+
         { innerHTML: 'const controller = new ScrollMagic.Controller();' }
       ]
+    }
+  },
+  computed: {
+    currentScript() {
+      if (this.$i18n.locale === 'de') { return '../.' } else {
+        return '.'
+      }
     }
   }
 }
@@ -65,21 +70,37 @@ export default {
           0.125rem -0.125rem 0 var(--darkgray),
           -0.125rem 0.125rem 0 var(--darkgray),
           0.125rem 0.125rem 0 var(--darkgray),
+          0.125rem 0 0 var(--darkgray),
+          -0.125rem 0 0 var(--darkgray),
+          0 0.125rem 0 var(--darkgray),
+          0 -0.125rem 0 var(--darkgray),
+
           -0.25rem -0.25rem 0 var(--darkgray),
           0.25rem -0.25rem 0 var(--darkgray),
           -0.25rem 0.25rem 0 var(--darkgray),
           0.25rem 0.25rem 0 var(--darkgray),
+          0.25rem 0 0 var(--darkgray),
+          -0.25rem 0 0 var(--darkgray),
+          0 0.25rem 0 var(--darkgray),
+          0 -0.25rem 0 var(--darkgray),
+
           -0.375rem -0.375rem 0 var(--darkgray),
           0.375rem -0.375rem 0 var(--darkgray),
           -0.375rem 0.375rem 0 var(--darkgray),
-          0.375rem 0.375rem 0 var(--darkgray);
+          0.375rem 0.375rem 0 var(--darkgray),
+          0.375rem 0 0 var(--darkgray),
+          -0.375rem 0 0 var(--darkgray),
+          0 0.375rem 0 var(--darkgray),
+          0 -0.375rem 0 var(--darkgray);
         transition: color .3s cubic-bezier(.25,0,0,1), transform .3s cubic-bezier(.25,0,0,1);
 
         &:before {
           background: rgba(#ff795f, .7);
         }
 
-        &:hover {
+        &:hover,
+        &:active,
+        &:focus {
           color: white;
 
           &:before {

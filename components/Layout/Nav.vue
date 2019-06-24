@@ -102,24 +102,18 @@ export default {
     font-family: inherit;
     opacity: .15;
     cursor: pointer;
-    // filter: blur(4px);
     transition: opacity .4s ease;
 
     &.active {
       opacity: .4;
-      // filter: blur(0);
     }
 
-    &:hover {
-      opacity: 1;
+    &:hover,
+    &:active,
+    &:focus {
+      opacity: 1 !important;
     }
   }
-
-  // &:hover {
-  //   a {
-  //     filter: blur(0);
-  //   }
-  // }
 
   @media (max-width: $bp-controls-layout) {
     display: none;
