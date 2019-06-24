@@ -40,41 +40,40 @@
 </template>
 
 <script>
-// if (process.browser && window.innerWidth > 650) { // $bp-tablet
-
-//   window.onNuxtReady(() => {
-//     // Pin Visual
-//     new ScrollMagic.Scene({ triggerElement: '#about', duration: document.body.clientHeight, offset: window.innerHeight * 0.5 })
-//       .setPin('#about--visual', { pushFollowers: false })
-//       // .addIndicators({ name: 'Pin About Visual' })
-//       .addTo(controller)
-
-//     // Grow Visual
-//     const growVisual = TweenMax.to('#about--visual--outer', 1, {
-//       paddingLeft: '0px',
-//       paddingTop: '0px',
-//       paddingBottom: '0px',
-//       ease: Expo.easeIn
-//     })
-//     new ScrollMagic.Scene({ triggerElement: '#about', duration: 300, offset: window.innerHeight * 0.5 - 300 })
-//       .setTween(growVisual)
-//       // .addIndicators({ name: 'Grow Visual' })
-//       .addTo(controller)
-
-//     // Keep image steady
-//     const keepVisualSteady = TweenMax.from('#about--visual--image', 1, {
-//       marginLeft: '0px',
-//       ease: Expo.easeIn
-//     })
-//     new ScrollMagic.Scene({ triggerElement: '#about', duration: 300, offset: window.innerHeight * 0.5 - 300 })
-//       .setTween(keepVisualSteady)
-//       // .addIndicators({ name: 'Keep Visual Steady' })
-//       .addTo(controller)
-//   })
-// }
-
 export default {
+  mounted() {
+    this.$nextTick(this.handleAboutVisual)
+  },
+  methods: {
+    handleAboutVisual() {
+      if (window.innerWidth > 650) {
+        // Pin Visual
+        const scenePinVisual = new this.$scrollmagic.Scene({ triggerElement: '#about', duration: document.body.clientHeight, offset: window.innerHeight * 0.5 })
+          .setPin('#about--visual', { pushFollowers: false })
+        this.$ksvuescr.$emit('addScene', 'scenePinVisual', scenePinVisual)
 
+        // Grow Visual
+        const growVisual = this.$gsap.TweenMax.to('#about--visual--outer', 1, {
+          paddingLeft: '0px',
+          paddingTop: '0px',
+          paddingBottom: '0px',
+          ease: this.$gsap.Expo.easeIn
+        })
+        const sceneGrowVisual = new this.$scrollmagic.Scene({ triggerElement: '#about', duration: 300, offset: window.innerHeight * 0.5 - 300 })
+          .setTween(growVisual)
+        this.$ksvuescr.$emit('addScene', 'sceneGrowVisual', sceneGrowVisual)
+
+        // Keep image steady
+        const keepVisualSteady = this.$gsap.TweenMax.from('#about--visual--image', 1, {
+          marginLeft: '0px',
+          ease: this.$gsap.Expo.easeIn
+        })
+        const sceneKeepVisualSteady = new this.$scrollmagic.Scene({ triggerElement: '#about', duration: 300, offset: window.innerHeight * 0.5 - 300 })
+          .setTween(keepVisualSteady)
+        this.$ksvuescr.$emit('addScene', 'sceneKeepVisualSteady', sceneKeepVisualSteady)
+      }
+    }
+  }
 }
 </script>
 
