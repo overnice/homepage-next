@@ -60,7 +60,7 @@ if (process.browser && window.innerWidth > 650) { // $bp-tablet
       // .addIndicators({ name: 'Grow Visual' })
       .addTo(controller)
 
-    // Keep image steady
+    // Keep Image Steady
     const keepVisualSteady = TweenMax.from('#about--visual--image', 1, {
       marginLeft: '0px',
       ease: Expo.easeIn
@@ -68,6 +68,12 @@ if (process.browser && window.innerWidth > 650) { // $bp-tablet
     new ScrollMagic.Scene({ triggerElement: '#about', duration: 300, offset: window.innerHeight * 0.5 - 300 })
       .setTween(keepVisualSteady)
       // .addIndicators({ name: 'Keep Visual Steady' })
+      .addTo(controller)
+
+    // Change Opacity of Overlaying Nav
+    new ScrollMagic.Scene({ triggerElement: '#about', duration: document.body.clientHeight, offset: window.innerHeight * 0.5 })
+      .setClassToggle('#controls', 'on-image')
+      // .addIndicators({ name: 'Change Opacity of Overlaying Nav' })
       .addTo(controller)
   })
 }
@@ -179,7 +185,9 @@ export default {
         margin-top: -0.5rem;
       }
 
-      &:hover {
+      &:hover,
+      &:active,
+      &:focus {
         opacity: 1;
       }
     }
