@@ -71,6 +71,11 @@ export default {
         const sceneKeepVisualSteady = new this.$scrollmagic.Scene({ triggerElement: '#about', duration: 300, offset: window.innerHeight * 0.5 - 300 })
           .setTween(keepVisualSteady)
         this.$ksvuescr.$emit('addScene', 'sceneKeepVisualSteady', sceneKeepVisualSteady)
+
+        // Change Opacity of Overlaying Nav
+        const sceneChangeNavOpacity = new this.$scrollmagic.Scene({ triggerElement: '#about', duration: document.body.clientHeight, offset: window.innerHeight * 0.5 })
+          .setClassToggle('#controls', 'on-image')
+        this.$ksvuescr.$emit('addScene', 'sceneChangeNavOpacity', sceneChangeNavOpacity)
       }
     }
   }
