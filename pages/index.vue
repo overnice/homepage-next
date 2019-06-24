@@ -101,35 +101,47 @@ export default {
     pinContainerScene() {
       if (window.innerWidth > 450) {
         // Zoom Logo
-        const tl = new this.$gsap.TimelineMax()
-
-        const zoomLogo = tl.fromTo('#intro--inner', 1,
+        const zoomLogo = this.$gsap.TweenMax.fromTo('#intro--inner', 1,
           { transform: 'scale(1)' },
-          { transform: 'scale(50) translate3D(-2.8vw, 0, 0)', ease: this.$gsap.Linear.easeIn }
+          { transform: 'scale(50) translate3D(-2.8vw, 0, 0)', ease: this.$gsap.Expo.easeIn }
         )
-        const sceneLogo = new this.$scrollmagic.Scene({ triggerElement: '#content', duration: 300 })
+        const sceneZoomLogo = new this.$scrollmagic.Scene({ triggerElement: '#content', duration: 300 })
           .setTween(zoomLogo)
-        // .addIndicators({ name: 'Zoom Logo' })
-        // .addTo(controller)
-        this.$ksvuescr.$emit('addScene', 'sceneLogo', sceneLogo)
+        this.$ksvuescr.$emit('addScene', 'sceneLogo', sceneZoomLogo)
 
         // Pin Video
-        const pinVideo = new this.$scrollmagic.Scene({ triggerElement: '#content', duration: 450, offset: 0 })
+        const scenePinVideo = new this.$scrollmagic.Scene({ triggerElement: '#content', duration: 450, offset: 0 })
           .setPin('#intro-video', { pushFollowers: false })
-          // .addIndicators({ name: 'Pin Video' })
-          // .addTo(controller)
-
-        this.$ksvuescr.$emit('addScene', 'pinVideo', pinVideo)
+        this.$ksvuescr.$emit('addScene', 'pinVideo', scenePinVideo)
 
         // Move Intro Text
-        const moveIntroText = tl.to('#intro--text', 1, {
-          marginTop: '50vh', ease: this.$gsap.Linear.easeOut
+        const moveIntroText = this.$gsap.TweenMax.to('#intro--text', 1, {
+          marginTop: '50vh', ease: this.$gsap.Expo.easeOut
         })
-        const sceneMoveIntro = new this.$scrollmagic.Scene({ triggerElement: '#content', duration: 240, offset: 260 })
+        const sceneMoveIntroText = new this.$scrollmagic.Scene({ triggerElement: '#content', duration: 240, offset: 260 })
           .setTween(moveIntroText)
-          // .addIndicators({ name: 'Move Intro Text' })
-          // .addTo(controller)
-        this.$ksvuescr.$emit('addScene', 'moveIntroText', sceneMoveIntro)
+        this.$ksvuescr.$emit('addScene', 'moveIntroText', sceneMoveIntroText)
+
+        // Darken Video
+        const darkenVideo = this.$gsap.TweenMax.from('#intro-video--video', 1, {
+          opacity: '1',
+          ease: this.$gsap.Circ.easeOut
+        })
+        const sceneDarkenVideo = new this.$scrollmagic.Scene({ triggerElement: '#content', duration: 200, offset: 300 })
+          .setTween(darkenVideo)
+        this.$ksvuescr.$emit('addScene', 'darkenVideo', sceneDarkenVideo)
+
+        // Shrink Video
+        const shrinkVideo = this.$gsap.TweenMax.from('#intro-video--outer', 1, {
+          paddingLeft: '0',
+          paddingRight: '0',
+          paddingBottom: '0',
+          opacity: 1,
+          ease: this.$gsap.Expo.easeOut
+        })
+        const sceneShrinkVideo = new this.$scrollmagic.Scene({ triggerElement: '#content', duration: 300, offset: 350 })
+          .setTween(shrinkVideo)
+        this.$ksvuescr.$emit('addScene', 'shrinkVideo', sceneShrinkVideo)
       }
     }
   }
