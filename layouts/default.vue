@@ -5,41 +5,28 @@
 </template>
 <script>
 
-if (process.browser) {
-  /* global window, ScrollMagic, controller */
-
-  let hiddenDuration = window.innerHeight + 450
-
-  if (window.innerWidth < 450) {
-    hiddenDuration = window.innerHeight * 0.9
-  }
-
-  window.onNuxtReady(() => {
-    // Show Logo
-    new ScrollMagic.Scene({ triggerElement: '#content', duration: hiddenDuration })
-      .setClassToggle('#controls', 'invisible')
-      // .addIndicators({ name: 'Hide Controls' })
-      .addTo(controller)
-  })
-}
-
 export default {
-  head() {
-    return {
-      script: [
-        // { src: './scripts/TweenMax.min.js' },
-        // { src: './scripts/ScrollMagic.js' },
-        // { src: './scripts/animation.gsap.js' },
-        // { src: './scripts/debug.addIndicators.js' },
-        // { innerHTML: 'var controller = new ScrollMagic.Controller();' }
-      ]
-    }
-  },
   computed: {
     currentScript() {
       if (this.$i18n.locale === 'de') { return '../.' } else {
         return '.'
       }
+    }
+  },
+  mounted() {
+    this.$nextTick(this.toggleNav)
+  },
+  methods: {
+    toggleNav() {
+      let hiddenDuration = window.innerHeight + 450
+
+      if (window.innerWidth < 450) {
+        hiddenDuration = window.innerHeight * 0.9
+      }
+
+      const sceneHideNav = new this.$scrollmagic.Scene({ triggerElement: '#content', duration: hiddenDuration })
+        .setClassToggle('#controls', 'invisible')
+      this.$ksvuescr.$emit('addScene', 'hideNav', sceneHideNav)
     }
   }
 }
