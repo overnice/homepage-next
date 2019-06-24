@@ -51,35 +51,46 @@ export default {
 
     // Make H3 following H1 Abstract, put space after
 
-    h1 + * {
-      margin-top: var(--xl-spacing) !important;
-    }
-
-    h1 + h3 {
-      font-size: var(--p-font-size);
-      font-weight: 400;
-      margin-top: 3rem !important;
-      text-transform: none;
-      letter-spacing: 0;
-
-      & + * {
-        margin-top: var(--xl-spacing) !important;
+    header {
+      p {
+        font-size: var(--p-font-size);
+        margin-top: 3rem;
       }
 
-      & + figure:not(.left):not(.right)  {
-        margin-top: var(--xl-spacing);
+      + figure:not(.left):not(.right)  {
         margin-bottom: var(--xl-spacing);
       }
     }
 
-    p, ul {
+    // h1 + * {
+    //   margin-top: var(--xl-spacing) !important;
+    // }
+
+    // h1 + h3 {
+      // font-size: var(--p-font-size);
+      // font-weight: 400;
+      // margin-top: 3rem !important;
+      // text-transform: none;
+      // letter-spacing: 0;
+
+      // & + * {
+      //   margin-top: var(--xl-spacing) !important;
+      // }
+
+    //   & + figure:not(.left):not(.right)  {
+    //     margin-top: var(--xl-spacing);
+    //     margin-bottom: var(--xl-spacing);
+    //   }
+    // }
+
+    p, ul, ol {
       font-size: var(--small-font-size);
       margin-top: 3rem;
       max-width: 100%;
       overflow: hidden;
     }
 
-    ul {
+    ul, ol {
       padding-left: 4rem;
 
       li {
@@ -87,14 +98,31 @@ export default {
         list-style-type: none;
 
         &:before {
-          content: "-";
+          content: "•";
           position: absolute;
-          left: -2.5rem;
-          top: 0;
+          left: -4rem;
+          width: 2.5rem;
+          top: 0.125rem;
+          text-align: right;
+          font-weight: bold;
+          color: var(--red);
         }
 
         & + li {
           margin-top: 2rem;
+        }
+      }
+    }
+
+    ol {
+      counter-reset: ordered-list;
+
+      li {
+        &:before {
+          counter-increment: ordered-list;
+          content: counter(ordered-list) ")";
+          font-size: 70%;
+          top: 1rem;
         }
       }
     }
@@ -121,6 +149,17 @@ export default {
       font-size: var(--p-font-size);
       color: var(--red);
       margin: 5rem;
+
+      p {
+        font-size: var(--p-font-size);
+        margin: 0;
+      }
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      border-radius: 1px;
     }
 
     figure {
@@ -159,12 +198,6 @@ export default {
         &.left, &.right {
           width: 50%;
         }
-      }
-
-      img {
-        display: block;
-        width: 100%;
-        border-radius: 1px;
       }
 
       figcaption {

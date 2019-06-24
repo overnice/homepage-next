@@ -1,5 +1,19 @@
 <template>
-  <div :key="$route.params.slug" v-html="body" />
+  <div>
+    <header>
+      <h1>{{ title }}</h1>
+      <p class="tags">
+        <span
+          v-for="tag in tags"
+          :key="tag"
+        >
+          {{ tag }}
+        </span>
+      </p>
+      <p v-html="abstract" />
+    </header>
+    <div :key="$route.params.slug" v-html="body" />
+  </div>
 </template>
 
 <script>
@@ -32,10 +46,11 @@ export default {
     console.log(fileContent)
     return {
       slug: params.slug,
-      name: attr.name,
-      related: attr.related,
+      // related: attr.related,
       body: fileContent.html,
       title: attr.title,
+      abstract: attr.abstract,
+      tags: attr.tags,
       urlTranslation: attr.urlTranslation
     }
   }
@@ -44,5 +59,12 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.tags {
+  font-size: var(--small-font-size) !important;
+  opacity: .5;
 
+  span + span:before {
+    content: "•"
+  }
+}
 </style>
