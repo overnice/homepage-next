@@ -5,7 +5,7 @@
         <div id="about--visual--inner" class="about--visual--inner">
           <!-- <video playsinline autoplay muted loop>
             <source src="~/assets/videos/background.webm" type="video/webm">
-          </video> -->
+          </video>-->
           <img id="about--visual--image" src="~/assets/images/office.jpg" role="presentation">
         </div>
       </div>
@@ -24,8 +24,10 @@
       <div id="contact" class="contact">
         <h2>Let's talk business</h2>
         <p>
-          Shoot us an <a href="mailto:hello@overnice.com">email</a>
-          or visit us in <a href="https://goo.gl/maps/kJ45arnjaPRWryRL6" target="blank">Kreuzberg</a>
+          Shoot us an
+          <a href="mailto:hello@overnice.com">email</a>
+          or visit us in
+          <a href="https://goo.gl/maps/kJ45arnjaPRWryRL6" target="blank">Kreuzberg</a>
         </p>
         <p class="footnotes">
           <a href="/imprint">Imprint</a>
@@ -38,45 +40,38 @@
 </template>
 
 <script>
-if (process.browser && window.innerWidth > 650) { // $bp-tablet
-  /* global window, document, ScrollMagic, TweenMax, Expo, controller */
+// if (process.browser && window.innerWidth > 650) { // $bp-tablet
 
-  window.onNuxtReady(() => {
-    // Pin Visual
-    new ScrollMagic.Scene({ triggerElement: '#about', duration: document.body.clientHeight, offset: window.innerHeight * 0.5 })
-      .setPin('#about--visual', { pushFollowers: false })
-      // .addIndicators({ name: 'Pin About Visual' })
-      .addTo(controller)
+//   window.onNuxtReady(() => {
+//     // Pin Visual
+//     new ScrollMagic.Scene({ triggerElement: '#about', duration: document.body.clientHeight, offset: window.innerHeight * 0.5 })
+//       .setPin('#about--visual', { pushFollowers: false })
+//       // .addIndicators({ name: 'Pin About Visual' })
+//       .addTo(controller)
 
-    // Grow Visual
-    const growVisual = TweenMax.to('#about--visual--outer', 1, {
-      paddingLeft: '0px',
-      paddingTop: '0px',
-      paddingBottom: '0px',
-      ease: Expo.easeIn
-    })
-    new ScrollMagic.Scene({ triggerElement: '#about', duration: 300, offset: window.innerHeight * 0.5 - 300 })
-      .setTween(growVisual)
-      // .addIndicators({ name: 'Grow Visual' })
-      .addTo(controller)
+//     // Grow Visual
+//     const growVisual = TweenMax.to('#about--visual--outer', 1, {
+//       paddingLeft: '0px',
+//       paddingTop: '0px',
+//       paddingBottom: '0px',
+//       ease: Expo.easeIn
+//     })
+//     new ScrollMagic.Scene({ triggerElement: '#about', duration: 300, offset: window.innerHeight * 0.5 - 300 })
+//       .setTween(growVisual)
+//       // .addIndicators({ name: 'Grow Visual' })
+//       .addTo(controller)
 
-    // Keep Image Steady
-    const keepVisualSteady = TweenMax.from('#about--visual--image', 1, {
-      marginLeft: '0px',
-      ease: Expo.easeIn
-    })
-    new ScrollMagic.Scene({ triggerElement: '#about', duration: 300, offset: window.innerHeight * 0.5 - 300 })
-      .setTween(keepVisualSteady)
-      // .addIndicators({ name: 'Keep Visual Steady' })
-      .addTo(controller)
-
-    // Change Opacity of Overlaying Nav
-    new ScrollMagic.Scene({ triggerElement: '#about', duration: document.body.clientHeight, offset: window.innerHeight * 0.5 })
-      .setClassToggle('#controls', 'on-image')
-      // .addIndicators({ name: 'Change Opacity of Overlaying Nav' })
-      .addTo(controller)
-  })
-}
+//     // Keep image steady
+//     const keepVisualSteady = TweenMax.from('#about--visual--image', 1, {
+//       marginLeft: '0px',
+//       ease: Expo.easeIn
+//     })
+//     new ScrollMagic.Scene({ triggerElement: '#about', duration: 300, offset: window.innerHeight * 0.5 - 300 })
+//       .setTween(keepVisualSteady)
+//       // .addIndicators({ name: 'Keep Visual Steady' })
+//       .addTo(controller)
+//   })
+// }
 
 export default {
 

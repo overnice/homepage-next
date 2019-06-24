@@ -44,7 +44,7 @@ import Controls from '~/components/Layout/Controls.vue'
 
 import serviceCategoriesData from '~/data/serviceCategories.json'
 
-// detect mobile device
+// // detect mobile device
 function isMobile() {
   if (
     navigator.userAgent.match(/Android/i) ||
@@ -61,83 +61,79 @@ function isMobile() {
   }
 }
 
-// Recalculate custom CSS property for 100vh on mobile
-// function onResize() {
-//   window.addEventListener('resize', () => {
-//     const vh = window.innerHeight * 0.01
-//     document.documentElement.style.setProperty('--vh', `${vh}px`)
-//   })
-// }
+// // Recalculate custom CSS property for 100vh on mobile
+// // function onResize() {
+// //   window.addEventListener('resize', () => {
+// //     const vh = window.innerHeight * 0.01
+// //     document.documentElement.style.setProperty('--vh', `${vh}px`)
+// //   })
+// // }
 
 if (process.browser) {
-  /* global window, TweenMax, Expo, Circ, ScrollMagic, controller */
-
   if (isMobile()) {
     // Set custom CSS property for 100vh on mobile
     const vh = window.innerHeight * 0.01
     document.documentElement.style.setProperty('--vh', `${vh}px`)
     // window.requestAnimationFrame(onResize)
   }
-
-  window.onNuxtReady(() => {
-    if (window.innerWidth > 450) {
-      // Zoom Logo
-      const zoomLogo = TweenMax.fromTo('#intro--inner', 1,
-        { transform: 'scale(1)' },
-        { transform: 'scale(50) translate3D(-2.8vw, 0, 0)', ease: Expo.easeIn }
-      )
-      new ScrollMagic.Scene({ triggerElement: '#content', duration: 300 })
-        .setTween(zoomLogo)
-        // .addIndicators({ name: 'Zoom Logo' })
-        .addTo(controller)
-
-      // Pin Video
-      new ScrollMagic.Scene({ triggerElement: '#content', duration: 450, offset: 0 })
-        .setPin('#intro-video', { pushFollowers: false })
-        // .addIndicators({ name: 'Pin Video' })
-        .addTo(controller)
-
-      // Move Intro Text
-      const moveIntroText = TweenMax.to('#intro--text', 1, {
-        marginTop: '50vh', ease: Expo.easeOut
-      })
-      new ScrollMagic.Scene({ triggerElement: '#content', duration: 240, offset: 260 })
-        .setTween(moveIntroText)
-        // .addIndicators({ name: 'Move Intro Text' })
-        .addTo(controller)
-    }
-
-    // Darken Video
-    const darkenVideo = TweenMax.from('#intro-video--video', 1, {
-      opacity: '1',
-      ease: Circ.easeOut
-    })
-    new ScrollMagic.Scene({ triggerElement: '#content', duration: 200, offset: 300 })
-      .setTween(darkenVideo)
-      // .addIndicators({ name: 'Darken Video' })
-      .addTo(controller)
-
-    // Shrink Video
-    const shrinkVideo = TweenMax.from('#intro-video--outer', 1, {
-      paddingLeft: '0',
-      paddingRight: '0',
-      paddingBottom: '0',
-      opacity: 1,
-      ease: Expo.easeOut
-    })
-    new ScrollMagic.Scene({ triggerElement: '#content', duration: 300, offset: 350 })
-      .setTween(shrinkVideo)
-      // .addIndicators({ name: 'Shrink Video' })
-      .addTo(controller)
-  })
 }
-
 export default {
   components: { IntroVideo, ServiceCategory, About, Controls },
 
   data() {
     return {
       serviceCategories: serviceCategoriesData
+    }
+  },
+  mounted() {
+    this.$nextTick(this.pinContainerScene)
+  },
+  methods: {
+    pinContainerScene() {
+      if (window.innerWidth > 450) {
+        // Zoom Logo
+        const zoomLogo = this.$gsap.TweenMax.fromTo('#intro--inner', 1,
+          { transform: 'scale(1)' },
+          { transform: 'scale(50) translate3D(-2.8vw, 0, 0)', ease: this.$gsap.Expo.easeIn }
+        )
+        const sceneZoomLogo = new this.$scrollmagic.Scene({ triggerElement: '#content', duration: 300 })
+          .setTween(zoomLogo)
+        this.$ksvuescr.$emit('addScene', 'sceneLogo', sceneZoomLogo)
+
+        // Pin Video
+        const scenePinVideo = new this.$scrollmagic.Scene({ triggerElement: '#content', duration: 450, offset: 0 })
+          .setPin('#intro-video', { pushFollowers: false })
+        this.$ksvuescr.$emit('addScene', 'pinVideo', scenePinVideo)
+
+        // Move Intro Text
+        const moveIntroText = this.$gsap.TweenMax.to('#intro--text', 1, {
+          marginTop: '50vh', ease: this.$gsap.Expo.easeOut
+        })
+        const sceneMoveIntroText = new this.$scrollmagic.Scene({ triggerElement: '#content', duration: 240, offset: 260 })
+          .setTween(moveIntroText)
+        this.$ksvuescr.$emit('addScene', 'moveIntroText', sceneMoveIntroText)
+
+        // Darken Video
+        const darkenVideo = this.$gsap.TweenMax.from('#intro-video--video', 1, {
+          opacity: '1',
+          ease: this.$gsap.Circ.easeOut
+        })
+        const sceneDarkenVideo = new this.$scrollmagic.Scene({ triggerElement: '#content', duration: 200, offset: 300 })
+          .setTween(darkenVideo)
+        this.$ksvuescr.$emit('addScene', 'darkenVideo', sceneDarkenVideo)
+
+        // Shrink Video
+        const shrinkVideo = this.$gsap.TweenMax.from('#intro-video--outer', 1, {
+          paddingLeft: '0',
+          paddingRight: '0',
+          paddingBottom: '0',
+          opacity: 1,
+          ease: this.$gsap.Expo.easeOut
+        })
+        const sceneShrinkVideo = new this.$scrollmagic.Scene({ triggerElement: '#content', duration: 300, offset: 350 })
+          .setTween(shrinkVideo)
+        this.$ksvuescr.$emit('addScene', 'shrinkVideo', sceneShrinkVideo)
+      }
     }
   }
 }

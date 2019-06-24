@@ -27,12 +27,11 @@ export default {
   head() {
     return {
       script: [
-        { src: this.currentScript + '/scripts/TweenMax.min.js' },
-        { src: this.currentScript + '/scripts/ScrollMagic.js' },
-        { src: this.currentScript + '/scripts/debug.addIndicators.js' },
-        { src: this.currentScript + '/scripts/animation.gsap.js' },
-
-        { innerHTML: 'const controller = new ScrollMagic.Controller();' }
+        // { src: './scripts/TweenMax.min.js' },
+        // { src: './scripts/ScrollMagic.js' },
+        // { src: './scripts/animation.gsap.js' },
+        // { src: './scripts/debug.addIndicators.js' },
+        // { innerHTML: 'var controller = new ScrollMagic.Controller();' }
       ]
     }
   },

@@ -7,7 +7,7 @@ const _ = require('lodash')
 
 export default {
   mode: 'universal',
-  
+
   /*
    ** Headers of the page
    */
@@ -36,7 +36,10 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: [],
+  plugins: [{
+    src: '~/plugins/ksvuescrollmagic',
+    ssr: false
+  }],
 
   /*
    ** Nuxt.js modules
