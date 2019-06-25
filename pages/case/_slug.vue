@@ -57,12 +57,6 @@ export default {
       tags: attr.tags,
       urlTranslation: attr.urlTranslation
     }
-  },
-  mounted() {
-    console.log(this)
-  },
-  methods: {
-
   }
 
 }
