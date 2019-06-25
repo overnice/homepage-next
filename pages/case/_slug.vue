@@ -30,7 +30,11 @@ export default {
   layout: 'content',
   head() {
     return {
-      title: 'Case'
+      title: this.title,
+      meta: [
+        // hid is used as unique identifier. Do not use `vmid` for it as it will not work
+        { hid: 'description', name: this.title, content: 'My custom description..' }
+      ]
     }
   // },
   // transition(to, from) {
@@ -43,7 +47,7 @@ export default {
   async asyncData({ params, app }) {
     const fileContent = await import('~/static/' + app.i18n.locale + '/case/' + params.slug + '.md')
     const attr = fileContent.attributes
-    console.log(fileContent)
+
     return {
       slug: params.slug,
       // related: attr.related,
