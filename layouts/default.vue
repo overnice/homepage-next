@@ -18,7 +18,7 @@ export default {
   },
   methods: {
     toggleNav() {
-      let hiddenDuration = window.innerHeight + 450
+      let hiddenDuration = window.innerHeight + 600
 
       if (window.innerWidth < 450) {
         hiddenDuration = window.innerHeight * 0.9
