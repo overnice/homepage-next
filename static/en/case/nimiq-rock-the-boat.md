@@ -1,6 +1,6 @@
 ---
 title: Rock the boat
-abstract: "How to promote <strong>Nimiq</strong> at a no logo/no sponsor conference? With a huge floating banner, weatherproof marketeers and a designated onboarding app obviously."
+abstract: "How to promote <strong>Nimiq</strong> at a no logo/no sponsor conference? With a huge floating banner, weatherproof marketeers and a designated onboarding app, obviously."
 tags:
   - concept
   - user experience and interface
@@ -16,7 +16,7 @@ But to justify breaking this rule, we had to come up with something that would c
 
 ![Spree location satelitte overview](/cases/creative_nimiq/location.jpg)
 
-The rough idea: Get a boat, put a giant billboard on it, develop a cryptocurrency faucet, embed it in a nice webapp and link to the it from the giant QR code that is displayed on the billboard. 
+The rough idea: Get a boat, put a giant billboard on it, develop a cryptocurrency faucet, embed it in a nice web app and link to it from the giant QR code that is displayed on the billboard. 
 
 ## From idea to execution in less than two weeks
 We found ourselves with an idea and less than two weeks to do all of that and — most importantly — decide whether this was a good idea and if we had the guts to take the risk.

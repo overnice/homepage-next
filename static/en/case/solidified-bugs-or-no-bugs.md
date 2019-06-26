@@ -8,7 +8,7 @@ tags:
 ---
 ![Solidified creative hero image](/cases/creative_solidified/hero.png)
 
-IT-security is becoming increasingly crucial for our world to function. Blockchain technology provides many solutions but like with every new technology, it comes with a set of new challenges.
+IT-security is becoming increasingly crucial for our world to function. Blockchain technology provides many solutions but, like with every new technology, it comes with a set of new challenges.
 
 Being immutable is one of the significant advantages of a blockchain. Being immutable also means that coding errors, vulnerabilities and bugs cannot be fixed after they were released. 
 
@@ -27,7 +27,7 @@ For underlining the technical aspiration of the project, we felt an infographic 
 ![Solidified info graphic full](/cases/creative_solidified/microsite.png)
 
 ## Putting faces on it
-Even with interactive experiences and infographics, such a highly technical and complicated matter remains abstract and is hard to trust. Together with our friends from Monic we produced some high-quality videos where the actual inventors and the team behind the Bug Prediction Market explains their reasoning and enthusiasm.
+Even with interactive experiences and infographics, such a highly technical and complicated matter remains abstract and is hard to trust. Together with our friends from Monic, we produced some high-quality videos where the actual inventors and the team behind the Bug Prediction Market explains their reasoning and enthusiasm.
 
 [Video](TBD)
 
