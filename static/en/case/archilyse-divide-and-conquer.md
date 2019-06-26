@@ -7,7 +7,7 @@ tags:
 ---
 ![Archilyse branding case hero image](/cases/branding_archilyse/logo.svg)
 
-Archilyse is a Swiss prop-tech startup that was founded by academics of the ETH Zürich. The unique approach combines an object’s floor plan and other project specific info with publicly available data about its environment, such as sunlight, traffic intensity, air condition, public transportation etc. 
+Archilyse is a Swiss prop-tech startup that was founded by academics of the ETH Zürich. The unique approach combines an object’s floor plan and other project-specific info with publicly available data about its environment, such as sunlight, traffic intensity, air condition, public transportation etc. 
 
 The results are unmatched architectural analysis empowered by machine learning and automatization.
 
@@ -28,7 +28,7 @@ So together with the founders, we developed a dual-brand structure that allowed 
 
 Archilyse is the effective, innovative and technocratic brand. As a SaaS, it’s market-oriented and profit driven. It’s a rather humorless affair and communication is always straight to the point. 
 
-![Archilyse brand book foto](/cases/branding_archilyse/dualbrand.jpg) (half)
+![Archilyse brand book foto](/cases/branding_archilyse/dualbrand.jpg)
 
 Archilyse Labs is Archilyse’s sub-brand and represents the research and development department. It is a mostly autonomous unit, which fulfills its functions with its own brand identity. In contrast to Archilyse, it’s an open, inclusive and outgoing brand, intended to appeal to young and international academics.
 
@@ -37,10 +37,10 @@ Both brands fulfill their own, designated tasks and cater to their specific audi
 ## Deriving the visual identity
 ![Font preview Weissenhof](/cases/branding_archilyse/font.svg)
 
-The Weissenhof Grotesk font struck us as the a ideal for Archilyse. It is a constructed geometric sans serif font and is inspired by the Weissenhof Estate, an architecturally avangardistique building complex, built in 1927 in Stuttgart, Germany.  
+The Weissenhof Grotesk font struck us as the perfect choice for Archilyse. It is a constructed geometric sans serif font and is inspired by the Weissenhof Estate, an avant-garde building complex, built in 1927 in Stuttgart, Germany.  
 
 ![brand colors overview](/cases/branding_archilyse/colors_1.svg)
 
-The color palette had to be able to cater to the demands of both sides of the brand and their respective target audiences. We focused mainly on the business-centric SaaS brand Archilyse and choose a classic set of blue and petrol. The accent color, however, was chosen to be a more youthful and electric red/pink: Amaranth.
+The color palette had to be able to cater to the demands of both sides of the brand and their respective target audiences. We focused mainly on the business-centric SaaS brand Archilyse and chose a classic set of blue and petrol. The accent color, however, was selected to be a more youthful and electric red/pink: Amaranth.
 
 While it’s used sparingly for Archilyse, it plays a more prominent role for the Archilyse Labs, creating a visual frame and diversion at the same time. 
