@@ -6,7 +6,7 @@ const fs = require('fs')
 const _ = require('lodash')
 
 export default {
-  mode: 'universal',
+  mode: 'spa',
 
   /*
    ** Headers of the page
@@ -21,6 +21,19 @@ export default {
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
   },
 
+  /**
+   * The custom rules for netlify SPA deployment
+   */
+  netlify: {
+    redirects: [
+      {
+        from: '/*',
+        to: '/200.html',
+        status: 200
+      }
+    ]
+  },
+
   /*
    ** Customize the progress-bar color
    */
@@ -29,17 +42,17 @@ export default {
   /*
    ** Global CSS
    */
-  css: [
-    '~/css/global.scss'
-  ],
+  css: ['~/css/global.scss'],
 
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: [{
-    src: '~/plugins/ksvuescrollmagic',
-    ssr: false
-  }],
+  plugins: [
+    {
+      src: '~/plugins/ksvuescrollmagic',
+      ssr: false
+    }
+  ],
 
   /*
    ** Nuxt.js modules
@@ -48,17 +61,20 @@ export default {
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
     '@nuxtjs/pwa',
-    ['nuxt-i18n', {
-      locales: ['en', 'de'],
-      defaultLocale: 'en',
-      vueI18n: {
-        fallbackLocale: 'en',
-        messages: {
-          en: require('./lang/en-US.json'),
-          de: require('./lang/de-DE.json')
+    [
+      'nuxt-i18n',
+      {
+        locales: ['en', 'de'],
+        defaultLocale: 'en',
+        vueI18n: {
+          fallbackLocale: 'en',
+          messages: {
+            en: require('./lang/en-US.json'),
+            de: require('./lang/de-DE.json')
+          }
         }
       }
-    }]
+    ]
   ],
   /*
    ** Axios module configuration
@@ -82,10 +98,10 @@ export default {
           test: /\.(js|vue)$/,
           loader: 'eslint-loader',
           exclude: /(node_modules)/,
-          options : {
-            fix : true,
-            vue:true
-        }
+          options: {
+            fix: true,
+            vue: true
+          }
         })
       }
       config.module.rules.push({
@@ -93,11 +109,11 @@ export default {
         loader: 'frontmatter-markdown-loader',
         options: {
           markdown: (body) => {
-            var md = require('markdown-it')();
+            const md = require('markdown-it')()
             return md.render(body)
           }
         }
-      });
+      })
     }
   }
 }

@@ -13,16 +13,17 @@
     "precommit": "npm run lint"
   },
   "dependencies": {
+    "@bazzite/nuxt-netlify": "^0.1.1",
     "@nuxtjs/axios": "^5.3.6",
     "@nuxtjs/pwa": "^2.6.0",
     "cross-env": "^5.2.0",
+    "ks-vue-scrollmagic": "^1.0.2",
     "markdown-it": "^8.4.2",
     "node-dir": "^0.1.17",
     "nuxt": "^2.8.1",
     "nuxt-i18n": "^5.12.4",
     "require-dir": "^1.2.0",
-    "scrollmagic": "^2.0.7",
-    "ks-vue-scrollmagic": "^1.0.2"
+    "scrollmagic": "^2.0.7"
   },
   "devDependencies": {
     "@nuxtjs/eslint-config": "^0.0.1",
