@@ -110,6 +110,34 @@ export default {
         options: {
           markdown: (body) => {
             const md = require('markdown-it')()
+
+            const defaultRender = md.renderer.rules.image
+            const youtubeRE = /(youtu\.be\/|youtube\.com\/(watch\?(.*&)?v=|(embed|v)\/))([^\?&"'>]+)/
+            md.renderer.rules.image = function (
+              tokens,
+              idx,
+              options,
+              env,
+              self
+            ) {
+              const token = tokens[idx]
+              const aIndex = token.attrIndex('src')
+
+              if (youtubeRE.test(token.attrs[aIndex][1])) {
+                const id = token.attrs[aIndex][1].match(youtubeRE)[2]
+
+                return (
+                  '<div class="embed-responsive">\n' +
+                  '  <iframe width="560" height="315" src="https://www.youtube.com/embed/' +
+                  id +
+                  '" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>\n' +
+                  '</div>\n'
+                )
+              }
+
+              // pass token to default renderer.
+              return defaultRender(tokens, idx, options, env, self)
+            }
             return md.render(body)
           }
         }
