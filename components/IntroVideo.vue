@@ -45,6 +45,7 @@ export default {
       transform: translate(-50%,-50%) scale(1.02);
       height: auto;
       min-width: 100vw;
+      min-height: 100%;
       z-index: unset;
       opacity: .4;
 
