@@ -1,11 +1,12 @@
 <template>
-  <div class="container">
+  <div class="container contt">
     <nuxt />
   </div>
 </template>
 <script>
 
 export default {
+  transition: 'contt',
   computed: {
     currentScript() {
       if (this.$i18n.locale === 'de') { return '../.' } else {

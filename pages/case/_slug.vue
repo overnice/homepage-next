@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="contt">
     <header>
       <h1>{{ title }}</h1>
       <p class="tags">
@@ -15,11 +15,11 @@
     <div :key="$route.params.slug" v-html="body" />
   </div>
 </template>
-
 <script>
 // import Close from '~/components/Layout/Close.vue'
 
 export default {
+  transition: 'contt',
   // async asyncData({ params }) {
   //   const fileContent = await import(`~/static/caseMarkdownFiles/${params.slug}.md`)
   //   return {
