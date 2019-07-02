@@ -190,8 +190,20 @@ p.small {
 
 
 
-img[src*="#link_1"] {
+.right{
   float: right;
-  max-width: 50%;
-  content:url('/cases/creative_solidified/infographic.jpg');
+  width: 50% !important;
+}
+.left{
+  float: left;
+  width:50% !important;
+}
+.text-left{
+  width: 50%;
+  float:left;
+}
+.text-right{
+  width: 50%;
+  float:right;
+  padding: 0 10px;
 }

@@ -4,6 +4,8 @@ const dir = require('node-dir')
 const routesArray = []
 const fs = require('fs')
 const _ = require('lodash')
+const md = require('markdown-it')()
+  .use(require('markdown-it-decorate'))
 
 export default {
   mode: 'spa',
@@ -110,6 +112,7 @@ export default {
         options: {
           markdown: (body) => {
             const md = require('markdown-it')()
+              .use(require('markdown-it-decorate'))
 
             const defaultRender = md.renderer.rules.image
             const youtubeRE = /(youtu\.be\/|youtube\.com\/(watch\?(.*&)?v=|(embed|v)\/))([^\?&"'>]+)/
