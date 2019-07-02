@@ -1,6 +1,6 @@
 ---
 title: Do It Yourself
-abstract: "Vodafone and it’s customers share a problem: If the internet connection gets lost, they have to engage with each other – or do they?"
+abstract: "<strong>Vodafone</strong> and it’s customers share a problem: If the internet connection gets lost, they have to engage with each other – or do they?"
 tags:
   - concept
   - user experience
@@ -21,7 +21,7 @@ Our friends at Hackerbay tasked us to develop the User Experience, Interface and
 
 A chat-bot type of system was identified as the most suitable format, optimized for the still connected mobile phones. First, a user should specify the setup and the type of connection. Secondly, the user should be guided to perform the statistically most promising task to fix the problem. 
 
-![Close up of the Vodafone speed-test](cases/product_vodafone/speedtest.png)
+![Close up of the Vodafone speed-test](/cases/product_vodafone/speedtest.png)
 
 The challenge: Making this as pleasant as possible and keeping the motivation up to perform all the steps.
 
@@ -45,7 +45,7 @@ A new customer of Vodafone would receive their router with a QR code which would
 
 The idea was to send the QR codes as stickers via mail. But printing and sending this much individual stickers would have significantly multiplied the project’s overall costs.   
 
-![Vodafone Netzassitent comntact book entry](static/cases/product_vodafone/contact.jpg)
+![Vodafone Netzassitent comntact book entry](/cases/product_vodafone/contact.jpg)
 
 So we developed a solution that solved the problem more or less for free: Every user would receive an SMS with a phone book contact. This contact was dubbed the “Vodafone Netzassistent” and contained a link which led directly to the bot. This way, the service would be as accessible as a user’s phone contact and on top, it would be easily shareable with whoever requires its help.
 

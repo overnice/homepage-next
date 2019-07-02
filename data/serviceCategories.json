@@ -32,6 +32,11 @@
         "slug": "nimiq-easy-money",
         "visual": "/cases/product_nimiq/hero.jpg",
         "copy": "Breaking barriers, translating complicated stuff and stripping away technicalities until it’s easier to create a <strong>Nimiq</strong> account on the blockchain than creating an email address."
+      },
+      {
+        "slug": "vodafone-self-service",
+        "visual": "/cases/product_vodafone/hero.jpg",
+        "copy": "<strong>Vodafone</strong> and it’s customers share a problem: If the internet connection gets lost, they have to engage with each other – or do they?"
       }
     ]
   },
