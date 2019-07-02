@@ -7,6 +7,7 @@ tags:
   - messaging
 ---
 ![Nimiq product case hero image](/cases/product_nimiq/hero.jpg)
+![Video](https://www.youtube.com/watch?v=dXmvnKwezT8)
 
 Nimiq is cryptocurrency designed for simplicity and ease-of-use. It is special for it is written in Javascript and Rust which allows for a download and installation free usage, directly in the browser. The project aspires to bring the benefits of blockchain to everyone – even non-technical users. 
 
