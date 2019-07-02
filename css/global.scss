@@ -187,3 +187,11 @@ p.small {
 .zoom-enter, .zoom-leave-active {
   opacity: 0
 } */
+
+
+
+img[src*="#link_1"] {
+  float: right;
+  max-width: 50%;
+  content:url('/cases/creative_solidified/infographic.jpg');
+}

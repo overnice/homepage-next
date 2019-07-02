@@ -43,8 +43,30 @@ import ServiceCategory from '~/components/ServiceCategory.vue'
 import About from '~/components/About.vue'
 import Controls from '~/components/Layout/Controls.vue'
 import ScrollIndicator from '~/components/ScrollIndicator.vue'
+import VueRouter from 'vue-router'
 
 import serviceCategoriesData from '~/data/serviceCategories.json'
+
+const Router = new VueRouter({
+
+  scrollBehavior: (to, from, savedPosition) => new Promise((resolve) => {
+    const position = savedPosition || {}
+    if (!savedPosition) {
+      if (to.hash) {
+        position.selector = to.hash
+      }
+      if (to.matched.some(m => m.meta.scrollToTop)) {
+        position.x = 0
+        position.y = 0
+      }
+    }
+    Router.app.$root.$once('triggerScroll', () => {
+      Router.app.$nextTick(() => resolve(position))
+    })
+  }),
+  mode: 'history',
+  routes: []
+})
 
 // // detect mobile device
 function isMobile() {
@@ -147,6 +169,7 @@ export default {
     }
   }
 }
+
 </script>
 
 <style lang="scss" scoped>
