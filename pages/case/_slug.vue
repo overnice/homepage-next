@@ -28,21 +28,6 @@ export default {
   // },
   // components: { Close },
   layout: 'content',
-  head() {
-    return {
-      title: this.title + ' – overnice',
-      meta: [
-        // hid is used as unique identifier. Do not use `vmid` for it as it will not work
-        { hid: 'description', name: this.title, content: 'My custom description..' }
-      ]
-    }
-  // },
-  // transition(to, from) {
-  //   return ({
-  //     name: 'zoom',
-  //     duration: 1000
-  //   })
-  },
 
   async asyncData({ params, app }) {
     const fileContent = await import('~/static/' + app.i18n.locale + '/case/' + params.slug + '.md')
@@ -57,6 +42,25 @@ export default {
       tags: attr.tags,
       urlTranslation: attr.urlTranslation
     }
+  },
+  mounted() {
+    // delete element with id visual-transition from dom
+    document.getElementById('visual-transition').remove()
+  },
+  head() {
+    return {
+      title: this.title + ' – overnice',
+      meta: [
+        // hid is used as unique identifier. Do not use `vmid` for it as it will not work
+        { hid: 'description', name: this.title, content: 'My custom description..' }
+      ]
+    }
+  // },
+  // transition(to, from) {
+  //   return ({
+  //     name: 'zoom',
+  //     duration: 1000
+  //   })
   }
 
 }

@@ -1,14 +1,16 @@
 <template>
-  <nuxt-link
-    :to="localePath({name: 'case-slug', params: {slug: param} })"
+  <div
+    ref="case"
     class="case"
+    @click="animate()"
   >
     <div class="visual" :style="{ backgroundImage: `url(${visual})` }" />
     <p v-html="copy" />
-  </nuxt-link>
+  </div>
 </template>
 
 <script>
+import { TimelineMax } from 'gsap'
 export default {
   props: {
     copy: String,
@@ -21,6 +23,28 @@ export default {
     },
     url() {
       return "'case/" + this.param + "'"
+    }
+  },
+  methods: {
+    goNavigate() {
+      this.$nuxt.$router.push(this.localePath({ name: 'case-slug', params: { slug: this.param } }))
+    },
+    animate() {
+      const visualData = this.$refs.case.getBoundingClientRect()
+      console.log(visualData)
+      const node = document.createElement('div')
+      document.body.appendChild(node)
+      node.classList += 'visual-transition'
+      node.id = 'visual-transition'
+      node.style.left = visualData.left
+      node.style.top = visualData.top
+      node.style.width = visualData.width
+      node.style.height = visualData.height
+      node.style.position = 'fixed'
+      const pageTransition = new TimelineMax()
+      pageTransition.to('#visual-transition', 0.6, { top: '0', left: '0', width: '100vw', height: '100vh', backgroundColor: '#ffffff', ease: this.$gsap.Expo.easeInOut })
+      // .to("#case-detail", .1, {autoAlpha: 1, ease: Circ.easeInOut }, "-=0")
+        .addCallback(this.goNavigate, 0.4)
     }
   }
 }
