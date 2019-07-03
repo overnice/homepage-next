@@ -1,5 +1,5 @@
 <template>
-  <div class="transition">
+  <div class="content">
     <header>
       <h1>{{ title }}</h1>
       <p class="tags">
@@ -19,7 +19,7 @@
 // import Close from '~/components/Layout/Close.vue'
 
 export default {
-  transition: 'transition',
+  transition: 'content',
   // async asyncData({ params }) {
   //   const fileContent = await import(`~/static/caseMarkdownFiles/${params.slug}.md`)
   //   return {

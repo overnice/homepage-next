@@ -1,5 +1,5 @@
 <template>
-  <div class="contt">
+  <div class="content">
     <Close link="/" />
     <div class="content--inner">
       <nuxt />
