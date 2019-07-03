@@ -1,5 +1,5 @@
 <template>
-  <nuxt-link :to="link" class="close" />
+  <div class="close" @click="$emit('click')" />
 </template>
 
 <script>

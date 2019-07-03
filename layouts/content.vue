@@ -1,6 +1,6 @@
 <template>
   <div class="content">
-    <Close link="/" />
+    <Close @click="goback" />
     <div class="content--inner">
       <nuxt />
     </div>
@@ -13,7 +13,11 @@ import Controls from '~/components/Layout/Controls.vue'
 
 export default {
   components: { Close, Controls },
-  transition: 'contt'
+  methods: {
+    goback() {
+      this.$router.back()
+    }
+  }
 }
 </script>
 

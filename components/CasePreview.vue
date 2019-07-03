@@ -27,7 +27,6 @@ export default {
     },
     animate() {
       // store the current scroll position
-      this.$store.commit('setPosition')
       const visualData = this.$refs.caseImage.getBoundingClientRect()
       const node = document.createElement('div')
       const image = document.createElement('div')
@@ -50,6 +49,8 @@ export default {
         height: ${visualData.height}px;
         position: fixed;
       `)
+
+      this.$store.commit('setPosition', visualData)
 
       image.setAttribute('style', `
         left: ${visualData.left}px;

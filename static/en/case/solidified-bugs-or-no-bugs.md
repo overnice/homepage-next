@@ -9,6 +9,7 @@ tags:
 ![Solidified creative hero image](/cases/creative_solidified/hero.png)
 
 IT-security is becoming increasingly crucial for our world to function. Blockchain technology provides many solutions but, like with every new technology, it comes with a set of new challenges.
+<!-- {.text-right} -->
 
 Being immutable is one of the significant advantages of a blockchain. Being immutable also means that coding errors, vulnerabilities and bugs cannot be fixed after they were released. 
 
@@ -19,11 +20,17 @@ We supported the fundraising campaign with marketing advice and content producti
 ## ELI5
 Reducing complexity and packaging complicated matters into easy-to-get pieces is what we love to do. To illustrate the sophisticated system, we developed a flow chart, visually explaining the Bug Prediction Market with crisp steps explaining the behaviour of the various actors.
 
+
 ![infographic about the solidified bug prediciton market](/cases/creative_solidified/infographic.jpg)
 
-For underlining the technical aspiration of the project, we felt an infographic might be too old-school. So we went ahead and built an interactive experience. Users could follow the ‘swimming lanes’ and mouse-over items to receive more in detail info. 
+<!-- {.left} -->
+
+
+
+For underlining the technical aspiration of the project, we felt an infographic might be too old-school. So we went ahead and built an interactive experience. Users could follow the ‘swimming lanes’ and mouse-over items to receive more in detail info.
 
 ![A sketch of the microsite](/cases/creative_solidified/micrositesketch.jpg)
+
 ![Solidified info graphic full](/cases/creative_solidified/microsite.png)
 
 ## Putting faces on it
