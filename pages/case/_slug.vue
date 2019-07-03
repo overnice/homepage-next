@@ -3,12 +3,7 @@
     <header>
       <h1>{{ title }}</h1>
       <p class="tags">
-        <span
-          v-for="tag in tags"
-          :key="tag"
-        >
-          {{ tag }}
-        </span>
+        <span v-for="tag in tags" :key="tag">{{ tag }}</span>
       </p>
       <p v-html="abstract" />
     </header>
@@ -45,7 +40,11 @@ export default {
   },
   mounted() {
     // delete element with id visual-transition from dom
-    document.getElementById('visual-transition').remove()
+    const transElement = document.getElementById('visual-transition')
+    // just remove it if its mounted before
+    if (transElement) {
+      transElement.remove()
+    }
   },
   head() {
     return {
