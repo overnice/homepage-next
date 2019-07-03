@@ -27,7 +27,7 @@ export default {
     },
     animate() {
       // store the current scroll position
-      this.$store.state.
+      this.$store.commit('setPosition')
       const visualData = this.$refs.caseImage.getBoundingClientRect()
       const node = document.createElement('div')
       const image = document.createElement('div')
