@@ -50,7 +50,8 @@ export default {
         position: fixed;
       `)
 
-      this.$store.commit('setPosition', visualData)
+      const { visual } = this
+      this.$store.commit('setPosition', { visualData, visual })
 
       image.setAttribute('style', `
         left: ${visualData.left}px;

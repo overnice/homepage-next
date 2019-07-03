@@ -132,6 +132,9 @@ export default {
     },
     lastPosition() {
       return this.$store.state.lastPosition
+    },
+    animImage() {
+      return this.$store.state.animImage
     }
   },
   mounted() {
