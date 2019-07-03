@@ -1,10 +1,10 @@
 @import 'css/variables';
 
 :root {
-  --darkgray: #24262C;
-  --lightgray: #E9E9EA;
-  --red: #FF795F;
-  --font-family: "TextaNarrow", sans-serif;
+  --darkgray: #24262c;
+  --lightgray: #e9e9ea;
+  --red: #ff795f;
+  --font-family: 'TextaNarrow', sans-serif;
 
   --base-size: 8px;
 
@@ -38,26 +38,34 @@
 }
 
 @font-face {
-  font-family: "TextaNarrow";
+  font-family: 'TextaNarrow';
   font-weight: 400;
-  src:  url("~assets/fonts/texta-narrow-book.eot");
-  src:  url("~assets/fonts/texta-narrow-book.eot?#iefix") format("embedded-opentype"),
-        url("~assets/fonts/texta-narrow-book.woff2") format("woff2"),
-        url("~assets/fonts/texta-narrow-book.woff") format("woff"),
-        url("~assets/fonts/texta-narrow-book.ttf") format("truetype");
+  src: url('~assets/fonts/texta-narrow-book.eot');
+  src: url('~assets/fonts/texta-narrow-book.eot?#iefix')
+      format('embedded-opentype'),
+    url('~assets/fonts/texta-narrow-book.woff2') format('woff2'),
+    url('~assets/fonts/texta-narrow-book.woff') format('woff'),
+    url('~assets/fonts/texta-narrow-book.ttf') format('truetype');
 }
 
 @font-face {
-  font-family: "TextaNarrow";
+  font-family: 'TextaNarrow';
   font-weight: 600;
-  src:  url("~assets/fonts/texta-narrow-bold.eot");
-  src:  url("~assets/fonts/texta-narrow-bold.eot?#iefix") format("embedded-opentype"),
-        url("~assets/fonts/texta-narrow-bold.woff2") format("woff2"),
-        url("~assets/fonts/texta-narrow-bold.woff") format("woff"),
-        url("~assets/fonts/texta-narrow-bold.ttf") format("truetype");
+  src: url('~assets/fonts/texta-narrow-bold.eot');
+  src: url('~assets/fonts/texta-narrow-bold.eot?#iefix')
+      format('embedded-opentype'),
+    url('~assets/fonts/texta-narrow-bold.woff2') format('woff2'),
+    url('~assets/fonts/texta-narrow-bold.woff') format('woff'),
+    url('~assets/fonts/texta-narrow-bold.ttf') format('truetype');
 }
 
-html, body, p, a, h1, h2, h3 {
+html,
+body,
+p,
+a,
+h1,
+h2,
+h3 {
   margin: 0;
   padding: 0;
   font-weight: normal;
@@ -68,12 +76,12 @@ html, body, p, a, h1, h2, h3 {
   -webkit-font-smoothing: antialiased;
 }
 
-body, html {
+body,
+html {
   // background: var(--darkgray);
   font-family: var(--font-family);
   font-size: var(--base-size);
 }
-
 
 /* temporary */
 
@@ -85,7 +93,8 @@ header {
   margin-bottom: var(--xl-spacing);
 }
 
-h1, h2 {
+h1,
+h2 {
   font-size: var(--h2-font-size);
   font-weight: bold;
   line-height: 1;
@@ -103,76 +112,58 @@ p {
     white-space: nowrap;
     display: inline-block;
     font-weight: 600;
-    text-shadow:
-      -0.125rem -0.125rem 0 white,
-      0.125rem -0.125rem 0 white,
-      -0.125rem 0.125rem 0 white,
-      0.125rem 0.125rem 0 white,
-      0.125rem 0 0 white,
-      -0.125rem 0 0 white,
-      0 0.125rem 0 white,
-      0 -0.125rem 0 white,
-      -0.125rem 0.45rem 0 white,
-      0.125rem 0.45rem 0 white,
-
-      -0.25rem -0.25rem 0 white,
-      0.25rem -0.25rem 0 white,
-      -0.25rem 0.25rem 0 white,
-      0.25rem 0.25rem 0 white,
-      0.25rem 0 0 white,
-      -0.25rem 0 0 white,
-      0 0.25rem 0 white,
-      0 -0.25rem 0 white,
-      -0.25rem 0.45rem 0 white,
-      0.25rem 0.45rem 0 white,
-
-      -0.375rem -0.375rem 0 white,
-      0.375rem -0.375rem 0 white,
-      -0.375rem 0.375rem 0 white,
-      0.375rem 0.375rem 0 white,
-      0.375rem 0 0 white,
-      -0.375rem 0 0 white,
-      0 0.375rem 0 white,
-      0 -0.375rem 0 white,
-      -0.375rem 0.45rem 0 white,
-      0.375rem 0.45rem 0 white;
-    transition: color .3s cubic-bezier(.25,0,0,1), transform .3s cubic-bezier(.25,0,0,1);
+    text-shadow: -0.125rem -0.125rem 0 white, 0.125rem -0.125rem 0 white,
+      -0.125rem 0.125rem 0 white, 0.125rem 0.125rem 0 white, 0.125rem 0 0 white,
+      -0.125rem 0 0 white, 0 0.125rem 0 white, 0 -0.125rem 0 white,
+      -0.125rem 0.45rem 0 white, 0.125rem 0.45rem 0 white,
+      -0.25rem -0.25rem 0 white, 0.25rem -0.25rem 0 white,
+      -0.25rem 0.25rem 0 white, 0.25rem 0.25rem 0 white, 0.25rem 0 0 white,
+      -0.25rem 0 0 white, 0 0.25rem 0 white, 0 -0.25rem 0 white,
+      -0.25rem 0.45rem 0 white, 0.25rem 0.45rem 0 white,
+      -0.375rem -0.375rem 0 white, 0.375rem -0.375rem 0 white,
+      -0.375rem 0.375rem 0 white, 0.375rem 0.375rem 0 white, 0.375rem 0 0 white,
+      -0.375rem 0 0 white, 0 0.375rem 0 white, 0 -0.375rem 0 white,
+      -0.375rem 0.45rem 0 white, 0.375rem 0.45rem 0 white;
+    transition: color 0.3s cubic-bezier(0.25, 0, 0, 1),
+      transform 0.3s cubic-bezier(0.25, 0, 0, 1);
 
     &:before {
-      content: "";
+      content: '';
       position: absolute;
       left: 0;
       right: 0;
       top: 100%;
       margin-top: -1.125rem;
       height: 2px;
-      background: rgba($darkgray, .3);
+      background: rgba($darkgray, 0.3);
       z-index: -1;
       border-radius: 1px;
-      transition: background .3s cubic-bezier(0.25, 0, 0, 1), transform .3s cubic-bezier(0.25, 0, 0, 1);
+      transition: background 0.3s cubic-bezier(0.25, 0, 0, 1),
+        transform 0.3s cubic-bezier(0.25, 0, 0, 1);
     }
 
     &:hover,
     &:active,
     &:focus {
       color: var(--red);
-      transform: translate3d(0,-2px,0);
+      transform: translate3d(0, -2px, 0);
 
       &:before {
-        transform: translate3D(0,2px,0);
-        background: rgba($red, .7);
+        transform: translate3D(0, 2px, 0);
+        background: rgba($red, 0.7);
       }
     }
   }
 }
 
-a, .button {
+a,
+.button {
   outline: none;
 }
 
 p.small {
   font-size: var(--small-font-size);
-  opacity: .4;
+  opacity: 0.4;
 }
 
 .nowrap {
@@ -180,10 +171,10 @@ p.small {
 }
 
 .transition-enter-active {
-  animation: transition-in .6s;
+  animation: transition-in 0.6s;
 }
 .transition-leave-active {
-  animation: transition-out .6s;
+  animation: transition-out 0.6s;
 }
 
 .visual-transition {
