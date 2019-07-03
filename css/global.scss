@@ -179,6 +179,20 @@ p.small {
   white-space: nowrap;
 }
 
+.transition-enter-active {
+  animation: transition-in .6s;
+}
+.transition-leave-active {
+  animation: transition-out .6s;
+}
+
+.visual-transition {
+  background-color: var(--red);
+  pointer-events: none;
+  border-radius: 1px;
+  z-index: 2;
+}
+
 /* .zoom-enter-active,
 .zoom-leave-active {
   transition: opacity .5s
