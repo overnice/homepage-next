@@ -28,7 +28,7 @@ For underlining the technical aspiration of the project, we felt an infographic 
 ![](/cases/creative_solidified/microsite.png)
 
 ## Putting faces on it
-Even with interactive experiences and infographics, such a highly technical and complicated matter remains abstract and is hard to trust. Together with our friends from Monic, we produced some high-quality videos where the actual inventors and the team behind the Bug Prediction Market explains their reasoning and enthusiasm.
+Even with interactive experiences and infographics, such a highly technical and complicated matter remains abstract and is hard to trust. Together with our friends from [Monic Films](https://www.monicfilms.de) and DOP [Alexander Schmutzler](https://alxschmtzlr.com/) produced some high-quality videos where the actual inventors and the team behind the Bug Prediction Market explain their reasoning and enthusiasm.
 
 ![](https://www.youtube.com/watch?v=4yG8C_dJcZg)
 
