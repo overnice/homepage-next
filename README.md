@@ -1,7 +1,5 @@
 # homepage
 
-> My good Nuxt.js project
-
 ## Build Setup
 
 ``` bash

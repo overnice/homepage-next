@@ -1,4 +1,3 @@
-import pkg from './package'
 const { join } = require('path')
 const dir = require('node-dir')
 const routesArray = []
