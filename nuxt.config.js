@@ -15,6 +15,7 @@ const md = require('markdown-it')()
   .use(require('markdown-it-decorate'))
 
 export default {
+
   mode: 'spa',
 
   /*

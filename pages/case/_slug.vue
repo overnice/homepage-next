@@ -14,7 +14,7 @@
 // import Close from '~/components/Layout/Close.vue'
 
 export default {
-  transition: 'content',
+  pageTransition: 'fade',
   // async asyncData({ params }) {
   //   const fileContent = await import(`~/static/caseMarkdownFiles/${params.slug}.md`)
   //   return {
