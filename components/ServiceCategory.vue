@@ -61,11 +61,14 @@ export default {
   box-sizing: border-box;
   margin: 0 auto;
   padding: var(--l-spacing);
-  pointer-events: none;
 
-  &/deep/ {
-    .case {
-      pointer-events: all;
+  @media (min-width: $bp-case-layout + 1) {
+    pointer-events: none;
+
+    &/deep/ {
+      .case {
+        pointer-events: all;
+      }
     }
   }
 }
