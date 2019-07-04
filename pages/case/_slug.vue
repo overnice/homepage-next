@@ -55,7 +55,7 @@ export default {
       title: this.title + ' – overnice',
       meta: [
         // hid is used as unique identifier. Do not use `vmid` for it as it will not work
-        { hid: 'description', name: this.title, content: 'My custom description..' }
+        // { hid: 'description', name: this.title, content: 'My custom description..' }
       ]
     }
   // },
@@ -81,7 +81,7 @@ export default {
   opacity: .5;
 
   span + span:before {
-    content: "•"
+    content: " • "
   }
 }
 </style>

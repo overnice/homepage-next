@@ -97,7 +97,7 @@ export default {
       font-size: var(--small-font-size);
       margin-top: 3rem;
       max-width: 100%;
-      overflow: hidden;
+      // overflow: hidden;
     }
 
     ul, ol {
@@ -180,6 +180,11 @@ export default {
 
       & + p {
         margin-top: 5rem;
+      }
+
+      iframe {
+        display: block;
+        width: 100%;
       }
     }
 

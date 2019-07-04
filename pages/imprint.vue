@@ -3,12 +3,10 @@
     <header>
       <h1>Imprint</h1>
       <p>
-        <span class="nowrap">Overnice GbR</span>
-        ∙ <span class="nowrap">Julian Bauer</span>
-        & <span class="nowrap">Tammo Mamedi</span>
-        ∙ <span class="nowrap">Kreuzbergstr. 28</span>
-        ∙ <span class="nowrap">10965 Berlin</span>
-        ∙ <span class="nowrap">hello@overnice.de</span>
+        <span class="nowrap">Overnice Creatives GmbH i.G.</span><br>
+        <span class="nowrap">Kreuzbergstr. 28</span>
+        ∙ <span class="nowrap">10965 Berlin</span><br>
+        <span class="nowrap">hello@overnice.com</span>
       </p>
     </header>
     <h2>

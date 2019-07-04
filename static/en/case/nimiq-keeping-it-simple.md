@@ -36,7 +36,7 @@ This radical simplicity sparked controversy amongst the community and the stakeh
 > We were convinced: It’s the only true representation of Nimiq and it’s identity.
 Along the web-based styleguide that everyone can access and use to build on, we presented our reasons and the community agreed. 
 
-::: left
+::: right
 ![](/cases/branding_nimiq/logo_outline.svg)
 :::
 

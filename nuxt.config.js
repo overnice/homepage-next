@@ -159,7 +159,7 @@ export default {
 
                 return (
                   '<div class="embed-responsive">\n' +
-                  '  <iframe width="560" height="315" src="https://www.youtube.com/embed/' +
+                  '  <iframe width="920" height="517" src="https://www.youtube.com/embed/' +
                   id +
                   '" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>\n' +
                   '</div>\n'
