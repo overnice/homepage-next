@@ -148,6 +148,15 @@ export default {
     pinContainerScene() {
       const logoZoomDuration = 450
 
+      // used both on mobile and desktop with different offset
+      const shrinkVideo = this.$gsap.TweenMax.from('#intro-video--outer', 1, {
+        paddingLeft: '0',
+        paddingRight: '0',
+        paddingBottom: '0',
+        opacity: 1,
+        ease: this.$gsap.Expo.easeOut
+      })
+
       if (window.innerWidth > 450) {
         // Zoom Logo
         const zoomLogo = this.$gsap.TweenMax.fromTo('#intro--inner', 1,
@@ -186,14 +195,11 @@ export default {
         this.$ksvuescr.$emit('addScene', 'darkenVideo', sceneDarkenVideo)
 
         // Shrink Video
-        const shrinkVideo = this.$gsap.TweenMax.from('#intro-video--outer', 1, {
-          paddingLeft: '0',
-          paddingRight: '0',
-          paddingBottom: '0',
-          opacity: 1,
-          ease: this.$gsap.Expo.easeOut
-        })
         const sceneShrinkVideo = new this.$scrollmagic.Scene({ triggerElement: '#content', duration: 300, offset: logoZoomDuration + 50 })
+          .setTween(shrinkVideo)
+        this.$ksvuescr.$emit('addScene', 'shrinkVideo', sceneShrinkVideo)
+      } else {
+        const sceneShrinkVideo = new this.$scrollmagic.Scene({ triggerElement: '#content', duration: 300, offset: window.innerHeight * 0.5 + 20 })
           .setTween(shrinkVideo)
         this.$ksvuescr.$emit('addScene', 'shrinkVideo', sceneShrinkVideo)
       }
