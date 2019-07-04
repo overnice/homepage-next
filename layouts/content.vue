@@ -62,7 +62,7 @@ export default {
         margin-top: 3rem;
       }
 
-      + figure:not(.left):not(.right)  {
+      + figure  { // no need to filter for .left or .right images because they are wrapped in divs anyways
         margin-bottom: var(--xl-spacing);
       }
     }
@@ -176,39 +176,46 @@ export default {
       & + p {
         margin-top: 5rem;
       }
+    }
 
-      @media (min-width: 520px) {
-        &.left, &.right {
-          width: 60%;
+    figcaption {
+      font-size: var(--tiny-font-size);
+      padding: 1rem;
+      text-align: center;
+    }
+
+    @media (min-width: 520px) {
+      .left, .right {
+        width: 60%;
+
+        figure {
           margin-top: 3rem;
           margin-bottom: 3rem;
-
-          & + p {
-            margin-top: 3rem;
-          }
         }
 
-        &.left {
-          float: left;
+        & + p {
+          margin-top: 3rem;
+        }
+      }
+
+      .left {
+        float: left;
+        figure {
           margin-right: 4rem;
         }
+      }
 
-        &.right {
-          float: right;
+      .right {
+        float: right;
+        figure {
           margin-left: 4rem;
         }
       }
+    }
 
-      @media (min-width: $bp-tablet) {
-        &.left, &.right {
-          width: 50%;
-        }
-      }
-
-      figcaption {
-        font-size: var(--tiny-font-size);
-        padding: 1rem;
-        text-align: center;
+    @media (min-width: $bp-tablet) {
+      .left, .right {
+        width: 50%;
       }
     }
 

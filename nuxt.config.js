@@ -121,6 +121,7 @@ export default {
         options: {
           markdown: (body) => {
             const implicitFigures = require('markdown-it-implicit-figures')
+            const markdownInline = require('markdown-it-for-inline')
             const md = require('markdown-it')()
               .use(require('markdown-it-container'), 'left')
               .use(require('markdown-it-container'), 'right')
@@ -130,7 +131,16 @@ export default {
                 tabindex: true, // <figure tabindex="1+n">..., default: false
                 link: false // <a href="img.png"><img src="img.png"></a>, default: false
               })
-              .use(require('markdown-it-decorate'))
+              .use(markdownInline, 'url_new_win', 'link_open', function (tokens, idx) {
+                var aIndex = tokens[idx].attrIndex('target');
+  
+                if (aIndex < 0) {
+                  tokens[idx].attrPush(['target', '_blank']);
+                } else {
+                  tokens[idx].attrs[aIndex][1] = '_blank';
+                }
+              })
+              // .use(require('markdown-it-decorate'))
 
             const defaultRender = md.renderer.rules.image
             const youtubeRE = /(youtu\.be\/|youtube\.com\/(watch\?(.*&)?v=|(embed|v)\/))([^\?&"'>]+)/

@@ -171,7 +171,6 @@ p.small {
 }
 
 .visual-transition {
-  // background-color: var(--red);
   pointer-events: none;
   position: fixed;
   background-size: cover;
@@ -180,20 +179,24 @@ p.small {
   z-index: 2;
   
   .visual-transition--overlay {
-    // content: "";
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
     background: white;
     position: absolute;
-    // opacity: 0.5;
-    // transition: opacity .6s ease;
   }
+}
 
-  // &.abc .visual-transition--overlay {
-  //   opacity: 1;
-  // }
+.visual-transition-back {
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  background-color: white;
+  opacity: 0;
+  z-index: 2;
 }
 
 .fade-enter-active {
@@ -222,22 +225,22 @@ p.small {
   opacity: 0
 } */
 
-.right {
-  float: right;
-  width: 50% !important;
-}
-.left {
-  float: left;
-  width: 50% !important;
-}
-.text-left {
-  width: 50%;
-  float: left;
-}
-.text-right {
-  width: 50%;
-  float: right;
-  padding: 0 10px;
-}
+// .right {
+//   float: right;
+//   width: 50% !important;
+// }
+// .left {
+//   float: left;
+//   width: 50% !important;
+// }
+// .text-left {
+//   width: 50%;
+//   float: left;
+// }
+// .text-right {
+//   width: 50%;
+//   float: right;
+//   padding: 0 10px;
+// }
 
 
