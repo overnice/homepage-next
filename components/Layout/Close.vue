@@ -1,11 +1,25 @@
 <template>
-  <nuxt-link :to="link" class="close" />
+  <div class="close" @click="close()" />
 </template>
 
 <script>
 export default {
   props: {
     link: String
+  },
+  methods: {
+    close() {
+      const nodeBlend = document.createElement('div')
+      document.body.appendChild(nodeBlend)
+
+      nodeBlend.id = 'visual-transition-back'
+      nodeBlend.classList += 'visual-transition-back'
+
+      this.$gsap.TweenMax.to('#visual-transition-back', 0.2, { opacity: 1 })
+      setTimeout(() => {
+        this.$emit('click')
+      }, 190)
+    }
   }
 }
 </script>

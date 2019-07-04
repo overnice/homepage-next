@@ -19,8 +19,9 @@ module.exports = {
   // ],
   // add your custom rules here
   rules: {
-    "vue/require-default-prop": false,
-    "no-tabs": 0,
-    "no-console": 1
+    'vue/require-default-prop': false,
+    'no-tabs': 0,
+    'no-console': 1,
+    'nuxt/no-globals-in-created': false
   }
 }

@@ -3,11 +3,25 @@
     <div>
       <section class="intro">
         <div id="intro--inner" class="intro--inner">
-          <svg id="logo" class="logo" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
-            <path d="M96.4,187.56c-2.9,0-3.6,2.21-3.6,12.04c0,9.69,0.7,12.04,3.6,12.04c2.9,0,3.6-2.35,3.6-12.04 C100,189.92,99.3,187.56,96.4,187.56z" />
-            <path d="M304.4,187.6c-2.6,0-3.5,1.9-3.5,5.9v1.7h7v-1.7C308,189.4,307.1,187.6,304.4,187.6z" />
-            <path d="M161.5,187.6c-2.6,0-3.5,1.9-3.5,5.9v1.7h7v-1.7C165.1,189.4,164.3,187.6,161.5,187.6z" />
-            <path d="M0,0v400h400V0H0z M96.4,219.95c-15.1,0-16.48-9.28-16.48-20.49c0-10.1,1.95-20.21,16.48-20.21 c15.08,0,16.47,9.14,16.48,20.35C112.88,209.7,110.93,219.95,96.4,219.95z M121.4,218.85l-9.4-38.5h13.3l3.7,27.8h0.1l3.6-27.8H146 l-9.4,38.5H121.4z M177.1,201.65H177v0.1h-18.9v5.1c0,4.1,1.7,5.3,3.5,5.3c2.2,0,3.6-1.5,3.6-6.8h11.6c-0.1,9.2-4.6,14.5-15.2,14.5 c-12.4,0-16.3-5.7-16.4-20.3c0-14.8,4.8-20.3,16.4-20.3c10.4,0,15.5,4.6,15.5,18.5V201.65z M202.3,191.15v-0.01 c-1.06-0.1-2.03-0.29-3.1-0.29c-4.6,0-7.2,1.8-7.2,6.9v21h-12.9H179v-38.5h12.4v6.1h0.1c1.5-4.7,5-6.2,8.7-6.2h2.1v10.99 c0.03,0,0.07,0.01,0.1,0.01H202.3z M223.8,218.85v-25.4c0-3.2-0.8-4.6-3.2-4.6c-2.4,0-3.2,1.4-3.2,4.6v25.4h-12.9v-38.5h12.4v4.7 h0.1c1.6-3.7,5-5.7,9.4-5.7c5.7,0,10.1,2.2,10.1,10.5v29H223.8z M252.2,218.85h-12.9v-38.5h12.9V218.85z M271.3,211.45 c2.4,0,3.7-1.5,3.7-6.3v-2.5h11.6c0.1,6.1-0.9,10.4-3.4,13.1c-2.5,2.8-6.5,4-11.9,4c-9.8,0-16.6-3-16.6-19.6c0-18.2,7.6-21,17.3-21 c11.5,0,14.6,6.5,14.6,16.2H275c0-3.2-0.3-5-0.8-6.2c-0.6-1.2-1.5-1.7-2.9-1.7c-2.9,0-3.7,2.5-3.7,12S268.4,211.45,271.3,211.45z  M320.1,201.65H320v0.1h-18.9v5.1c0,4.1,1.6,5.3,3.5,5.3c2.2,0,3.6-1.5,3.6-6.8h11.6c-0.3,9.2-4.6,14.5-15.2,14.5 c-12.4,0-16.4-5.7-16.4-20.3c0-14.8,4.8-20.3,16.4-20.3c10.2,0,15.5,4.6,15.5,18.5V201.65z" />
+          <svg
+            id="logo"
+            class="logo"
+            version="1.1"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 400 400"
+          >
+            <path
+              d="M96.4,187.56c-2.9,0-3.6,2.21-3.6,12.04c0,9.69,0.7,12.04,3.6,12.04c2.9,0,3.6-2.35,3.6-12.04 C100,189.92,99.3,187.56,96.4,187.56z"
+            />
+            <path
+              d="M304.4,187.6c-2.6,0-3.5,1.9-3.5,5.9v1.7h7v-1.7C308,189.4,307.1,187.6,304.4,187.6z"
+            />
+            <path
+              d="M161.5,187.6c-2.6,0-3.5,1.9-3.5,5.9v1.7h7v-1.7C165.1,189.4,164.3,187.6,161.5,187.6z"
+            />
+            <path
+              d="M0,0v400h400V0H0z M96.4,219.95c-15.1,0-16.48-9.28-16.48-20.49c0-10.1,1.95-20.21,16.48-20.21 c15.08,0,16.47,9.14,16.48,20.35C112.88,209.7,110.93,219.95,96.4,219.95z M121.4,218.85l-9.4-38.5h13.3l3.7,27.8h0.1l3.6-27.8H146 l-9.4,38.5H121.4z M177.1,201.65H177v0.1h-18.9v5.1c0,4.1,1.7,5.3,3.5,5.3c2.2,0,3.6-1.5,3.6-6.8h11.6c-0.1,9.2-4.6,14.5-15.2,14.5 c-12.4,0-16.3-5.7-16.4-20.3c0-14.8,4.8-20.3,16.4-20.3c10.4,0,15.5,4.6,15.5,18.5V201.65z M202.3,191.15v-0.01 c-1.06-0.1-2.03-0.29-3.1-0.29c-4.6,0-7.2,1.8-7.2,6.9v21h-12.9H179v-38.5h12.4v6.1h0.1c1.5-4.7,5-6.2,8.7-6.2h2.1v10.99 c0.03,0,0.07,0.01,0.1,0.01H202.3z M223.8,218.85v-25.4c0-3.2-0.8-4.6-3.2-4.6c-2.4,0-3.2,1.4-3.2,4.6v25.4h-12.9v-38.5h12.4v4.7 h0.1c1.6-3.7,5-5.7,9.4-5.7c5.7,0,10.1,2.2,10.1,10.5v29H223.8z M252.2,218.85h-12.9v-38.5h12.9V218.85z M271.3,211.45 c2.4,0,3.7-1.5,3.7-6.3v-2.5h11.6c0.1,6.1-0.9,10.4-3.4,13.1c-2.5,2.8-6.5,4-11.9,4c-9.8,0-16.6-3-16.6-19.6c0-18.2,7.6-21,17.3-21 c11.5,0,14.6,6.5,14.6,16.2H275c0-3.2-0.3-5-0.8-6.2c-0.6-1.2-1.5-1.7-2.9-1.7c-2.9,0-3.7,2.5-3.7,12S268.4,211.45,271.3,211.45z  M320.1,201.65H320v0.1h-18.9v5.1c0,4.1,1.6,5.3,3.5,5.3c2.2,0,3.6-1.5,3.6-6.8h11.6c-0.3,9.2-4.6,14.5-15.2,14.5 c-12.4,0-16.4-5.7-16.4-20.3c0-14.8,4.8-20.3,16.4-20.3c10.2,0,15.5,4.6,15.5,18.5V201.65z"
+            />
           </svg>
         </div>
         <ScrollIndicator />
@@ -38,13 +52,37 @@
 </template>
 
 <script>
+import TimelineMax from 'gsap/src/uncompressed/TimelineMax'
+
 import IntroVideo from '~/components/IntroVideo.vue'
 import ServiceCategory from '~/components/ServiceCategory.vue'
 import About from '~/components/About.vue'
 import Controls from '~/components/Layout/Controls.vue'
 import ScrollIndicator from '~/components/ScrollIndicator.vue'
+import VueRouter from 'vue-router'
 
 import serviceCategoriesData from '~/data/serviceCategories.json'
+
+const Router = new VueRouter({
+
+  scrollBehavior: (to, from, savedPosition) => new Promise((resolve) => {
+    const position = savedPosition || {}
+    if (!savedPosition) {
+      if (to.hash) {
+        position.selector = to.hash
+      }
+      if (to.matched.some(m => m.meta.scrollToTop)) {
+        position.x = 0
+        position.y = 0
+      }
+    }
+    Router.app.$root.$once('triggerScroll', () => {
+      Router.app.$nextTick(() => resolve(position))
+    })
+  }),
+  mode: 'history',
+  routes: []
+})
 
 // // detect mobile device
 function isMobile() {
@@ -88,9 +126,24 @@ export default {
       serviceCategories: serviceCategoriesData
     }
   },
+  computed: {
+    showBackAnimation() {
+      return this.$store.state.showBackAnimation
+    },
+    lastPosition() {
+      return this.$store.state.lastPosition
+    },
+    animImage() {
+      return this.$store.state.animImage
+    },
+    imageid() {
+      return this.$store.state.imageid
+    }
+  },
   mounted() {
     this.$nextTick(this.pinContainerScene)
   },
+
   methods: {
     pinContainerScene() {
       const logoZoomDuration = 450
@@ -144,9 +197,33 @@ export default {
           .setTween(shrinkVideo)
         this.$ksvuescr.$emit('addScene', 'shrinkVideo', sceneShrinkVideo)
       }
+
+      this.$nextTick(() => {
+        if (this.showBackAnimation || document.getElementsByClassName('visual-transition-back')) {
+          const pageTransitionBack = new TimelineMax()
+          let animData = { top: 0, left: 0, width: '1px', height: '1px', ease: this.$gsap.Expo.easeInOut }
+
+          if (document.getElementById(this.imageid)) {
+            const visualData = document.getElementById(this.imageid).getBoundingClientRect()
+            animData = { top: (visualData.top) + 'px', left: (visualData.left) + 'px', width: visualData.width + 'px', height: visualData.height + 'px', ease: this.$gsap.Expo.easeInOut }
+          }
+
+          pageTransitionBack.to('#visual-transition-back', 0.6, animData)
+            .to('#visual-transition-back', 0.2, { autoAlpha: 0 })
+            .addCallback(function () {
+            // delete element with id visual-transition from dom
+              const transElement = document.getElementById('visual-transition-back')
+              // just remove it if its mounted before
+              if (transElement) {
+                transElement.remove()
+              }
+            }, 0.8)
+        }
+      })
     }
   }
 }
+
 </script>
 
 <style lang="scss" scoped>

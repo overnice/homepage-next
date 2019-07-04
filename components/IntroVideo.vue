@@ -5,7 +5,6 @@
         <!-- <div id="intro-video--overlay" class="intro-video--overlay" /> -->
         <video id="intro-video--video" autoplay playsinline muted loop>
           <source src="~/assets/videos/intro_video.mp4" type="video/mp4">
-          <source src="~/assets/videos/intro_video.webm" type="video/webm">
         </video>
       </div>
     </div>
@@ -45,6 +44,7 @@ export default {
       transform: translate(-50%,-50%) scale(1.02);
       height: auto;
       min-width: 100vw;
+      min-height: 100%;
       z-index: unset;
       opacity: .4;
 

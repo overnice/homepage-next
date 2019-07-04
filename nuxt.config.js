@@ -4,9 +4,19 @@ const dir = require('node-dir')
 const routesArray = []
 const fs = require('fs')
 const _ = require('lodash')
+const implicitFigures = require('markdown-it-implicit-figures')
+const md = require('markdown-it')()
+  .use(implicitFigures, {
+    dataType: true, // <figure data-type="image">, default: false
+    figcaption: true, // <figcaption>alternative text</figcaption>, default: false
+    tabindex: true, // <figure tabindex="1+n">..., default: false
+    link: false // <a href="img.png"><img src="img.png"></a>, default: false
+  })
+  .use(require('markdown-it-decorate'))
 
 export default {
-  mode: 'universal',
+
+  mode: 'spa',
 
   /*
    ** Headers of the page
@@ -21,6 +31,19 @@ export default {
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
   },
 
+  /**
+   * The custom rules for netlify SPA deployment
+   */
+  netlify: {
+    redirects: [
+      {
+        from: '/*',
+        to: '/200.html',
+        status: 200
+      }
+    ]
+  },
+
   /*
    ** Customize the progress-bar color
    */
@@ -29,17 +52,17 @@ export default {
   /*
    ** Global CSS
    */
-  css: [
-    '~/css/global.scss'
-  ],
+  css: ['~/css/global.scss'],
 
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: [{
-    src: '~/plugins/ksvuescrollmagic',
-    ssr: false
-  }],
+  plugins: [
+    {
+      src: '~/plugins/ksvuescrollmagic',
+      ssr: false
+    }
+  ],
 
   /*
    ** Nuxt.js modules
@@ -48,17 +71,21 @@ export default {
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
     '@nuxtjs/pwa',
-    ['nuxt-i18n', {
-      locales: ['en', 'de'],
-      defaultLocale: 'en',
-      vueI18n: {
-        fallbackLocale: 'en',
-        messages: {
-          en: require('./lang/en-US.json'),
-          de: require('./lang/de-DE.json')
+    '@bazzite/nuxt-netlify',
+    [
+      'nuxt-i18n',
+      {
+        locales: ['en', 'de'],
+        defaultLocale: 'en',
+        vueI18n: {
+          fallbackLocale: 'en',
+          messages: {
+            en: require('./lang/en-US.json'),
+            de: require('./lang/de-DE.json')
+          }
         }
       }
-    }]
+    ]
   ],
   /*
    ** Axios module configuration
@@ -82,10 +109,10 @@ export default {
           test: /\.(js|vue)$/,
           loader: 'eslint-loader',
           exclude: /(node_modules)/,
-          options : {
-            fix : true,
-            vue:true
-        }
+          options: {
+            fix: true,
+            vue: true
+          }
         })
       }
       config.module.rules.push({
@@ -93,11 +120,59 @@ export default {
         loader: 'frontmatter-markdown-loader',
         options: {
           markdown: (body) => {
-            var md = require('markdown-it')();
+            const implicitFigures = require('markdown-it-implicit-figures')
+            const markdownInline = require('markdown-it-for-inline')
+            const md = require('markdown-it')()
+              .use(require('markdown-it-container'), 'left')
+              .use(require('markdown-it-container'), 'right')
+              .use(implicitFigures, {
+                dataType: true, // <figure data-type="image">, default: false
+                figcaption: true, // <figcaption>alternative text</figcaption>, default: false
+                tabindex: true, // <figure tabindex="1+n">..., default: false
+                link: false // <a href="img.png"><img src="img.png"></a>, default: false
+              })
+              .use(markdownInline, 'url_new_win', 'link_open', function (tokens, idx) {
+                var aIndex = tokens[idx].attrIndex('target');
+  
+                if (aIndex < 0) {
+                  tokens[idx].attrPush(['target', '_blank']);
+                } else {
+                  tokens[idx].attrs[aIndex][1] = '_blank';
+                }
+              })
+              // .use(require('markdown-it-decorate'))
+
+            const defaultRender = md.renderer.rules.image
+            const youtubeRE = /(youtu\.be\/|youtube\.com\/(watch\?(.*&)?v=|(embed|v)\/))([^\?&"'>]+)/
+            md.renderer.rules.image = function (
+              tokens,
+              idx,
+              options,
+              env,
+              self
+            ) {
+              const token = tokens[idx]
+              const aIndex = token.attrIndex('src')
+
+              if (youtubeRE.test(token.attrs[aIndex][1])) {
+                const id = token.attrs[aIndex][1].match(youtubeRE)[5]
+
+                return (
+                  '<div class="embed-responsive">\n' +
+                  '  <iframe width="920" height="517" src="https://www.youtube.com/embed/' +
+                  id +
+                  '" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>\n' +
+                  '</div>\n'
+                )
+              }
+
+              // pass token to default renderer.
+              return defaultRender(tokens, idx, options, env, self)
+            }
             return md.render(body)
           }
         }
-      });
+      })
     }
   }
 }

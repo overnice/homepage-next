@@ -13,7 +13,7 @@
     <div class="about--content">
       <h2>{{ $t('about') }}</h2>
       <p>
-        Overnice is obsessed with quality, technology, and its clients.
+        We are obsessed with quality, technology, and its clients.
       </p>
       <p class="small">
         We love them. We travel the world for them, cross the jungle, sail the sea, take the train. But Friday afternoons are off because there's more to life than work.

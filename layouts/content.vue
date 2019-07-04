@@ -1,6 +1,6 @@
 <template>
   <div class="content">
-    <Close link="/" />
+    <Close @click="goback" />
     <div class="content--inner">
       <nuxt />
     </div>
@@ -12,7 +12,17 @@ import Close from '~/components/Layout/Close.vue'
 import Controls from '~/components/Layout/Controls.vue'
 
 export default {
-  components: { Close, Controls }
+  components: { Close, Controls },
+  methods: {
+    goback() {
+      if (window.history.length) {
+        this.$router.back()
+      } else {
+        console.log('test')
+        this.$router.push('/')
+      }
+    }
+  }
 }
 </script>
 
@@ -57,7 +67,7 @@ export default {
         margin-top: 3rem;
       }
 
-      + figure:not(.left):not(.right)  {
+      + figure  { // no need to filter for .left or .right images because they are wrapped in divs anyways
         margin-bottom: var(--xl-spacing);
       }
     }
@@ -87,7 +97,7 @@ export default {
       font-size: var(--small-font-size);
       margin-top: 3rem;
       max-width: 100%;
-      overflow: hidden;
+      // overflow: hidden;
     }
 
     ul, ol {
@@ -172,38 +182,50 @@ export default {
         margin-top: 5rem;
       }
 
-      @media (min-width: 520px) {
-        &.left, &.right {
-          width: 60%;
+      iframe {
+        display: block;
+        width: 100%;
+      }
+    }
+
+    figcaption {
+      font-size: var(--tiny-font-size);
+      padding: 1rem;
+      text-align: center;
+    }
+
+    @media (min-width: 520px) {
+      .left, .right {
+        width: 60%;
+
+        figure {
           margin-top: 3rem;
           margin-bottom: 3rem;
-
-          & + p {
-            margin-top: 3rem;
-          }
         }
 
-        &.left {
-          float: left;
+        & + p {
+          margin-top: 3rem;
+        }
+      }
+
+      .left {
+        float: left;
+        figure {
           margin-right: 4rem;
         }
+      }
 
-        &.right {
-          float: right;
+      .right {
+        float: right;
+        figure {
           margin-left: 4rem;
         }
       }
+    }
 
-      @media (min-width: $bp-tablet) {
-        &.left, &.right {
-          width: 50%;
-        }
-      }
-
-      figcaption {
-        font-size: var(--tiny-font-size);
-        padding: 1rem;
-        text-align: center;
+    @media (min-width: $bp-tablet) {
+      .left, .right {
+        width: 50%;
       }
     }
 

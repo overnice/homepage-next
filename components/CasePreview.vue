@@ -1,14 +1,17 @@
 <template>
-  <nuxt-link
-    :to="localePath({name: 'case-slug', params: {slug: param} })"
-    class="case"
-  >
-    <div class="visual" :style="{ backgroundImage: `url(${visual})` }" />
+  <div class="case" @click="animate()">
+    <div
+      :id="imageid"
+      ref="caseImage"
+      class="visual"
+      :style="{ backgroundImage: `url(${visual})` }"
+    />
     <p v-html="copy" />
-  </nuxt-link>
+  </div>
 </template>
 
 <script>
+import { TimelineMax } from 'gsap'
 export default {
   props: {
     copy: String,
@@ -16,11 +19,52 @@ export default {
     param: String
   },
   computed: {
+    imageid() {
+      return this.param + '_preview'
+    },
     path() {
       return this.localePath('case/' + this.param)
     },
     url() {
       return "'case/" + this.param + "'"
+    }
+  },
+  methods: {
+    goNavigate() {
+      this.$nuxt.$router.push(this.localePath({ name: 'case-slug', params: { slug: this.param } }))
+    },
+    animate() {
+      // store the current scroll position
+      const visualData = this.$refs.caseImage.getBoundingClientRect()
+      const node = document.createElement('div')
+      const nodeOverlay = document.createElement('div')
+
+      // append div to body
+      document.body.appendChild(node)
+      node.appendChild(nodeOverlay)
+
+      node.classList += 'visual-transition'
+      node.id = 'visual-transition'
+      nodeOverlay.classList += 'visual-transition--overlay'
+      nodeOverlay.id += 'visual-transition--overlay'
+
+      const { visual, imageid } = this
+      this.$store.commit('setPosition', { visualData, visual, imageid })
+
+      node.setAttribute('style', `
+        left: ${visualData.left}px;
+        top: ${visualData.top}px;
+        width: ${visualData.width}px;
+        height: ${visualData.height}px;
+        background-image: url(${visual}) !important;
+      `)
+
+      const pageTransition = new TimelineMax({
+        onComplete: this.goNavigate
+      })
+
+      pageTransition.to('#visual-transition', 0.6, { top: '0', left: '0', width: '100vw', height: '100vh', ease: this.$gsap.Expo.easeInOut })
+        .from('#visual-transition--overlay', 0.3, { autoAlpha: 0 }, '-=0.3')
     }
   }
 }

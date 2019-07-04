@@ -6,7 +6,7 @@ tags:
   - corporate design and logo
   - messaging
 ---
-![Nimiq branding case hero image](/cases/branding_nimiq/hero.jpg)
+![](/cases/branding_nimiq/hero.jpg)
 
 ## Brand new Money
 We were thrilled to be invited to the so-called ‘Nerd Temple’ in fair Costa Rica. There, we found a group of incredibly talented people that shared a vision we could get behind: Bring the benefits of blockchain technology to everyone by building a cryptocurrency so easy and convenient to use and understand that your grandma would be able to use it. 
@@ -15,16 +15,19 @@ We were thrilled to be invited to the so-called ‘Nerd Temple’ in fair Costa 
 While the old branding was considered to be lacking in many regards by the team and the community alike, there was a heritage to acknowledge and to honour in our rebranding. 
 
 ## Getting the fundamentals right
-We interviewed the whole team, stakeholders and about ten community members to establish an authentic and first-hand understanding of what we were trying to brand here. In workshops and group discussions, an increasingly clear identity emerged and we were quick to capture and refine the results. 
 
-![brand values Nimiq](/cases/branding_nimiq/brandvalues.jpeg) 
+::: right
+![](/cases/branding_nimiq/brandvalues.jpeg)
+:::
+
+We interviewed the whole team, stakeholders and about ten community members to establish an authentic and first-hand understanding of what we were trying to brand here. In workshops and group discussions, an increasingly clear identity emerged and we were quick to capture and refine the results. 
 
 To enable an easily relatable brand free from cryptic marketing speech, a brand persona was developed. It features various character traits, strengths and weaknesses and a set of things this fictional person is passionate about. 
 
 Vision and mission were heavily discussed and iterated on until everyone in the team had a shared and aligned understanding of what the project was aiming to accomplish. 
 
 ## A new logo – radical simplicity 
-![Nimiq logo scatches and scribbles](/cases/branding_nimiq/logosketches.jpeg)
+![](/cases/branding_nimiq/logosketches.jpeg)
 
 Nimiq strives for simplicity. We believe that stripping away everything unnecessary leads to less cognitive load and eventually to a more convenient and enjoyable user experience. This aspiration was directly applied to the logo creation. 
 
@@ -33,7 +36,9 @@ This radical simplicity sparked controversy amongst the community and the stakeh
 > We were convinced: It’s the only true representation of Nimiq and it’s identity.
 Along the web-based styleguide that everyone can access and use to build on, we presented our reasons and the community agreed. 
 
-![Nimiq logo outlines](/cases/branding_nimiq/logo_outline.svg) half
+::: right
+![](/cases/branding_nimiq/logo_outline.svg)
+:::
 
 1. The logo fully delivers on being simple and on being special
 2. It’s an iconic shape that works internationally (unlike the Latin “n”).
@@ -50,12 +55,12 @@ Finding an appropriate font was tricky. It needed to
 
 After quite some research, we found what we were looking for: Muli.
 
-![Nimiq branding font](/cases/branding_nimiq/fontoutline.svg)
+![](/cases/branding_nimiq/fontoutline.svg)
 
 It’s a very plain and straightforward sans-serif but has subtle, expressive accents that make it stand out. Furthermore, Muli is on Google Fonts and its source code is publicly accessible on Github.
 
 ## Primary Colours 
-![Nimiq branding primary colors](/cases/branding_nimiq/primarycolors.svg)
+![](/cases/branding_nimiq/primarycolors.svg)
 
 We use traditional, basic colors with relation to payments, but with a subtle, unexpected spin. The ultramarine dark-blue with a subtle touch of violet spread from the corner. The classic red that slightly turns into magenta.
 
@@ -64,13 +69,13 @@ A light stage was chosen to underline Nimiq’s transparent, open and collaborat
 While a dark ultramarine embodies trust and reliability, ajar to the traditional financial sector, a  bright tone of gold transports value and warmth.
 
 ## Secondary Colours
-![Nimiq branding secondary colors](/cases/branding_nimiq/secondarycolors.svg)
+![](/cases/branding_nimiq/secondarycolors.svg)
 
 Nimiq’s main brand touchpoint are its interfaces so we choose the secondary color palette to support interactions and interface feedback: A classic light blue for neutral highlights, mint green for success, vivid orange for strong highlights and warnings, and a rich red to express danger.
 
 ## All about accessibility 
 Nimiq is a web-based technology. The branding reflects this and so we decided to let the presentation of the branding reflect it as well. 
 
-![Nimiq styleguide](/cases/branding_nimiq/styleguide.jpg)
+![](/cases/branding_nimiq/styleguide.jpg)
 
 The brand book was delivered as a [Google Doc](https://docs.google.com/document/d/15MEknmT-IwWysZC_7-inbHyvSoZ_ujU4jGw3aiJR2xU/edit#), the styleguide as an open [Figma file](https://www.figma.com/file/GU6cdS85S2v13QcdzW9v8Tav/NIMIQ-Style-Guide-(Oct-18)?node-id=300%3A0).
