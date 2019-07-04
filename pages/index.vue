@@ -201,21 +201,10 @@ export default {
       this.$nextTick(() => {
         if (this.showBackAnimation) {
           console.log('pos', this.lastPosition)
-          const node = document.createElement('div')
-          document.body.appendChild(node)
-          node.classList += 'visual-transition-back'
-          node.id = 'visual-transition-back'
-          node.setAttribute('style', `
-        left: 0;
-        top: 0;
-        width: 100vw;
-        height: 100vh;
-        position: fixed;
-        `)
           const pageTransitionBack = new TimelineMax()
 
           const visualData = document.getElementById(this.imageid).getBoundingClientRect()
-          // hmmm
+
           const animData = { top: (visualData.top) + 'px', left: (visualData.left) + 'px', width: visualData.width + 'px', height: visualData.height + 'px', backgroundColor: '#ffffff', ease: this.$gsap.Expo.easeInOut }
           console.log(animData)
           pageTransitionBack.to('#visual-transition-back', 0.6, animData)

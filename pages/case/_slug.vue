@@ -11,10 +11,10 @@
   </div>
 </template>
 <script>
-// import Close from '~/components/Layout/Close.vue'
-
+import pageTransition from '~/utils/page-transition'
+import { TimelineMax } from 'gsap'
 export default {
-  pageTransition: 'fade',
+  transition: pageTransition,
   // async asyncData({ params }) {
   //   const fileContent = await import(`~/static/caseMarkdownFiles/${params.slug}.md`)
   //   return {
@@ -43,7 +43,11 @@ export default {
     const transElement = document.getElementById('visual-transition')
     // just remove it if its mounted before
     if (transElement) {
-      transElement.remove()
+      const pageTransition = new TimelineMax()
+      pageTransition.to('#visual-transition', 0.6, { opacity: 0, ease: this.$gsap.Expo.easeInOut })
+        .addCallback(() => {
+          transElement.remove()
+        }, 0.6)
     }
   },
   head() {
@@ -66,6 +70,12 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.fade-enter-active, .fade-leave-active {
+  transition: opacity 5.5s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
+}
 .tags {
   font-size: var(--small-font-size) !important;
   opacity: .5;

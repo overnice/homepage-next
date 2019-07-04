@@ -1,11 +1,35 @@
 <template>
-  <div class="close" @click="$emit('click')" />
+  <div class="close" @click="close()" />
 </template>
 
 <script>
 export default {
   props: {
     link: String
+  },
+  methods: {
+    close() {
+      const nodeBlend = document.createElement('div')
+      document.body.appendChild(nodeBlend)
+
+      nodeBlend.id = 'visual-transition-back'
+      nodeBlend.classList += 'visual-transition-back'
+
+      nodeBlend.setAttribute('style', `
+        left: 0;
+        top: 0;
+        width: 100vw;
+        height: 100vh;
+        position: fixed;
+        background-color: #ffffff;
+        opacity: 0;
+      `)
+
+      this.$gsap.TweenMax.to('#visual-transition-back', 0.2, { opacity: 1 })
+      setTimeout(() => {
+        this.$emit('click')
+      }, 190)
+    }
   }
 }
 </script>
