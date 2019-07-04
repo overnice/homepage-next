@@ -1,6 +1,11 @@
 <template>
   <div class="case" @click="animate()">
-    <div ref="caseImage" class="visual" :style="{ backgroundImage: `url(${visual})` }" />
+    <div
+      :id="imageid"
+      ref="caseImage"
+      class="visual"
+      :style="{ backgroundImage: `url(${visual})` }"
+    />
     <p v-html="copy" />
   </div>
 </template>
@@ -14,6 +19,9 @@ export default {
     param: String
   },
   computed: {
+    imageid() {
+      return this.param + '_preview'
+    },
     path() {
       return this.localePath('case/' + this.param)
     },
@@ -50,8 +58,8 @@ export default {
         position: fixed;
       `)
 
-      const { visual } = this
-      this.$store.commit('setPosition', { visualData, visual })
+      const { visual, imageid } = this
+      this.$store.commit('setPosition', { visualData, visual, imageid })
 
       image.setAttribute('style', `
         left: ${visualData.left}px;

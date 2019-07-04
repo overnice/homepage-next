@@ -6,14 +6,16 @@ export const state = () => ({
     height: 0
   },
   showBackAnimation: false,
-  animImage: ''
+  animImage: '',
+  imageid: ''
 })
 
 export const mutations = {
   setPosition(state, data) {
-    const { visualData, visual } = data
+    const { visualData, visual, imageid } = data
     state.animImage = visual
     state.lastPosition = visualData
+    state.imageid = imageid
     state.showBackAnimation = true
   }
 }
