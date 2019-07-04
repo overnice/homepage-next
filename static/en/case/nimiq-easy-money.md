@@ -29,7 +29,9 @@ The concept of private keys and public keys, seed words, Image Wallets etc. were
 
 The wording is reduced to a minimum and focuses on providing precise info and guidance.
 
+::: left
 ![Nimiq oboarding screens](/cases/product_nimiq/signup.gif)
+:::
 
 ## Easy onboarding
 We took our time to design the entrance to the Nimiq blockchain that has one clear cut goal: Be easy.

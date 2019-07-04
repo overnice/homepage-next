@@ -4,14 +4,15 @@ const dir = require('node-dir')
 const routesArray = []
 const fs = require('fs')
 const _ = require('lodash')
-const implicitFigures = require('markdown-it-implicit-figures');
+const implicitFigures = require('markdown-it-implicit-figures')
 const md = require('markdown-it')()
   .use(implicitFigures, {
-    dataType: true,  // <figure data-type="image">, default: false
-    figcaption: true,  // <figcaption>alternative text</figcaption>, default: false
+    dataType: true, // <figure data-type="image">, default: false
+    figcaption: true, // <figcaption>alternative text</figcaption>, default: false
     tabindex: true, // <figure tabindex="1+n">..., default: false
     link: false // <a href="img.png"><img src="img.png"></a>, default: false
-  }).use(require('markdown-it-decorate'));
+  })
+  .use(require('markdown-it-decorate'))
 
 export default {
   mode: 'spa',
@@ -117,16 +118,17 @@ export default {
         loader: 'frontmatter-markdown-loader',
         options: {
           markdown: (body) => {
-            const implicitFigures = require('markdown-it-implicit-figures');
+            const implicitFigures = require('markdown-it-implicit-figures')
             const md = require('markdown-it')()
-              
+              .use(require('markdown-it-container'), 'left')
+              .use(require('markdown-it-container'), 'right')
               .use(implicitFigures, {
-                dataType: true,  // <figure data-type="image">, default: false
-                figcaption: true,  // <figcaption>alternative text</figcaption>, default: false
+                dataType: true, // <figure data-type="image">, default: false
+                figcaption: true, // <figcaption>alternative text</figcaption>, default: false
                 tabindex: true, // <figure tabindex="1+n">..., default: false
                 link: false // <a href="img.png"><img src="img.png"></a>, default: false
-              }).use(require('markdown-it-decorate'));
-             
+              })
+              .use(require('markdown-it-decorate'))
 
             const defaultRender = md.renderer.rules.image
             const youtubeRE = /(youtu\.be\/|youtube\.com\/(watch\?(.*&)?v=|(embed|v)\/))([^\?&"'>]+)/
@@ -141,7 +143,7 @@ export default {
               const aIndex = token.attrIndex('src')
 
               if (youtubeRE.test(token.attrs[aIndex][1])) {
-                const id = token.attrs[aIndex][1].match(youtubeRE)[2]
+                const id = token.attrs[aIndex][1].match(youtubeRE)[5]
 
                 return (
                   '<div class="embed-responsive">\n' +
