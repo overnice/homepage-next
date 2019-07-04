@@ -4,7 +4,7 @@
       <div class="intro-video--inner">
         <!-- <div id="intro-video--overlay" class="intro-video--overlay" /> -->
         <video id="intro-video--video" autoplay playsinline muted loop>
-          <source src="~/assets/videos/intro_video.mp4" type="video/mp4">
+          <source src="https://s3.eu-central-1.amazonaws.com/on-website-assets/intro_video.mp4" type="video/mp4">
         </video>
       </div>
     </div>
