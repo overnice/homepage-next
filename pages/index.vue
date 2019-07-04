@@ -205,9 +205,10 @@ export default {
 
           const visualData = document.getElementById(this.imageid).getBoundingClientRect()
 
-          const animData = { top: (visualData.top) + 'px', left: (visualData.left) + 'px', width: visualData.width + 'px', height: visualData.height + 'px', backgroundColor: '#ffffff', ease: this.$gsap.Expo.easeInOut }
+          const animData = { top: (visualData.top) + 'px', left: (visualData.left) + 'px', width: visualData.width + 'px', height: visualData.height + 'px', ease: this.$gsap.Expo.easeInOut }
           console.log(animData)
           pageTransitionBack.to('#visual-transition-back', 0.6, animData)
+            .to('#visual-transition-back', 0.2, { autoAlpha: 0 })
             .addCallback(function () {
             // delete element with id visual-transition from dom
               const transElement = document.getElementById('visual-transition-back')
@@ -215,7 +216,7 @@ export default {
               if (transElement) {
                 transElement.remove()
               }
-            }, 0.6)
+            }, 0.8)
         }
       })
     }

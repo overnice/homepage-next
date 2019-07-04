@@ -23,6 +23,7 @@ export default {
         position: fixed;
         background-color: #ffffff;
         opacity: 0;
+        z-index: 2;
       `)
 
       this.$gsap.TweenMax.to('#visual-transition-back', 0.2, { opacity: 1 })

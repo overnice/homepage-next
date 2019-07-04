@@ -37,46 +37,34 @@ export default {
       // store the current scroll position
       const visualData = this.$refs.caseImage.getBoundingClientRect()
       const node = document.createElement('div')
-      const image = document.createElement('div')
+      const nodeOverlay = document.createElement('div')
+
       // append div to body
       document.body.appendChild(node)
-
-      // append image to div
-      node.appendChild(image)
+      node.appendChild(nodeOverlay)
 
       node.classList += 'visual-transition'
       node.id = 'visual-transition'
+      nodeOverlay.classList += 'visual-transition--overlay'
+      nodeOverlay.id += 'visual-transition--overlay'
 
-      image.classList += 'visual-transition-image'
-      image.id = 'visual-transition-image'
+      const { visual, imageid } = this
+      this.$store.commit('setPosition', { visualData, visual, imageid })
 
       node.setAttribute('style', `
         left: ${visualData.left}px;
         top: ${visualData.top}px;
         width: ${visualData.width}px;
         height: ${visualData.height}px;
-        position: fixed;
+        background-image: url(${visual}) !important;
       `)
 
-      const { visual, imageid } = this
-      this.$store.commit('setPosition', { visualData, visual, imageid })
+      const pageTransition = new TimelineMax({
+        onComplete: this.goNavigate
+      })
 
-      image.setAttribute('style', `
-        left: ${visualData.left}px;
-        top: ${visualData.top}px;
-        width: ${visualData.width}px;
-        height: ${visualData.height}px;
-        position: fixed;
-        background-size: cover;
-        background-image: url(${this.visual}) !important;
-      `)
-      const pageTransition = new TimelineMax()
-      const pageTransitionImage = new TimelineMax()
-
-      pageTransition.to('#visual-transition', 0.6, { top: '0', left: '0', width: '100vw', height: '100vh', backgroundColor: '#ffffff', ease: this.$gsap.Expo.easeInOut })
-        .addCallback(this.goNavigate, 0.6)
-      pageTransitionImage.to('#visual-transition-image', 0.6, { top: '0', left: '0', width: '100vw', height: '100vh', opacity: '0', ease: this.$gsap.Expo.easeInOut })
-        .addCallback(this.goNavigate, 0.6)
+      pageTransition.to('#visual-transition', 0.6, { top: '0', left: '0', width: '100vw', height: '100vh', ease: this.$gsap.Expo.easeInOut })
+        .from('#visual-transition--overlay', 0.3, { autoAlpha: 0 }, '-=0.3')
     }
   }
 }
