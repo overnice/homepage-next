@@ -199,14 +199,15 @@ export default {
       }
 
       this.$nextTick(() => {
-        if (this.showBackAnimation) {
-          console.log('pos', this.lastPosition)
+        if (this.showBackAnimation || document.getElementsByClassName('visual-transition-back')) {
           const pageTransitionBack = new TimelineMax()
+          let animData = { top: 0, left: 0, width: '1px', height: '1px', ease: this.$gsap.Expo.easeInOut }
 
-          const visualData = document.getElementById(this.imageid).getBoundingClientRect()
+          if (document.getElementById(this.imageid)) {
+            const visualData = document.getElementById(this.imageid).getBoundingClientRect()
+            animData = { top: (visualData.top) + 'px', left: (visualData.left) + 'px', width: visualData.width + 'px', height: visualData.height + 'px', ease: this.$gsap.Expo.easeInOut }
+          }
 
-          const animData = { top: (visualData.top) + 'px', left: (visualData.left) + 'px', width: visualData.width + 'px', height: visualData.height + 'px', ease: this.$gsap.Expo.easeInOut }
-          console.log(animData)
           pageTransitionBack.to('#visual-transition-back', 0.6, animData)
             .to('#visual-transition-back', 0.2, { autoAlpha: 0 })
             .addCallback(function () {

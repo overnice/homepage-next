@@ -15,7 +15,12 @@ export default {
   components: { Close, Controls },
   methods: {
     goback() {
-      this.$router.back()
+      if (window.history.length) {
+        this.$router.back()
+      } else {
+        console.log('test')
+        this.$router.push('/')
+      }
     }
   }
 }
