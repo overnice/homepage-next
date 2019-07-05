@@ -24,9 +24,9 @@
     "smallCopy": "Web- and mobile apps, platforms, websites.",
     "casePreviews": [
       {
-        "slug": "talentwunder-13-become-1",
-        "visual": "/cases/product_talentwunder/preview.jpg",
-        "copy": "<strong>Talentwunder</strong> finds talent. overnice helped with the search. Aggregating a tiring and incomprehensible list of input fields into a single, smart search field."
+        "slug": "vodafone-self-service",
+        "visual": "/cases/product_vodafone/hero.jpg",
+        "copy": "<strong>Vodafone</strong> and it’s customers share a problem: If the internet connection gets lost, they have to engage with each other – or do they?"
       },
       {
         "slug": "nimiq-easy-money",
@@ -34,9 +34,9 @@
         "copy": "Breaking barriers, translating complicated stuff and stripping away technicalities until it’s easier to create a <strong>Nimiq</strong> account on the blockchain than creating an email address."
       },
       {
-        "slug": "vodafone-self-service",
-        "visual": "/cases/product_vodafone/hero.jpg",
-        "copy": "<strong>Vodafone</strong> and it’s customers share a problem: If the internet connection gets lost, they have to engage with each other – or do they?"
+        "slug": "talentwunder-13-become-1",
+        "visual": "/cases/product_talentwunder/preview.jpg",
+        "copy": "<strong>Talentwunder</strong> finds talent. overnice helped with the search. Aggregating a tiring and incomprehensible list of input fields into a single, smart search field."
       }
     ]
   },
