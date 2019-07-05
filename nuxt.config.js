@@ -29,7 +29,7 @@ export default {
       { hid: 'description', name: 'description', content: 'We create brands, products, creatives and overall a good time for users.' },
       { hid: 'image', name: 'image', content: '/og-image.png' },
       { hid: 'twitter-card', name: 'twitter:card', content: 'summary_large_image' },
-      { hid: 'twitter-title', name: 'twitter:card', content: 'overnice' },
+      { hid: 'twitter-title', name: 'twitter:title', content: 'overnice' },
       { hid: 'twitter-description', name: 'twitter:description', content: 'We create brands, products, creatives and overall a good time for users.' },
       { hid: 'twitter-image-src', name: 'twitter:image:src', content: '/og-image.png' },
       { hid: 'og-title', name: 'og:title', content: 'overnice' },
