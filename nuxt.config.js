@@ -31,11 +31,11 @@ export default {
       { hid: 'twitter-card', name: 'twitter:card', content: 'summary_large_image' },
       { hid: 'twitter-title', name: 'twitter:title', content: 'overnice' },
       { hid: 'twitter-description', name: 'twitter:description', content: 'We create brands, products, creatives and overall a good time for users.' },
-      { hid: 'twitter-image-src', name: 'twitter:image:src', content: '/og-image.png' },
+      { hid: 'twitter-image', name: 'twitter:image', content: '/og-image.png' },
       { hid: 'og-title', name: 'og:title', content: 'overnice' },
       { hid: 'og-description', name: 'og:description', content: 'We create brands, products, creatives and overall a good time for users.' },
       { hid: 'og-image', name: 'og:image', content: '/og-image.png' },
-      { hid: 'og-type', name: 'og:type', content: 'website' },
+      { hid: 'og-type', name: 'og:type', content: 'website' }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
