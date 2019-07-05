@@ -13,7 +13,7 @@
     <div class="about--content">
       <h2>{{ $t('about') }}</h2>
       <p>
-        We are obsessed with quality, technology, and our clients.
+        We are obsessed with quality, technology and our clients.
       </p>
       <p class="small">
         We love them. We travel the world for them, cross the jungle, sail the sea, take the train. But Friday afternoons are off because there's more to life than work.

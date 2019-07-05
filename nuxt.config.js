@@ -21,13 +21,32 @@ export default {
    ** Headers of the page
    */
   head: {
-    title: 'overnice – brands, products & creatives',
+    title: 'overnice',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      // { hid: 'description', name: 'description', content: "" }
+      { hid: 'title', name: 'title', content: 'overnice' },
+      { hid: 'description', name: 'description', content: 'We create brands, products, creatives and overall a good time for users.' },
+      { hid: 'image', name: 'image', content: '/og-image.png' },
+      { hid: 'twitter-card', name: 'twitter:card', content: 'summary_large_image' },
+      { hid: 'twitter-title', name: 'twitter:card', content: 'overnice' },
+      { hid: 'twitter-description', name: 'twitter:description', content: 'We create brands, products, creatives and overall a good time for users.' },
+      { hid: 'twitter-image-src', name: 'twitter:image:src', content: '/og-image.png' },
+      { hid: 'og-title', name: 'og:title', content: 'overnice' },
+      { hid: 'og-description', name: 'og:description', content: 'We create brands, products, creatives and overall a good time for users.' },
+      { hid: 'og-image', name: 'og:image', content: '/og-image.png' },
+      { hid: 'og-type', name: 'og:type', content: 'website' },
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
+    link: [
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'apple-touch-icon', sizes: '180x180', href: '/180x180.png' },
+      { rel: 'icon', type: 'image/png', sizes: '192x192', href: '/192x192.png' },
+      { rel: 'icon', type: 'image/png', sizes: '96x96', href: '/96x96.png' },
+      { rel: 'icon', type: 'image/png', sizes: '32x32', href: '/32x32.png' },
+      { rel: 'icon', type: 'image/png', sizes: '16x16', href: '/16x16.png' }
+      // { rel: 'sitemap', type: 'application/xml', href: '____' }
+      // { rel: 'manifest', href: '____' }
+    ]
   },
 
   /**
