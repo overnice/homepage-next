@@ -207,7 +207,7 @@ export default {
       this.$nextTick(() => {
         if (this.showBackAnimation || document.getElementsByClassName('visual-transition-back')) {
           const pageTransitionBack = new TimelineMax()
-          let animData = { top: 0, left: 0, width: '1px', height: '1px', ease: this.$gsap.Expo.easeInOut }
+          let animData = { opacity: 0, ease: this.$gsap.Expo.easeInOut }
 
           if (document.getElementById(this.imageid)) {
             const visualData = document.getElementById(this.imageid).getBoundingClientRect()
@@ -224,6 +224,7 @@ export default {
                 transElement.remove()
               }
             }, 0.8)
+          this.$store.commit('resetAnimations')
         }
       })
     }
