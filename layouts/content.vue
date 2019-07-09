@@ -18,7 +18,6 @@ export default {
       if (window.history.length) {
         this.$router.back()
       } else {
-        console.log('test')
         this.$router.push('/')
       }
     }
