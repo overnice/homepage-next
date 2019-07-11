@@ -30,13 +30,14 @@
           <a href="https://goo.gl/maps/kJ45arnjaPRWryRL6" target="blank">Kreuzberg</a>
         </p>
         <p class="footnotes">
-          <a class="clickable" @click="nav('/imprint')">
+          <nuxt-link class="clickable" to="/imprint">
             Imprint
-          </a>
-          <a class="clickable" @click="nav('/privacy')">
+          </nuxt-link>
+          <nuxt-link class="clickable" to="/privacy">
             Privacy
-          </a>
-          <!-- <a href="">Jobs</a> -->
+          </nuxt-link>
+            <!-- <a href="">Jobs</a> -->
+          </nuxt-link>
         </p>
       </div>
     </div>
@@ -53,34 +54,24 @@ export default {
     nav(link) {
       // store the current scroll position
       const node = document.createElement('div')
-      const nodeOverlay = document.createElement('div')
 
       // append div to body
       document.body.appendChild(node)
-      node.appendChild(nodeOverlay)
 
       node.classList += 'visual-transition'
       node.id = 'visual-transition'
-      nodeOverlay.classList += 'visual-transition--overlay'
-      nodeOverlay.id += 'visual-transition--overlay'
 
       node.setAttribute('style', `
         left: 0;
         top: 0;
         width: 100vh;
         height: 100vh;
-        opacity: 0;
+        opacity: 1;
       `)
 
-      const pageTransition = new TimelineMax({
-        onComplete: this.goNavigate(link)
-      })
+      const pageTransition = new TimelineMax()
 
       pageTransition.to('#visual-transition', 0.6, { opacity: '0', ease: this.$gsap.Expo.easeInOut })
-        .from('#visual-transition--overlay', 0.3, { autoAlpha: 0 }, '-=0.3')
-    },
-    goNavigate(link) {
-      this.$router.push(link)
     },
     handleAboutVisual() {
       if (window.innerWidth > 650) {
