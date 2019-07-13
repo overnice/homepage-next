@@ -8,11 +8,11 @@ tags:
 ---
 ![](/cases/creative_solidified/hero.png)
 
-IT-security is becoming increasingly crucial for our world to function. Blockchain technology provides many solutions but, like with every new technology, it comes with a set of new challenges.
+IT security is becoming an increasingly high-stakes issue in our world today. Blockchain technology provides many solutions but, like every new technology, it comes with a set of new challenges.
 
-Being immutable is one of the significant advantages of a blockchain. Being immutable also means that coding errors, vulnerabilities and bugs cannot be fixed after they were released. 
+Being immutable is one of the significant advantages of a blockchain. But being immutable also means that coding errors, vulnerabilities and bugs cannot be fixed after they were released. 
 
-Solidified provides code reviews by renowned experts. But room for human error and abuse still persists. So the companies researchers developed a system that utilizes game theory to align incentives and to distributes the burden of making sure that no mistake is left: The bug prediction market. 
+Solidified provides code reviews by renowned experts. But room for human error remains and abuse still persists. So the companies researchers developed a system that utilizes game theory to align incentives and share the burden of eliminating mistakes: The Bug Prediction Market. 
 
 We supported the fundraising campaign with marketing advice and content production.
 
@@ -21,17 +21,17 @@ Reducing complexity and packaging complicated matters into easy-to-get pieces is
 
 ![](/cases/creative_solidified/infographic.jpg)
 
-For underlining the technical aspiration of the project, we felt an infographic might be too old-school. So we went ahead and built an interactive experience. Users could follow the ‘swimming lanes’ and mouse-over items to receive more in detail info.
+To underline the technical aspirations of the project, we felt an infographic might be too old-school. So we went ahead and built an interactive experience. Users could follow the ‘swimming lanes’ and mouse-over items to receive more detailed info.
 
 ![](/cases/creative_solidified/micrositesketch.jpg)
 
 ![](/cases/creative_solidified/microsite.png)
 
 ## Putting faces on it
-Even with interactive experiences and infographics, such a highly technical and complicated matter remains abstract and is hard to trust. Together with our friends from [Monic Films](https://www.monicfilms.de) and DOP [Alexander Schmutzler](https://alxschmtzlr.com/) produced some high-quality videos where the actual inventors and the team behind the Bug Prediction Market explain their reasoning and enthusiasm.
+Even with interactive experiences and infographics, such a highly technical and complicated matter remains abstract and is hard to trust. Together with our friends at [Monic Films](https://www.monicfilms.de) and DOP [Alexander Schmutzler](https://alxschmtzlr.com/) produced some high-quality videos in which the actual inventors and the team behind the Bug Prediction Market explain their reasoning and enthusiasm.
 
 ![](https://www.youtube.com/watch?v=4yG8C_dJcZg)
 
-For the more technical people, we designed the so-called whitepaper, an in-depth description of the system’s design and functionality. While the infographic and interactive experience aimed to be accessible and easy-to-get, the whitepaper is supposed to catch the academic quality and aspiration of the project. 
+For the more tech-savvy, we designed the so-called ‘whitepaper’ - an in-depth description of the system’s design and functionality. While the infographic and interactive experience aimed to be accessible and easy to grasp, the white paper is intended to catch the academic quality and aspiration of the project.
 
 ![](/cases/creative_solidified/whitepaper_bpm.png)

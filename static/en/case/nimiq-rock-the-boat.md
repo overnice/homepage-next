@@ -8,37 +8,38 @@ tags:
 ---
 ![](/cases/creative_nimiq/hero.jpg)
 
-The Web3 Summit is a well respected and high-quality conference. They implemented a no-promotion policy for good reasons, as many conferences are riddled with rampant advertisements, bought speaking opportunities and massive sponsoring. 
+The Web3 Summit is a well-respected and high-quality conference. The organizers implemented a no-promotion policy, and with good reason, as many conferences are riddled with rampant advertisements, bought speaking opportunities and massive sponsoring. 
 
-We had to make sure not to draw the anger of the organizers and the visitors on us for ruining their non-bullshit conference. 
+We had to be careful not to draw the anger of the organizers or visitors for encroaching on their no-bullshit conference.
 
 ::: left
 ![](/cases/creative_nimiq/location.jpg)
 :::
 
-But to justify breaking this rule, we had to come up with something that would create attention in a meaningful way — in a way that added value, not only to the attendees but hopefully to the organizers as well.
+To justify breaking the rule, we had to come up with something that would create attention in a meaningful way — in a way that added value, not only for attendees but hopefully for the organizers as well.
 
-The rough idea: Get a boat, put a giant billboard on it, develop a cryptocurrency faucet, embed it in a nice web app and link to it from the giant QR code that is displayed on the billboard. 
+The rough idea: Get a boat, put a giant billboard on it, develop a cryptocurrency faucet, embed it in a nice web app and link to it from the giant QR code displayed on the billboard.
 
-## From idea to execution in less than two weeks
-We found ourselves with an idea and less than two weeks to do all of that and — most importantly — decide whether this was a good idea and if we had the guts to take the risk.
+## From idea to execution in under two weeks
+We found ourselves with a concept  and less than two weeks to put it into action and— most importantly —to  decide whether it was actually a good idea, and whether we had the guts to take the risk.
 
 From trouble with the German water police to hate from the community to simply not being able to finish the app in time — the list of things that could go wrong was daunting.
 
-In the end, the reason we ran with it was the team’s spirit. Team Nimiq and we liked the idea and liked doing something bold. 
+In the end, the reason we ran with it was the team’s spirit. We and Team Nimiq liked the idea and were ready to do something bold. 
 
 ## The beauty of the struggle
 ![](/cases/creative_nimiq/workinprogress.jpg)
 
-While the developers worked overtime, the billboard was set up by our trusted handymen and a user experience was designed that pushed Nimiq’s ease-of-use principle even further.
+While the developers worked overtime, the billboard was set up by our trusted handymen, and a user experience that pushed Nimiq’s ease-of-use principle even further was designed.
 
 ![](/cases/creative_nimiq/interfaces.jpeg)
 
-We had cross about 50km of German rivers and lakes to get the boat to its designated place of action and moved in with our office, putting finishing touches on everything.
+We had to cross about 50km of German rivers and lakes to get the boat to its designated 
+place of action, even moving our office onboard while we put the finishing touches on everything.
 
 ![](/cases/creative_nimiq/boatworking.jpg)
 
-Stormy weather, bridges that were almost too low to pass, the motor dying minutes before the event, the police, the app itself — it all worked like a charm in the end. Even the organizers seemed to like the attention and the effort that we had put into their summit.
+Stormy weather, bridges that were almost too low to pass, the motor dying minutes before the event, the police, the app itself — it all worked like a charm in the end. Even the organizers seemed to like the attention and appreciate the effort we had put into their summit.
 
 ![](/cases/creative_nimiq/wheather.jpeg)
 
