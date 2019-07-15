@@ -1,6 +1,6 @@
 ---
 title: Do It Yourself
-abstract: "<strong>Vodafone</strong> and it’s customers share a problem: If the internet connection gets lost, they have to engage with each other – or do they?"
+abstract: "<strong>Vodafone</strong> and its customers share a problem: If the internet connection gets lost, they have to engage with each other – or do they?"
 tags:
   - concept
   - user experience
