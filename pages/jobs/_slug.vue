@@ -11,21 +11,13 @@
   </div>
 </template>
 <script>
-import pageTransition from '~/utils/page-transition'
 import { TimelineMax } from 'gsap'
 export default {
-  transition: pageTransition,
-  // async asyncData({ params }) {
-  //   const fileContent = await import(`~/static/caseMarkdownFiles/${params.slug}.md`)
-  //   return {
-  //     content: fileContent
-  //   }
-  // },
-  // components: { Close },
+  pageTransition: 'fade',
   layout: 'content',
 
   async asyncData({ params, app }) {
-    const fileContent = await import('~/static/' + app.i18n.locale + '/case/' + params.slug + '.md')
+    const fileContent = await import('~/static/' + app.i18n.locale + '/jobs/' + params.slug + '.md')
     const attr = fileContent.attributes
 
     return {

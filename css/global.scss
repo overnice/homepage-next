@@ -206,6 +206,21 @@ p.small {
   animation: fade-out 0.6s;
 }
 
+// Page transitions
+.page-enter-active, .page-leave-active {
+  transition: opacity .6s cubic-bezier(0.25, 0, 0, 1);
+}
+.page-enter, .page-leave-to {
+  opacity: 0;
+}
+
+.layout-enter-active, .layout-leave-active {
+  transition: opacity .6s cubic-bezier(0.25, 0, 0, 1)
+}
+.layout-enter, .layout-leave-active {
+  opacity: 0
+}
+
 @keyframes fade-in {
   0% { opacity: 0; }
   100% { opacity: 1; }
@@ -216,31 +231,6 @@ p.small {
   100% { opacity: 0; }
 }
 
-/* .zoom-enter-active,
-.zoom-leave-active {
-  transition: opacity .5s
+.clickable {
+  cursor: pointer;
 }
-
-.zoom-enter, .zoom-leave-active {
-  opacity: 0
-} */
-
-// .right {
-//   float: right;
-//   width: 50% !important;
-// }
-// .left {
-//   float: left;
-//   width: 50% !important;
-// }
-// .text-left {
-//   width: 50%;
-//   float: left;
-// }
-// .text-right {
-//   width: 50%;
-//   float: right;
-//   padding: 0 10px;
-// }
-
-

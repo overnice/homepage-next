@@ -22,6 +22,7 @@ module.exports = {
     'vue/require-default-prop': false,
     'no-tabs': 0,
     'no-console': 1,
-    'nuxt/no-globals-in-created': false
+    'nuxt/no-globals-in-created': false,
+    'vue/no-v-html': false
   }
 }

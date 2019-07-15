@@ -17,5 +17,8 @@ export const mutations = {
     state.lastPosition = visualData
     state.imageid = imageid
     state.showBackAnimation = true
+  },
+  resetAnimations(state) {
+    state.imageid = ''
   }
 }

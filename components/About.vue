@@ -30,9 +30,14 @@
           <a href="https://goo.gl/maps/kJ45arnjaPRWryRL6" target="blank">Kreuzberg</a>
         </p>
         <p class="footnotes">
-          <a href="/imprint">Imprint</a>
-          <a href="/privacy">Privacy</a>
-          <!-- <a href="">Jobs</a> -->
+          <nuxt-link class="clickable" to="/imprint">
+            Imprint
+          </nuxt-link>
+          <nuxt-link class="clickable" to="/privacy">
+            Privacy
+          </nuxt-link>
+            <!-- <a href="">Jobs</a> -->
+          </nuxt-link>
         </p>
       </div>
     </div>
@@ -40,11 +45,34 @@
 </template>
 
 <script>
+import TimelineMax from 'gsap/src/uncompressed/TimelineMax'
 export default {
   mounted() {
     this.$nextTick(this.handleAboutVisual)
   },
   methods: {
+    nav(link) {
+      // store the current scroll position
+      const node = document.createElement('div')
+
+      // append div to body
+      document.body.appendChild(node)
+
+      node.classList += 'visual-transition'
+      node.id = 'visual-transition'
+
+      node.setAttribute('style', `
+        left: 0;
+        top: 0;
+        width: 100vh;
+        height: 100vh;
+        opacity: 1;
+      `)
+
+      const pageTransition = new TimelineMax()
+
+      pageTransition.to('#visual-transition', 0.6, { opacity: '0', ease: this.$gsap.Expo.easeInOut })
+    },
     handleAboutVisual() {
       if (window.innerWidth > 650) {
         // Pin Visual
