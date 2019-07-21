@@ -68,3 +68,13 @@ export default {
 
 }
 </script>
+<style lang="scss" scoped>
+.tags {
+  font-size: var(--small-font-size) !important;
+  opacity: .5;
+
+  span + span:before {
+    content: " • "
+  }
+}
+</style>

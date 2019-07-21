@@ -22,7 +22,7 @@
         <img src="~/assets/images/logos.svg" role="presentation">
       </div>
       <div id="contact" class="contact">
-        <h2>Let's talk business</h2>
+        <h2>Let's talk business.</h2>
         <p>
           Shoot us an
           <a href="mailto:hello@overnice.com">email</a>
@@ -36,8 +36,8 @@
           <nuxt-link class="clickable" to="/privacy">
             Privacy
           </nuxt-link>
-            <!-- <a href="">Jobs</a> -->
-          </nuxt-link>
+
+          <!-- <a href="">Jobs</a> -->
         </p>
       </div>
     </div>

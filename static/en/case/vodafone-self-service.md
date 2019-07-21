@@ -62,4 +62,4 @@ So we developed a solution that solved the problem more or less for free: Every 
 
 ![](/cases/product_vodafone/contact.jpg)
 
-The project was set up and concluded in less than three months, thanks to design sprints and a great team spirit between the amazing people involved from Vodafone’s site, Hackerbay and us.
+The project was set up and concluded in less than three months, thanks to design sprints and a great team spirit between the amazing people involved from Vodafone’s side, Hackerbay and us.

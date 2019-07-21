@@ -1,20 +1,4 @@
-const { join } = require('path')
-const dir = require('node-dir')
-const routesArray = []
-const fs = require('fs')
-const _ = require('lodash')
-const implicitFigures = require('markdown-it-implicit-figures')
-const md = require('markdown-it')()
-  .use(implicitFigures, {
-    dataType: true, // <figure data-type="image">, default: false
-    figcaption: true, // <figcaption>alternative text</figcaption>, default: false
-    tabindex: true, // <figure tabindex="1+n">..., default: false
-    link: false // <a href="img.png"><img src="img.png"></a>, default: false
-  })
-  .use(require('markdown-it-decorate'))
-
 export default {
-
   mode: 'spa',
 
   /*
@@ -93,8 +77,18 @@ export default {
     [
       'nuxt-i18n',
       {
-        locales: ['en', 'de'],
+        locales: [
+          {
+            code: 'en',
+            iso: 'en-US'
+          },
+          {
+            code: 'de',
+            iso: 'de-DE'
+          }
+        ],
         defaultLocale: 'en',
+        baseUrl: 'https://overnice.com',
         vueI18n: {
           fallbackLocale: 'en',
           messages: {
