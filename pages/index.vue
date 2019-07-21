@@ -325,7 +325,7 @@ export default {
 
   &.on-mobile /deep/ {
     .service-category .cases {
-      overflow: scroll;
+      // overflow: scroll;
       -webkit-overflow-scrolling: touch;
     }
   }
