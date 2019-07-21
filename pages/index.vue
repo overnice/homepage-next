@@ -34,7 +34,7 @@
           <strong>a good time for users.</strong>
         </h1>
       </div>
-      <section id="content" :class="{'content':true, 'on-mobile':(isMobile)}">
+      <section id="content" class="content">
         <ServiceCategory
           v-for="serviceCategory in serviceCategories"
           :id="serviceCategory.id"
@@ -127,9 +127,6 @@ export default {
     }
   },
   computed: {
-    isMobile() {
-      return isMobile()
-    },
     showBackAnimation() {
       return this.$store.state.showBackAnimation
     },
@@ -322,13 +319,6 @@ export default {
   top: 50vh;
   margin-top: 1px;
   padding-top: calc(600px + 50vh); // video scroll height + video size (minus top value)
-
-  &.on-mobile /deep/ {
-    .service-category .cases {
-      // overflow: scroll;
-      -webkit-overflow-scrolling: touch;
-    }
-  }
 }
 
 @media (max-width: $bp-mobile) {

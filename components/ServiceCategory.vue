@@ -78,6 +78,7 @@ export default {
     display: flex;
     margin: calc(var(--l-spacing) * -1); // compensate service category padding + case hover state
     overflow: auto;
+    -webkit-overflow-scrolling: touch;
     padding: var(--l-spacing) 0;
   }
 }
