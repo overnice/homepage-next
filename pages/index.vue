@@ -34,7 +34,7 @@
           <strong>a good time for users.</strong>
         </h1>
       </div>
-      <section id="content" class="content">
+      <section id="content" :class="{'content':true, 'on-mobile':(isMobile)}">
         <ServiceCategory
           v-for="serviceCategory in serviceCategories"
           :id="serviceCategory.id"
@@ -54,12 +54,12 @@
 <script>
 import TimelineMax from 'gsap/src/uncompressed/TimelineMax'
 
+import VueRouter from 'vue-router'
 import IntroVideo from '~/components/IntroVideo.vue'
 import ServiceCategory from '~/components/ServiceCategory.vue'
 import About from '~/components/About.vue'
 import Controls from '~/components/Layout/Controls.vue'
 import ScrollIndicator from '~/components/ScrollIndicator.vue'
-import VueRouter from 'vue-router'
 
 import serviceCategoriesData from '~/data/serviceCategories.json'
 
@@ -127,6 +127,9 @@ export default {
     }
   },
   computed: {
+    isMobile() {
+      return isMobile()
+    },
     showBackAnimation() {
       return this.$store.state.showBackAnimation
     },
@@ -319,6 +322,13 @@ export default {
   top: 50vh;
   margin-top: 1px;
   padding-top: calc(600px + 50vh); // video scroll height + video size (minus top value)
+
+  &.on-mobile /deep/ {
+    .service-category .cases {
+      overflow: scroll;
+      -webkit-overflow-scrolling: touch;
+    }
+  }
 }
 
 @media (max-width: $bp-mobile) {

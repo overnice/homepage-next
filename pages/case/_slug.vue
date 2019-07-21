@@ -11,8 +11,8 @@
   </div>
 </template>
 <script>
-import pageTransition from '~/utils/page-transition'
 import { TimelineMax } from 'gsap'
+import pageTransition from '~/utils/page-transition'
 export default {
   transition: pageTransition,
   // async asyncData({ params }) {
