@@ -13,7 +13,6 @@
 <script>
 import { TimelineMax } from 'gsap'
 export default {
-  pageTransition: 'fade',
   layout: 'content',
 
   async asyncData({ params, app }) {
@@ -50,12 +49,6 @@ export default {
         // { hid: 'description', name: this.title, content: 'My custom description..' }
       ]
     }
-  // },
-  // transition(to, from) {
-  //   return ({
-  //     name: 'zoom',
-  //     duration: 1000
-  //   })
   }
 
 }

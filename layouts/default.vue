@@ -6,7 +6,6 @@
 <script>
 
 export default {
-  transition: 'contt',
   computed: {
     currentScript() {
       if (this.$i18n.locale === 'de') { return '../.' } else {
