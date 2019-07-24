@@ -7,7 +7,8 @@ export const state = () => ({
   },
   showBackAnimation: false,
   animImage: '',
-  imageid: ''
+  imageid: '',
+  fromExtern: ''
 })
 
 export const mutations = {
@@ -20,5 +21,8 @@ export const mutations = {
   },
   resetAnimations(state) {
     state.imageid = ''
+  },
+  setFromExtern(state, fromExtern) {
+    state.fromExtern = fromExtern
   }
 }

@@ -2,7 +2,6 @@
   <div id="intro-video" class="intro-video">
     <div id="intro-video--outer" class="intro-video--outer">
       <div class="intro-video--inner">
-        <!-- <div id="intro-video--overlay" class="intro-video--overlay" /> -->
         <video id="intro-video--video" autoplay playsinline muted loop>
           <source src="https://s3.eu-central-1.amazonaws.com/on-website-assets/intro_video.mp4" type="video/mp4">
         </video>
@@ -11,18 +10,6 @@
   </div>
 </template>
 <script>
-
-if (process.browser) {
-
-  // window.onNuxtReady(() => {
-  // const video = document.getElementById('intro-video--video')
-  // console.log(video)
-  // video.onloadedmetadata = () => {
-  //   console.log('metadata loaded')
-  // this.currentTime = 4000
-  // }
-  // })
-}
 
 export default {
 
