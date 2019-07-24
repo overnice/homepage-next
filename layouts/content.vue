@@ -10,18 +10,22 @@
 <script>
 import Close from '~/components/Layout/Close.vue'
 import Controls from '~/components/Layout/Controls.vue'
+import { mapState } from 'vuex'
 
 export default {
   components: { Close, Controls },
   methods: {
     goback() {
-      if (window.history.length) {
+      if (!this.fromExtern) {
         this.$router.back()
       } else {
         this.$router.push('/')
       }
     }
-  }
+  },
+  computed: mapState({
+    fromExtern: state => state.fromExtern
+  })
 }
 </script>
 
