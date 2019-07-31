@@ -21,7 +21,6 @@ export default {
 
     return {
       slug: params.slug,
-      // related: attr.related,
       body: fileContent.html,
       title: attr.title,
       abstract: attr.abstract,
@@ -43,12 +42,13 @@ export default {
   },
   head() {
     return {
-      title: this.title + ' – overnice',
-      meta: [
-        // hid is used as unique identifier. Do not use `vmid` for it as it will not work
-        // { hid: 'description', name: this.title, content: 'My custom description..' }
-      ]
+      title: this.title + ' – overnice'
     }
+  },
+  beforeRouteEnter(to, from, next) {
+    next((vm) => {
+      vm.$store.commit('setFromExtern', (from.name === null || from.name === undefined))
+    })
   }
 }
 </script>
