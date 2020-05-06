@@ -14,6 +14,9 @@ import Controls from '~/components/Layout/Controls.vue'
 
 export default {
   components: { Close, Controls },
+  computed: mapState({
+    fromExtern: state => state.fromExtern
+  }),
   methods: {
     goback() {
       if (!this.fromExtern) {
@@ -22,10 +25,7 @@ export default {
         this.$router.push('/')
       }
     }
-  },
-  computed: mapState({
-    fromExtern: state => state.fromExtern
-  })
+  }
 }
 </script>
 

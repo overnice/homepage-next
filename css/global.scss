@@ -209,3 +209,17 @@ p.small {
 .clickable {
   cursor: pointer;
 }
+
+/* TODO: Tidy this up */
+.imprint-label {
+  font-size: 0.7em;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-right: 2rem;
+}
+
+.imprint-block-start {
+  display: inline-block;
+  margin-top: var(--m-spacing);
+}
