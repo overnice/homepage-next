@@ -41,13 +41,13 @@
         <h2 class="hiring">
           We're hiring!
         </h2>
-        <p>
+        <p class="hiring">
           <a
             href="https://www.notion.so/overnice/Job-offer-Project-and-Office-Manager-d23106accb8146699e70180de2cd414d"
             target="_blank"
           >Project and Office Manager</a>
         </p>
-        <p>
+        <p class="hiring">
           <a
             href="https://www.notion.so/overnice/Job-offer-Interaction-Designer-Web-af544609803d4a9dbaf5a5f05ff89d44"
             target="_blank"
@@ -248,6 +248,18 @@ export default {
   p {
     font-size: var(--small-font-size);
   }
+}
+
+p.hiring {
+  a {
+    &:before {
+      background: rgba(255, 255, 255, 0);
+    }
+  }
+}
+
+.hiring {
+  color: rgba(255, 255, 255, 0.5);
 }
 
 h2.hiring {
