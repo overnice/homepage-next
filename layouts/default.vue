@@ -4,11 +4,12 @@
   </div>
 </template>
 <script>
-
 export default {
   computed: {
     currentScript() {
-      if (this.$i18n.locale === 'de') { return '../.' } else {
+      if (this.$i18n.locale === 'de') {
+        return '../.'
+      } else {
         return '.'
       }
     }
@@ -24,8 +25,10 @@ export default {
         hiddenDuration = window.innerHeight * 0.9
       }
 
-      const sceneHideNav = new this.$scrollmagic.Scene({ triggerElement: '#content', duration: hiddenDuration })
-        .setClassToggle('#controls', 'invisible')
+      const sceneHideNav = new this.$scrollmagic.Scene({
+        triggerElement: '#content',
+        duration: hiddenDuration
+      }).setClassToggle('#controls', 'invisible')
       this.$ksvuescr.$emit('addScene', 'hideNav', sceneHideNav)
     }
   }
@@ -51,37 +54,26 @@ export default {
 
     p {
       a {
-        text-shadow:
-          -0.125rem -0.125rem 0 var(--darkgray),
+        text-shadow: -0.125rem -0.125rem 0 var(--darkgray),
           0.125rem -0.125rem 0 var(--darkgray),
           -0.125rem 0.125rem 0 var(--darkgray),
-          0.125rem 0.125rem 0 var(--darkgray),
-          0.125rem 0 0 var(--darkgray),
-          -0.125rem 0 0 var(--darkgray),
-          0 0.125rem 0 var(--darkgray),
-          0 -0.125rem 0 var(--darkgray),
-
-          -0.25rem -0.25rem 0 var(--darkgray),
-          0.25rem -0.25rem 0 var(--darkgray),
-          -0.25rem 0.25rem 0 var(--darkgray),
-          0.25rem 0.25rem 0 var(--darkgray),
-          0.25rem 0 0 var(--darkgray),
-          -0.25rem 0 0 var(--darkgray),
-          0 0.25rem 0 var(--darkgray),
-          0 -0.25rem 0 var(--darkgray),
-
-          -0.375rem -0.375rem 0 var(--darkgray),
+          0.125rem 0.125rem 0 var(--darkgray), 0.125rem 0 0 var(--darkgray),
+          -0.125rem 0 0 var(--darkgray), 0 0.125rem 0 var(--darkgray),
+          0 -0.125rem 0 var(--darkgray), -0.25rem -0.25rem 0 var(--darkgray),
+          0.25rem -0.25rem 0 var(--darkgray), -0.25rem 0.25rem 0 var(--darkgray),
+          0.25rem 0.25rem 0 var(--darkgray), 0.25rem 0 0 var(--darkgray),
+          -0.25rem 0 0 var(--darkgray), 0 0.25rem 0 var(--darkgray),
+          0 -0.25rem 0 var(--darkgray), -0.375rem -0.375rem 0 var(--darkgray),
           0.375rem -0.375rem 0 var(--darkgray),
           -0.375rem 0.375rem 0 var(--darkgray),
-          0.375rem 0.375rem 0 var(--darkgray),
-          0.375rem 0 0 var(--darkgray),
-          -0.375rem 0 0 var(--darkgray),
-          0 0.375rem 0 var(--darkgray),
+          0.375rem 0.375rem 0 var(--darkgray), 0.375rem 0 0 var(--darkgray),
+          -0.375rem 0 0 var(--darkgray), 0 0.375rem 0 var(--darkgray),
           0 -0.375rem 0 var(--darkgray);
-        transition: color .3s cubic-bezier(.25,0,0,1), transform .3s cubic-bezier(.25,0,0,1);
+        transition: color 0.3s cubic-bezier(0.25, 0, 0, 1),
+          transform 0.3s cubic-bezier(0.25, 0, 0, 1);
 
         &:before {
-          background: rgba(#ff795f, .7);
+          background: rgba(#ff795f, 0.7);
         }
 
         &:hover,
@@ -90,7 +82,7 @@ export default {
           color: white;
 
           &:before {
-            background: rgba(255,255,255,.5);
+            background: rgba(255, 255, 255, 0.5);
           }
         }
       }
