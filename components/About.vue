@@ -53,6 +53,12 @@
             target="_blank"
           >Interaction Designer (Web)</a>
         </p>
+        <p class="hiring">
+          <a
+            href="https://www.notion.so/overnice/Job-offer-Creative-Frontend-Developer-Web-f45559c2473c4e95a25ea1d12cb800d0"
+            target="_blank"
+          >Creative Frontend Developer (Web)</a>
+        </p>
         <p class="footnotes">
           <nuxt-link class="clickable" to="/imprint">
             Imprint
